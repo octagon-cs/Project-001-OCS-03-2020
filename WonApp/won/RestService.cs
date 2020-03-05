@@ -51,35 +51,22 @@ namespace won
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             return content;
         }
-    }
 
-    internal class NameValueCollection
-    {
-        internal void Add(string v1, string v2)
+
+        public void Error(HtppResponseResult response)
         {
-            throw new NotImplementedException();
+            var content = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<ErrorMessage>(content);
+            throw new System.Exception(result.Message);
         }
     }
 
 
 
-
-    public class RoleUser
+    public class ErrorMessage
     {
-        public List<Role> Role { get; set; }
+        public string Message { get; set; }
     }
 
-    public class Role
-    {
-        public string Nama { get; set; }
-    }
 
-    public class ResponseResult
-    {
-        public bool status { get; set; }
-        public object data { get; set; }
-        public string message { get; set; }
-        public string set { get; set; }
-
-    }
 }

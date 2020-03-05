@@ -9,8 +9,7 @@ namespace won.Models.SuratPermohonan
     {
 
         private string nikSuami;
-
-
+        
         [JsonProperty("niksuami")]
         public string NIKSuami
         {
