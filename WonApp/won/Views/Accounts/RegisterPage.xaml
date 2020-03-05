@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="won.Views.Accounts.RegisterPage">
+    <ContentPage.Content>
+        <Grid Margin="40,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">
+                <Label Text="WON" FontSize="40" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <StackLayout Margin="20,20" Grid.Row="1">
+                <Label Text="Registrasi" FontSize="Title"/>
+                <Label Margin="5,40,0,0" Text="NIK"/>
+                <Entry Placeholder="{Binding NIK}" />
+                <Label Margin="5,20,0,0" Text="NKK"/>
+                <Entry Placeholder="{Binding NKK}"/> 
+                <Label Margin="5,20,0,0" Text="Email"/>
+                <Entry Placeholder="Email" Text="{Binding Email}"/> 
+                <Label Margin="5,20,0,0" Text="Password"/>
+                <Entry Placeholder="Password"/>
+                <Label Margin="5,20,0,0" Text="Ulangi Password"/>
+                <Entry Placeholder="Ulangi Password"/>
+                <Button Margin="5,20,0,0" Text="Register" HeightRequest="60" Command="{Binding RegisterAction}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="2">
+                <Label FontSize="Micro" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Text="Power By Octagon Cendrawasih Solution"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

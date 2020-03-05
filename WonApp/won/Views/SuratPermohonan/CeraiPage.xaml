@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="won.Views.SuratPermohonan.CeraiPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label Text="NIK Suami"   />
+                <Entry Placeholder="NIK" Text="{Binding Model.NIKSuami}"></Entry>
+                <Label Text="Nama Suami"   />
+                <Entry Placeholder="Nama Suami" Text="{Binding Model.NIKSuami}"></Entry>
+                <Label Text="NIK Istri"   />
+                <Entry Placeholder="NIK" Text="{Binding Model.NIKSuami}"></Entry>
+                <Label Text="Nama Istri"   />
+                <Entry Placeholder="NIK" Text="{Binding Model.NIKSuami}"></Entry>
+                <Label Text="No. Surat"   />
+                <Entry Placeholder="NIK" Text="{Binding Model.NIKSuami}"></Entry>
+                <Label Text="Keterangan Cerai"   />
+                <Entry Placeholder="NIK" Text="{Binding Model.NIKSuami}"></Entry>
+                <Label Text="Footer Cetak Data"   />
+                <Entry Placeholder="NIK" Text="{Binding Model.NIKSuami}"></Entry>
+                <Label Text="Judul Atas Nama"   />
+                <Entry Placeholder="NIK" Text="{Binding Model.NIKSuami}"></Entry>
+                <Label Text="Jabatan Atas Nama"   />
+                <Entry Placeholder="NIK" Text="{Binding Model.NIKSuami}"></Entry>
+                <Label Text="Nama Atas Nama"   />
+                <Entry Placeholder="NIK" Text="{Binding Model.NIKSuami}"></Entry>
+                <Label Text="NIP/NIAP Atas Nama"   />
+                <Entry Placeholder="NIK" Text="{Binding Model.NIKSuami}"></Entry>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
