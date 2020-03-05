@@ -5,7 +5,7 @@ using System.Text;
 
 namespace won.Models.SuratPermohonan
 {
-  public  class CeraiModel:BaseNotify
+    public class KtpModel : BaseNotify
     {
 
         private string nikSuami;
@@ -15,21 +15,8 @@ namespace won.Models.SuratPermohonan
         public string NIKSuami
         {
             get { return nikSuami; }
-            set { SetProperty(ref nikSuami ,value); }
+            set { SetProperty(ref nikSuami, value); }
         }
 
     }
-    {
-
-        private string namaSuami;
-
-
-    [JsonProperty("namasuami")]
-    public string NamaSuami
-    {
-        get { return namaSuami; }
-        set { SetProperty(ref namaSuami, value); }
-    }
-
-}
 }

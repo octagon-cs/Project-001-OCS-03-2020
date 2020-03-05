@@ -10,17 +10,17 @@ using Xamarin.Forms.Xaml;
 namespace won.Views.SuratPermohonan
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CeraiPage : ContentPage
+    public partial class KkPage : ContentPage
     {
-        public CeraiPage()
+        public KkPage()
         {
             InitializeComponent();
-            BindingContext = new CeraiViewModel();
+            BindingContext = new KkViewModel();
         }
     }
-    public class CeraiViewModel:BaseViewModel
+    public class KkViewModel : BaseViewModel
     {
-        public CeraiViewModel()
+        public KkViewModel()
         {
             SaveCommand = new Command(SaveAction);
         }
@@ -39,5 +39,4 @@ namespace won.Views.SuratPermohonan
         }
 
     }
-
 }

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="won.Views.SuratPermohonan.PindahPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label Text="NIK"  Margin="0,20,0,0" />
+                <Entry Placeholder="NIK" Text="{Binding Model.NIK}"></Entry>
+                <Label Text="Nama"  Margin="0,20,0,0" />
+                <Entry Placeholder="Nama" Text="{Binding Model.Nama}"></Entry>
+                <Label Text="Tempat Lahir"    Margin="0,20,0,0"/>
+                <Entry Placeholder="Tempat Lahir" Text="{Binding Model.TempatLahir}"></Entry>
+                <Label Text="Tanggal Lahir"    Margin="0,20,0,0"/>
+                <Entry Placeholder="Tanggal Lahir" Text="{Binding Model.TanggalLahir}"></Entry>
+                <Label Text="Tanggal Pindah"   Margin="0,20,0,0" />
+                <Entry Placeholder="Tanggal Pindah" Text="{Binding Model.TanggalPindah}"></Entry>
+                <Label Text="Keterangan Pindah"  Margin="0,20,0,0" />
+                <Entry Placeholder="Keterangan Pindah" Text="{Binding Model.KeteranganPindah}"></Entry>
+                <Label Text="Pindah Ke"  Margin="0,20,0,0" />
+                <Entry Placeholder="Pindah Ke" Text="{Binding Model.PindahKe}"></Entry>
+                <Label Text="Tanggal Input Data"  Margin="0,20,0,0" />
+                <Entry Placeholder="Tanggal Input Data" Text="{Binding Model.TanggalInputData}"></Entry>
+                <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

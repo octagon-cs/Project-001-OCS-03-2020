@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="won.Views.SuratPermohonan.CeraiPage">
+             x:Class="won.Views.SuratPermohonan.KetnikahPage">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="20">
@@ -18,8 +18,8 @@
                 <Entry Placeholder="Nama Istri" Text="{Binding Model.NamaIstri}"></Entry>
                 <Label Text="No. Surat"  Margin="0,20,0,0" />
                 <Entry Placeholder="No. Surat" Text="{Binding Model.NoSurat}"></Entry>
-                <Label Text="Keterangan Cerai"  Margin="0,20,0,0" />
-                <Entry Placeholder="Keterangan Cerai" Text="{Binding Model.KetCerai}"></Entry>
+                <Label Text="Keterangan Nikah"  Margin="0,20,0,0" />
+                <Entry Placeholder="Keterangan Nikah" Text="{Binding Model.KetNikah}"></Entry>
                 <Label Text="Footer Cetak Data"  Margin="0,20,0,0" />
                 <Entry Placeholder="Footer Cetak Data" Text="{Binding Model.FootCetak}"></Entry>
                 <Label Text="Judul Atas Nama"   Margin="0,20,0,0"/>
@@ -29,8 +29,9 @@
                 <Label Text="Nama Atas Nama"   Margin="0,20,0,0"/>
                 <Entry Placeholder="Nama Atas Nama" Text="{Binding Model.AtasNama}"></Entry>
                 <Label Text="NIP/NIAP Atas Nama" Margin="0,20,0,0"  />
-                <Entry Placeholder="NIP/NIAP Atas NamaNIK" Text="{Binding Model.NIPNama}"></Entry>
+                <Entry Placeholder="NIP/NIAP Atas Nama" Text="{Binding Model.NIPNama}"></Entry>
                 <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

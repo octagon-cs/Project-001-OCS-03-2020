@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="won.Views.SuratPermohonan.KematianPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label Text="NIK"  Margin="0,20,0,0" />
+                <Entry Placeholder="NIK" Text="{Binding Model.NIK}"></Entry>
+                <Label Text="Nama"  Margin="0,20,0,0" />
+                <Entry Placeholder="Nama" Text="{Binding Model.Nama}"></Entry>
+                <Label Text="Tempat Lahir"    Margin="0,20,0,0"/>
+                <Entry Placeholder="Tempat Lahir" Text="{Binding Model.TempatLahir}"></Entry>
+                <Label Text="Tanggal Lahir"    Margin="0,20,0,0"/>
+                <Entry Placeholder="Tanggal Lahir" Text="{Binding Model.TanggalLahir}"></Entry>
+                <Label Text="Hari/Tanggal Meninggal"   Margin="0,20,0,0" />
+                <Entry Placeholder="Hari/Tanggal Meninggal" Text="{Binding Model.TanggalMeninggal}"></Entry>
+                <Label Text="Tempat Meninggal"  Margin="0,20,0,0" />
+                <Entry Placeholder="Tempat Meninggal" Text="{Binding Model.TempatMeninggal}"></Entry>
+                <Label Text="Disebabkan Karena"  Margin="0,20,0,0" />
+                <Entry Placeholder="Disebabkan Karena" Text="{Binding Model.DisebabkanKarena}"></Entry>
+                <Label Text="Dikebumikan Di"  Margin="0,20,0,0" />
+                <Entry Placeholder="Dikebumikan Di" Text="{Binding Model.DikebumikanDi}"></Entry>
+                <Label Text="Hari/Tanggal Dikebumikan"  Margin="0,20,0,0" />
+                <Entry Placeholder="Hari/Tanggal Dikebumikan" Text="{Binding Model.HariTanggalDikebumikan}"></Entry>
+                <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
