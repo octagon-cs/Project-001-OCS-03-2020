@@ -109,5 +109,18 @@ namespace won.Models.SuratPermohonan
             get { return _NIPNama; }
             set { SetProperty(ref _NIPNama, value); }
         }
+    
+    
+
+        private string namaSuami;
+
+
+    [JsonProperty("namasuami")]
+    public string NamaSuami
+    {
+        get { return namaSuami; }
+        set { SetProperty(ref namaSuami, value); }
     }
+
+}
 }

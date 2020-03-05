@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="won.Views.SuratPermohonan.TanahPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label Text="NIK"    Margin="0,20,0,0"/>
+                <Entry Placeholder="NIK" Text="{Binding Model.NIK}"></Entry>
+                <Label Text="Nama"   Margin="0,20,0,0" />
+                <Entry Placeholder="Nama" Text="{Binding Model.Nama}"></Entry>
+                <Label Text="No. Surat"  Margin="0,20,0,0" />
+                <Entry Placeholder="No. Surat" Text="{Binding Model.NoSurat}"></Entry>
+                <Label Text="Footer Cetak Data"  Margin="0,20,0,0" />
+                <Entry Placeholder="Footer Cetak Data" Text="{Binding Model.FootCetak}"></Entry>
+                <Label Text="Sebidang Tanah"  Margin="0,20,0,0" />
+                <Entry Placeholder="Sebidang Tanah" Text="{Binding Model.SebidangTanah}"></Entry>
+                <Label Text="Digunakan Untuk"  Margin="0,20,0,0" />
+                <Entry Placeholder="Digunakan Untuk" Text="{Binding Model.DigunakanUntuk}"></Entry>
+                <Label Text="Sebelah Utara"  Margin="0,20,0,0" />
+                <Entry Placeholder="Sebelah Utara" Text="{Binding Model.SebelahUtara}"></Entry>
+                <Label Text="Sebelah Selatan"  Margin="0,20,0,0" />
+                <Entry Placeholder="Sebelah Selatan" Text="{Binding Model.SebelahSelatan}"></Entry>
+                <Label Text="Sebelah Timur"  Margin="0,20,0,0" />
+                <Entry Placeholder="Sebelah Timur" Text="{Binding Model.SebelahTimur}"></Entry>
+                <Label Text="Sebelah Barat"  Margin="0,20,0,0" />
+                <Entry Placeholder="Sebelah Barat" Text="{Binding Model.SebelahBarat}"></Entry>
+                <Label Text="Terjadi Pada Tahun"  Margin="0,20,0,0" />
+                <Entry Placeholder="Terjadi Pada Tahun" Text="{Binding Model.TerjadiPadaTahun}"></Entry>
+                <Label Text="Diusahakan Sebagai"  Margin="0,20,0,0" />
+                <Entry Placeholder="Diusahakan Sebagai" Text="{Binding Model.DiusahakanSebagai}"></Entry>
+                <Label Text="Judul Atas Nama"   Margin="0,20,0,0"/>
+                <Entry Placeholder="Judul Atas Nama" Text="{Binding Model.JudulNama}"></Entry>
+                <Label Text="Jabatan Atas Nama"  Margin="0,20,0,0" />
+                <Entry Placeholder="Jabatan Atas Nama" Text="{Binding Model.JabatanNama}"></Entry>
+                <Label Text="Nama Atas Nama"   Margin="0,20,0,0"/>
+                <Entry Placeholder="Nama Atas Nama" Text="{Binding Model.AtasNama}"></Entry>
+                <Label Text="NIP/NIAP Atas Nama" Margin="0,20,0,0"  />
+                <Entry Placeholder="NIP/NIAP Atas Nama" Text="{Binding Model.NIPNama}"></Entry>
+                <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
+S
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

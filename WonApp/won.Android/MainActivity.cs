@@ -29,5 +29,11 @@ namespace won.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+        protected override void OnNewIntent(Android.Content.Intent intent)
+        {
+            base.OnNewIntent(intent);
+            Push.CheckLaunchedFromNotification(this, intent);
+        }
     }
 }

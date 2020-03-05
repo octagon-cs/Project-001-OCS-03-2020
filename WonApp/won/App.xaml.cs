@@ -11,7 +11,6 @@ namespace won
 {
     public partial class App : Application
     {
-
         public App()
         {
             InitializeComponent();
@@ -30,14 +29,30 @@ namespace won
                 await Current.MainPage.DisplayAlert(message.Title, message.Message, message.Cancel);
 
             });
-
-
-
             DependencyService.Register<AccountService>();
-
-
-           
             MainPage = new LoginPage();
+            AppCenter.Start("android=371b628f-72e3-4305-805c-595bdaa16b97",
+                 typeof(Push), typeof(Analytics), typeof(Crashes));
+            if (!AppCenter.Configured)
+            {
+                Push.PushNotificationReceived += (sender, e) =>
+                {
+                    var summary = $"Push notification received:" +
+                                                    $"\n\tNotification title: {e.Title}" +
+                                                    $"\n\tMessage: {e.Message}";
+
+                    if (e.CustomData != null)
+                    {
+                        summary += "\n\tCustom data:\n";
+                        foreach (var key in e.CustomData.Keys)
+                        {
+                            summary += $"\t\t{key} : {e.CustomData[key]}\n";
+                        }
+                    }
+                    System.Diagnostics.Debug.WriteLine(summary);
+                };
+            }
+
         }
 
 
@@ -62,5 +77,7 @@ namespace won
         {
             // Handle when your app resumes
         }
+
+
     }
 }
