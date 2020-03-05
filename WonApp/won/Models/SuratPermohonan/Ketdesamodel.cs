@@ -1,69 +1,41 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace won.Models.SuratPermohonan
 {
-    public class CeraiModel : BaseNotify
+    public class Ketdesamodel : BaseNotify
     {
 
-        private string _NIKSuami;
+        private string _NIK;
 
 
-        [JsonProperty("niksuami")]
-        public string NIKSuami
+        [JsonProperty("nik")]
+        public string NIK
         {
-            get { return _NIKSuami; }
-            set { SetProperty(ref _NIKSuami, value); }
+            get { return _NIK; }
+            set { SetProperty(ref _NIK, value); }
         }
-        private string _NamaSuami;
+
+        private string _Nama;
 
 
-        [JsonProperty("namasuami")]
-        public string NamaSuami
+        [JsonProperty("nama")]
+        public string Nama
         {
-            get { return _NamaSuami; }
-            set { SetProperty(ref _NamaSuami, value); }
-        }
-        private string _NIKIstri;
-
-
-        [JsonProperty("nikistri")]
-        public string NIKIstri
-        {
-            get { return _NIKIstri; }
-            set { SetProperty(ref _NIKIstri, value); }
-        }
-        private string _NamaIstri;
-
-
-        [JsonProperty("namaistri")]
-        public string NamaIstri
-        {
-            get { return _NamaIstri; }
-            set { SetProperty(ref _NamaIstri, value); }
+            get { return _Nama; }
+            set { SetProperty(ref _Nama, value); }
         }
         private string _NoSurat;
 
 
         [JsonProperty("nosurat")]
-        public string NOSurat
+        public string NoSurat
         {
             get { return _NoSurat; }
             set { SetProperty(ref _NoSurat, value); }
         }
-
-        private string _ketCerai;
-
-
-        [JsonProperty("ketcerai")]
-        public string ketCerai
-        {
-            get { return _KetCerai; }
-            set { SetProperty(ref _KetCerai, value); }
-        }
-
         private string _FootCetak;
 
 
@@ -85,7 +57,7 @@ namespace won.Models.SuratPermohonan
         private string _JabatanNama;
 
 
-        [JsonProperty("jabatanama")]
+        [JsonProperty("jabatanNama")]
         public string JabatanNama
         {
             get { return _JabatanNama; }
@@ -104,7 +76,7 @@ namespace won.Models.SuratPermohonan
 
 
         [JsonProperty("nipnama")]
-        public string NIKNama
+        public string NIPNama
         {
             get { return _NIPNama; }
             set { SetProperty(ref _NIPNama, value); }

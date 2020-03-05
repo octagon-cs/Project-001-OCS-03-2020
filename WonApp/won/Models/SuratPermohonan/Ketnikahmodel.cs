@@ -1,11 +1,11 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace won.Models.SuratPermohonan
 {
-    public class CeraiModel : BaseNotify
+    public class Ketnikahmodel : BaseNotify
     {
 
         private string _NIKSuami;
@@ -17,6 +17,7 @@ namespace won.Models.SuratPermohonan
             get { return _NIKSuami; }
             set { SetProperty(ref _NIKSuami, value); }
         }
+
         private string _NamaSuami;
 
 
@@ -48,22 +49,20 @@ namespace won.Models.SuratPermohonan
 
 
         [JsonProperty("nosurat")]
-        public string NOSurat
+        public string NoSurat
         {
             get { return _NoSurat; }
             set { SetProperty(ref _NoSurat, value); }
         }
+        private string _Ketnikah;
 
-        private string _ketCerai;
 
-
-        [JsonProperty("ketcerai")]
-        public string ketCerai
+        [JsonProperty("ketnikah")]
+        public string Ketnikah
         {
-            get { return _KetCerai; }
-            set { SetProperty(ref _KetCerai, value); }
+            get { return _Ketnikah; }
+            set { SetProperty(ref _Ketnikah, value); }
         }
-
         private string _FootCetak;
 
 
@@ -85,7 +84,7 @@ namespace won.Models.SuratPermohonan
         private string _JabatanNama;
 
 
-        [JsonProperty("jabatanama")]
+        [JsonProperty("jabatannama")]
         public string JabatanNama
         {
             get { return _JabatanNama; }
@@ -104,7 +103,7 @@ namespace won.Models.SuratPermohonan
 
 
         [JsonProperty("nipnama")]
-        public string NIKNama
+        public string nipnama
         {
             get { return _NIPNama; }
             set { SetProperty(ref _NIPNama, value); }
