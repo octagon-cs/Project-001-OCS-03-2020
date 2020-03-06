@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "540001517976",
+    "firebase_url": "https://project-001-ocs-03-2020.firebaseio.com",
+    "project_id": "project-001-ocs-03-2020",
+    "storage_bucket": "project-001-ocs-03-2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540001517976:android:da4192af469c8e5bb76bed",
+        "android_client_info": {
+          "package_name": "com.ocs.won"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "540001517976-58kvt5n39ub16dcnvrhp37ggkp84nso6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACMjdC_X2fzem9JFJuIyT9DNG1vnB55fU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "540001517976-58kvt5n39ub16dcnvrhp37ggkp84nso6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
