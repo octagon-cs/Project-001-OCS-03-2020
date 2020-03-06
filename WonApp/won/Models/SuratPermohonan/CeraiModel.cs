@@ -145,8 +145,5 @@ namespace won.Models.SuratPermohonan
             if (valid) ErrorMessage = "";
             return valid;
         }
-
-
-       
     }
 }

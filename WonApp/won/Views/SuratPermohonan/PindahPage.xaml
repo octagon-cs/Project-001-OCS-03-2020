@@ -22,8 +22,8 @@
                 <Entry Placeholder="Keterangan Pindah" Text="{Binding Model.KeteranganPindah}"></Entry>
                 <Label Text="Pindah Ke"  Margin="0,20,0,0" />
                 <Entry Placeholder="Pindah Ke" Text="{Binding Model.PindahKe}"></Entry>
-                <Label Text="Tanggal Input Data"  Margin="0,20,0,0" />
-                <Entry Placeholder="Tanggal Input Data" Text="{Binding Model.TanggalInputData}"></Entry>
+                <!-- <Label Text="Tanggal Input Data"  Margin="0,20,0,0" />
+                <Entry Placeholder="Tanggal Input Data" Text="{Binding Model.TanggalInputData}"></Entry> -->
                 <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
 
             </StackLayout>

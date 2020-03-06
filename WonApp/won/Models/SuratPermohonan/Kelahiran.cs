@@ -108,7 +108,7 @@ namespace won.Models.SuratPermohonan
         //     get { return _NIPNama; }
         //     set { SetProperty(ref _NIPNama, value); }
         // }
-    }
+    
     public override bool Valid
         {
             get
@@ -144,4 +144,5 @@ namespace won.Models.SuratPermohonan
             if (valid) ErrorMessage = "";
             return valid;
         }
+    }
 }
