@@ -14,8 +14,8 @@
                 <Entry Placeholder="Nama" Text="{Binding Model.Nama}"></Entry>
                 <Label Text="No. Surat"  Margin="0,20,0,0" />
                 <Entry Placeholder="No. Surat" Text="{Binding Model.NoSurat}"></Entry>
-                <Label Text="Footer Cetak Data"  Margin="0,20,0,0" />
-                <Entry Placeholder="Footer Cetak Data" Text="{Binding Model.FootCetak}"></Entry>
+                <!-- <Label Text="Footer Cetak Data"  Margin="0,20,0,0" />
+                <Entry Placeholder="Footer Cetak Data" Text="{Binding Model.FootCetak}"></Entry> -->
                 <Label Text="Nama Usaha"  Margin="0,20,0,0" />
                 <Entry Placeholder="Nama Usaha" Text="{Binding Model.NamaUsaha}"></Entry>
                 <Label Text="Jenis Usaha"  Margin="0,20,0,0" />
@@ -28,14 +28,14 @@
                 <Entry Placeholder="Berlaku Sejak Tanggal" Text="{Binding Model.BerlakuSejakTanggal}"></Entry>
                 <Label Text="Sampai Dengan Tanggal"  Margin="0,20,0,0" />
                 <Entry Placeholder="Sampai Dengan Tanggal" Text="{Binding Model.SampaiDenganTanggal}"></Entry>
-                <Label Text="Judul Atas Nama"   Margin="0,20,0,0"/>
+                <!-- <Label Text="Judul Atas Nama"   Margin="0,20,0,0"/>
                 <Entry Placeholder="Judul Atas Nama" Text="{Binding Model.JudulNama}"></Entry>
                 <Label Text="Jabatan Atas Nama"  Margin="0,20,0,0" />
                 <Entry Placeholder="Jabatan Atas Nama" Text="{Binding Model.JabatanNama}"></Entry>
                 <Label Text="Nama Atas Nama"   Margin="0,20,0,0"/>
                 <Entry Placeholder="Nama Atas Nama" Text="{Binding Model.AtasNama}"></Entry>
                 <Label Text="NIP/NIAP Atas Nama" Margin="0,20,0,0"  />
-                <Entry Placeholder="NIP/NIAP Atas Nama" Text="{Binding Model.NIPNama}"></Entry>
+                <Entry Placeholder="NIP/NIAP Atas Nama" Text="{Binding Model.NIPNama}"></Entry> -->
                 <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
 
             </StackLayout>
