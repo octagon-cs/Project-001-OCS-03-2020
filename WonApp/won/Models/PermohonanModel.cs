@@ -1,9 +1,13 @@
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace won.Models
 {
     public class PermohonanModel
     {
+        [JsonProperty("idpermohonan")]
+        public int IdPermohonan { get; set; }
         public List<Persetujuan> Persetujuan { get; set; }
         
     }
@@ -11,7 +15,7 @@ namespace won.Models
 
 
     public class Persetujuan{
-        public Date Created { get; set; }
+        public DateTime Created { get; set; }
 
         public string Message { get; set; }
         public ProgressRole Role {get;set;}

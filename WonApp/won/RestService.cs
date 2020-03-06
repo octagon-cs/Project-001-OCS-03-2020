@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace won
 {
@@ -45,6 +46,12 @@ namespace won
                 //this.DefaultRequestHeaders.Authorization =new AuthenticationHeaderValue("Basic", token);
             }
         }
+
+        internal Task DeleteAsync(string v, StringContent stringContent)
+        {
+            throw new NotImplementedException();
+        }
+
         public StringContent GenerateHttpContent(object data)
         {
             var json = JsonConvert.SerializeObject(data);
@@ -53,11 +60,11 @@ namespace won
         }
 
 
-        public void Error(HtppResponseResult response)
+        public async Task<string> Error(HttpResponseMessage response)
         {
             var content = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<ErrorMessage>(content);
-            throw new System.Exception(result.Message);
+            return result.Message;
         }
     }
 

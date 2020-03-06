@@ -1,4 +1,8 @@
 
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using won.Models;
 
 namespace won.Services
@@ -6,14 +10,13 @@ namespace won.Services
     public class PermohonanService : IPermohonan<PermohonanModel>
     {
         private string controller = "permohonan";
-        Task<PermohonanModel> Create(T item)
+       public async Task<PermohonanModel> Create(PermohonanModel item)
         {
             try
             {
                 using (var service = new RestService())
                 {
-                    HtppResponseResult response = await service.PostAsync($"/api/{controller}",
-                            service.GenerateHttpContent(model));
+                    var response = await service.PostAsync($"/api/{controller}",service.GenerateHttpContent(item));
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
@@ -22,7 +25,7 @@ namespace won.Services
                     }
                     else
                     {
-                        service.Error(response);
+                        throw new SystemException( await service.Error(response));
                     }
                 }
             }
@@ -31,14 +34,13 @@ namespace won.Services
                 throw new SystemException(ex.Message);
             }
         }
-        Task<PermohonanModel> Delete(T item)
+      public async  Task<bool> Delete(PermohonanModel item)
         {
             try
             {
                 using (var service = new RestService())
                 {
-                    var response = await service.DeleteAsync($"/api/{controller}/{id}",
-                            service.GenerateHttpContent(model));
+                    var response = await service.DeleteAsync($"/api/{controller}/{item.IdPermohonan}");
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
@@ -47,7 +49,7 @@ namespace won.Services
                     }
                     else
                     {
-                        service.Error(response);
+                        throw new SystemException( await service.Error(response));
                     }
                 }
             }
@@ -56,14 +58,13 @@ namespace won.Services
                 throw new SystemException(ex.Message);
             }
         }
-        Task<PermohonanModel> GetById(int id)
+        public async Task<PermohonanModel> GetById(int id)
         {
             try
             {
                 using (var service = new RestService())
                 {
-                    var response = await service.GetAsync($"/api/{controller}/{id}",
-                            service.GenerateHttpContent(model));
+                    var response = await service.GetAsync($"/api/{controller}/{id}");
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
@@ -72,7 +73,7 @@ namespace won.Services
                     }
                     else
                     {
-                        service.Error(response);
+                        throw new SystemException(await service.Error(response));
                     }
                 }
             }
@@ -81,7 +82,8 @@ namespace won.Services
                 throw new SystemException(ex.Message);
             }
         }
-        Task<List<PermohonanModel>> GetPermohonans()
+
+       public async Task<List<PermohonanModel>> GetPermohonans()
         {
             try
             {
@@ -96,7 +98,7 @@ namespace won.Services
                     }
                     else
                     {
-                        service.Error(response);
+                        throw new SystemException(await service.Error(response));
                     }
                 }
             }
@@ -105,5 +107,7 @@ namespace won.Services
                 throw new SystemException(ex.Message);
             }
         }
+
+       
     }
 }

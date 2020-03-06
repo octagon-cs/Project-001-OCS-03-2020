@@ -6,6 +6,10 @@ using won.Views;
 using won.Views.Accounts;
 using System.Threading.Tasks;
 using System.Globalization;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Push;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace won
 {

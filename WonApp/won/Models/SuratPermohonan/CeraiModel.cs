@@ -26,6 +26,7 @@ namespace won.Models.SuratPermohonan
             get { return _NamaSuami; }
             set { SetProperty(ref _NamaSuami, value); }
         }
+
         private string _NIKIstri;
 
 
@@ -60,8 +61,8 @@ namespace won.Models.SuratPermohonan
         [JsonProperty("ketcerai")]
         public string ketCerai
         {
-            get { return _KetCerai; }
-            set { SetProperty(ref _KetCerai, value); }
+            get { return _ketCerai; }
+            set { SetProperty(ref _ketCerai, value); }
         }
 
         private string _FootCetak;
@@ -109,18 +110,9 @@ namespace won.Models.SuratPermohonan
             get { return _NIPNama; }
             set { SetProperty(ref _NIPNama, value); }
         }
-    
-    
-
-        private string namaSuami;
 
 
-    [JsonProperty("namasuami")]
-    public string NamaSuami
-    {
-        get { return namaSuami; }
-        set { SetProperty(ref namaSuami, value); }
+
+       
     }
-
-}
 }

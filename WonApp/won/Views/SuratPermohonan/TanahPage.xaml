@@ -41,7 +41,6 @@
                 <Label Text="NIP/NIAP Atas Nama" Margin="0,20,0,0"  />
                 <Entry Placeholder="NIP/NIAP Atas Nama" Text="{Binding Model.NIPNama}"></Entry>
                 <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
-S
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

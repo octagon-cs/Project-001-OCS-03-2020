@@ -76,7 +76,7 @@ namespace won.Models.SuratPermohonan
 
 
         [JsonProperty("judulnama")]
-        public string _JudulNama
+        public string JudulNama
         {
             get { return _JudulNama; }
             set { SetProperty(ref _JudulNama, value); }
