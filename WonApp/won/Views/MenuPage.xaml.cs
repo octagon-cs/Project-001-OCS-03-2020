@@ -21,7 +21,8 @@ namespace won.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Home, Title="Home" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" }
+                new HomeMenuItem {Id = MenuItemType.About, Title="About" },
+                new HomeMenuItem {Id = MenuItemType.JenisPermohonan, Title="Jenis Permohonan" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

@@ -34,6 +34,9 @@ namespace won
 
             });
             DependencyService.Register<AccountService>();
+            DependencyService.Register<JenisPermohonanService>();
+
+
             MainPage = new LoginPage();
             AppCenter.Start("android=371b628f-72e3-4305-805c-595bdaa16b97",
                  typeof(Push), typeof(Analytics), typeof(Crashes));

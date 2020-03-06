@@ -12,7 +12,6 @@ namespace won
     {
         public RestService()
         {
-
             // this.MaxResponseContentBufferSize = 256000;
             //var a = ConfigurationManager.AppSettings["IP"];
             string _server = "http://waena-desa.id/";

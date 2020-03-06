@@ -7,7 +7,8 @@ namespace won.Models
     public enum MenuItemType
     {
         Home,
-        About
+        About,
+        JenisPermohonan
     }
     public class HomeMenuItem
     {

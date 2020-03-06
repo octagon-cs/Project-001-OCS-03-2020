@@ -23,9 +23,9 @@
                 <Entry Placeholder="{Binding NKK}"/> 
                 <Label Margin="5,20,0,0" Text="Email"/>
                 <Entry Placeholder="Email" Text="{Binding Email}"/> 
-                <Label Margin="5,20,0,0" Text="Password"/>
+                <Label Margin="5,20,0,0" Text="{Binding Password}"/>
                 <Entry Placeholder="Password"/>
-                <Label Margin="5,20,0,0" Text="Ulangi Password"/>
+                <Label Margin="5,20,0,0" Text="{Binding ConfirmPassword}"/>
                 <Entry Placeholder="Ulangi Password"/>
                 <Button Margin="5,20,0,0" Text="Register" HeightRequest="60" Command="{Binding RegisterAction}"/>
             </StackLayout>

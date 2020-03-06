@@ -10,6 +10,20 @@ namespace won.Models.Accounts
         private string email;
         private string password;
         private string confirmPassword;
+        private string nkk;
+        private string nik;
+
+        public string NIK
+        {
+            get { return nik; }
+            set { SetProperty(ref nik ,value); }
+        }
+
+        public string NKK
+        {
+            get { return nkk; }
+            set {SetProperty(ref nkk ,value); }
+        }
 
         public string Email
         {
@@ -42,7 +56,8 @@ namespace won.Models.Accounts
         private bool Validation()
         {
             var valid = true;
-            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(ConfirmPassword))
+            if (string.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(NKK)|| string.IsNullOrEmpty(Email) ||
+                string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(ConfirmPassword))
             {
                 valid = false;
                 ErrorMessage = "Data Tidak Boleh Kosong";

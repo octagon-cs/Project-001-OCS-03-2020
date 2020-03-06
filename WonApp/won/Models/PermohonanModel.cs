@@ -12,8 +12,6 @@ namespace won.Models
         
     }
 
-
-
     public class Persetujuan{
         public DateTime Created { get; set; }
 

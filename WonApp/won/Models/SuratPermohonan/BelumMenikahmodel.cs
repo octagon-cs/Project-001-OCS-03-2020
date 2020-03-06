@@ -18,11 +18,11 @@ namespace won.Models.SuratPermohonan
             set { SetProperty(ref _NoSurat, value); }
         }
 
-        private string _Rt;
+        private int _Rt;
 
 
         [JsonProperty("rt")]
-        public string Rt
+        public int Rt
         {
             get { return _Rt; }
             set { SetProperty(ref _Rt, value); }
@@ -36,11 +36,11 @@ namespace won.Models.SuratPermohonan
             get { return _NomorSuratPengantar; }
             set { SetProperty(ref _NomorSuratPengantar, value); }
         }
-        private string _TanggalSuratPengantar;
+        private DateTime _TanggalSuratPengantar;
 
 
         [JsonProperty("tanggalsuratpengantar")]
-        public string TanggalSuratPengantar
+        public DateTime TanggalSuratPengantar
         {
             get { return _TanggalSuratPengantar; }
             set { SetProperty(ref _TanggalSuratPengantar, value); }
@@ -63,15 +63,17 @@ namespace won.Models.SuratPermohonan
             get { return _Nama; }
             set { SetProperty(ref _Nama, value); }
         }
-        private string _TanggalCetakSurat;
+        private DateTime _TanggalCetakSurat;
 
 
         [JsonProperty("tanggalcetaksurat")]
-        public string TanggalCetakSurat
+        public DateTime TanggalCetakSurat
         {
             get { return _TanggalCetakSurat; }
             set { SetProperty(ref _TanggalCetakSurat, value); }
         }
+
+
         private string _JudulNama;
 
 
@@ -109,5 +111,34 @@ namespace won.Models.SuratPermohonan
             get { return _NIPNama; }
             set { SetProperty(ref _NIPNama, value); }
         }
+
+        public override bool Valid
+        {
+            get
+            {
+                return Validation();
+
+            }
+        }
+
+        private bool Validation()
+        {
+            var valid = true;
+            if (string.IsNullOrEmpty(NIK) || Rt<=0 || string.IsNullOrEmpty(NoSuratPengantar) ||
+                string.IsNullOrEmpty(NoSurat) || TanggalSuratPengantar==new DateTime())
+            {
+                valid = false;
+                ErrorMessage = "Data Tidak Boleh Kosong";
+            }
+
+
+            if (valid) ErrorMessage = "";
+            return valid;
+        }
+
+
+
+
+
     }
 }

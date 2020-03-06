@@ -15,6 +15,7 @@ namespace won.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         public IAccountService AccountService => DependencyService.Get<IAccountService>();
+        public IJenisPermohonanService<JenisPermohonanModel> JenisPermohonan => DependencyService.Get<IJenisPermohonanService<JenisPermohonanModel>>();
 
         bool isBusy = false;
         public bool IsBusy
