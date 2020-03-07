@@ -14,7 +14,7 @@
                 <Entry Placeholder="Nama" Text="{Binding Model.Nama}"></Entry>
                 <Label Text="No. Surat"  Margin="0,20,0,0" />
                 <Entry Placeholder="No. Surat" Text="{Binding Model.NoSurat}"></Entry>
-                <Label Text="Tanggal Cetak Surat"  Margin="0,20,0,0" />
+                <!-- <Label Text="Tanggal Cetak Surat"  Margin="0,20,0,0" />
                 <Entry Placeholder="Tanggal Cetak Surat" Text="{Binding Model.TanggalCetak}"></Entry>
                 <Label Text="Judul Atas Nama"   Margin="0,20,0,0"/>
                 <Entry Placeholder="Judul Atas Nama" Text="{Binding Model.JudulNama}"></Entry>
@@ -23,7 +23,7 @@
                 <Label Text="Nama Atas Nama"   Margin="0,20,0,0"/>
                 <Entry Placeholder="Nama Atas Nama" Text="{Binding Model.AtasNama}"></Entry>
                 <Label Text="NIP/NIAP Atas Nama" Margin="0,20,0,0"  />
-                <Entry Placeholder="NIP/NIAP Atas Nama" Text="{Binding Model.NIPNama}"></Entry>
+                <Entry Placeholder="NIP/NIAP Atas Nama" Text="{Binding Model.NIPNama}"></Entry> -->
                 <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
 
             </StackLayout>

@@ -8,11 +8,11 @@ namespace won.Models.SuratPermohonan
     public class CeraiModel : BaseNotify
     {
 
-        private string _NIKSuami;
+        private int _NIKSuami;
 
 
         [JsonProperty("niksuami")]
-        public string NIKSuami
+        public int NIKSuami
         {
             get { return _NIKSuami; }
             set { SetProperty(ref _NIKSuami, value); }
@@ -27,11 +27,11 @@ namespace won.Models.SuratPermohonan
             set { SetProperty(ref _NamaSuami, value); }
         }
 
-        private string _NIKIstri;
+        private int _NIKIstri;
 
 
         [JsonProperty("nikistri")]
-        public string NIKIstri
+        public int NIKIstri
         {
             get { return _NIKIstri; }
             set { SetProperty(ref _NIKIstri, value); }
@@ -45,74 +45,105 @@ namespace won.Models.SuratPermohonan
             get { return _NamaIstri; }
             set { SetProperty(ref _NamaIstri, value); }
         }
-        private string _NoSurat;
+        private int _NoSurat;
 
 
         [JsonProperty("nosurat")]
-        public string NOSurat
+        public int NoSurat
         {
             get { return _NoSurat; }
             set { SetProperty(ref _NoSurat, value); }
         }
 
-        private string _ketCerai;
+        private string _KetCerai;
 
 
         [JsonProperty("ketcerai")]
-        public string ketCerai
+        public string KetCerai
         {
-            get { return _ketCerai; }
-            set { SetProperty(ref _ketCerai, value); }
+            get { return _KetCerai; }
+            set { SetProperty(ref _KetCerai, value); }
         }
 
-        private string _FootCetak;
+        // private string _FootCetak;
 
 
-        [JsonProperty("footcetak")]
-        public string FootCetak
+        // [JsonProperty("footcetak")]
+        // public string _FootCetak
+        // {
+        //     get { return _FootCetak; }
+        //     set { SetProperty(ref _FootCetak, value); }
+        // }
+        // private string _JudulNama;
+
+
+        // [JsonProperty("judulnama")]
+        // public string JudulNama
+        // {
+        //     get { return _JudulNama; }
+        //     set { SetProperty(ref _JudulNama, value); }
+        // }
+        // private string _JabatanNama;
+
+
+        // [JsonProperty("jabatanama")]
+        // public string JabatanNama
+        // {
+        //     get { return _JabatanNama; }
+        //     set { SetProperty(ref _JabatanNama, value); }
+        // }
+        // private string _AtasNama;
+
+
+        // [JsonProperty("atasnama")]
+        // public string AtasNama
+        // {
+        //     get { return _AtasNama; }
+        //     set { SetProperty(ref _AtasNama, value); }
+        // }
+        // private string _NIPNama;
+
+
+        // [JsonProperty("nipnama")]
+        // public string NIKNama
+        // {
+        //     get { return _NIPNama; }
+        //     set { SetProperty(ref _NIPNama, value); }
+        // }
+        public override bool Valid
         {
-            get { return _FootCetak; }
-            set { SetProperty(ref _FootCetak, value); }
+            get
+            {
+                return Validation();
+
+            }
         }
-        private string _JudulNama;
 
-
-        [JsonProperty("judulnama")]
-        public string JudulNama
+        private bool Validation()
         {
-            get { return _JudulNama; }
-            set { SetProperty(ref _JudulNama, value); }
+            var valid = true;
+            if (int.IsNullOrEmpty(NIKSuami) || string.IsNullOrEmpty(NamaSuami) || int.IsNullOrEmpty(NIKIstri) || string.IsNullOrEmpty(NamaIstri) || int.IsNullOrEmpty(NoSurat) || string.IsNullOrEmpty(KetCerai))
+            {
+                valid = false;
+                ErrorMessage = "Data Tidak Boleh Kosong";
+            }
+
+            // if (Password != ConfirmPassword)
+            // {
+            //     valid = false;
+            //     ErrorMessage = "Email dan Password Tidak Sama";
+            // }
+            // const string pattern = @"^(? !\.)(""([^""\r\\] |\\[""\r\\])*""|" + @"([-a - z0 - 9!#$%&’*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)" + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
+
+            // var regex = new Regex(pattern, RegexOptions.IgnoreCase);
+
+            // if (regex.IsMatch(Email))
+            // {
+            //     ErrorMessage = "Email Anda Tidak Valid";valid = false;
+            // }
+
+            if (valid) ErrorMessage = "";
+            return valid;
         }
-        private string _JabatanNama;
-
-
-        [JsonProperty("jabatanama")]
-        public string JabatanNama
-        {
-            get { return _JabatanNama; }
-            set { SetProperty(ref _JabatanNama, value); }
-        }
-        private string _AtasNama;
-
-
-        [JsonProperty("atasnama")]
-        public string AtasNama
-        {
-            get { return _AtasNama; }
-            set { SetProperty(ref _AtasNama, value); }
-        }
-        private string _NIPNama;
-
-
-        [JsonProperty("nipnama")]
-        public string NIKNama
-        {
-            get { return _NIPNama; }
-            set { SetProperty(ref _NIPNama, value); }
-        }
-
-
-
-       
     }
 }

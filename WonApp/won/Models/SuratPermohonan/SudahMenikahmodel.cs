@@ -8,21 +8,21 @@ namespace won.Models.SuratPermohonan
     public class SudahMenikahmodel : BaseNotify
     {
 
-        private string _NoSurat;
+        private int _NoSurat;
 
 
         [JsonProperty("nosurat")]
-        public string NoSurat
+        public int NoSurat
         {
             get { return _NoSurat; }
             set { SetProperty(ref _NoSurat, value); }
         }
 
-        private string _Rt;
+        private int _Rt;
 
 
         [JsonProperty("rt")]
-        public string Rt
+        public int Rt
         {
             get { return _Rt; }
             set { SetProperty(ref _Rt, value); }
@@ -36,29 +36,29 @@ namespace won.Models.SuratPermohonan
             get { return _KetuaRt; }
             set { SetProperty(ref _KetuaRt, value); }
         }
-        private string _NomorSuratPengantar;
+        private int _NomorSuratPengantar;
 
 
         [JsonProperty("nomorsuratpengantar")]
-        public string NomorSuratPengantar
+        public int NomorSuratPengantar
         {
             get { return _NomorSuratPengantar; }
             set { SetProperty(ref _NomorSuratPengantar, value); }
         }
-        private string _TanggalSuratPengantar;
+        private DateTime _TanggalSuratPengantar;
 
 
         [JsonProperty("tanggalsuratpengantar")]
-        public string TanggalSuratPengantar
+        public DateTime TanggalSuratPengantar
         {
             get { return _TanggalSuratPengantar; }
             set { SetProperty(ref _TanggalSuratPengantar, value); }
         }
-        private string _NIK;
+        private int _NIK;
 
 
         [JsonProperty("nik")]
-        public string NIK
+        public int NIK
         {
             get { return _NIK; }
             set { SetProperty(ref _NIK, value); }
@@ -72,50 +72,85 @@ namespace won.Models.SuratPermohonan
             get { return _Nama; }
             set { SetProperty(ref _Nama, value); }
         }
-        private string _TanggalCetakSurat;
+        // private string _TanggalCetakSurat;
 
 
-        [JsonProperty("tanggalsuratcetak")]
-        public string TanggalSuratCetak
-        {
-            get { return _TanggalCetakSurat; }
-            set { SetProperty(ref _TanggalCetakSurat, value); }
-        }
-         private string _JudulNama;
+        // [JsonProperty("tanggalsuratcetak")]
+        // public string TanggalSuratCetak
+        // {
+        //     get { return _TanggalCetakSurat; }
+        //     set { SetProperty(ref _TanggalCetakSurat, value); }
+        // }
+        //  private string _JudulNama;
 
 
-        [JsonProperty("judulnama")]
-        public string JudulNama
-        {
-            get { return _JudulNama; }
-            set { SetProperty(ref _JudulNama, value); }
-        }
-         private string _JabatanNama;
+        // [JsonProperty("judulnama")]
+        // public string JudulNama
+        // {
+        //     get { return _JudulNama; }
+        //     set { SetProperty(ref _JudulNama, value); }
+        // }
+        //  private string _JabatanNama;
 
 
-        [JsonProperty("jabatannama")]
-        public string JabatanNama
-        {
-            get { return _JabatanNama; }
-            set { SetProperty(ref _JabatanNama, value); }
-        }
-         private string _AtasNama;
+        // [JsonProperty("jabatannama")]
+        // public string JabatanNama
+        // {
+        //     get { return _JabatanNama; }
+        //     set { SetProperty(ref _JabatanNama, value); }
+        // }
+        //  private string _AtasNama;
 
 
-        [JsonProperty("atasnama")]
-        public string AtasNama
-        {
-            get { return _AtasNama; }
-            set { SetProperty(ref _AtasNama, value); }
-        }
-         private string _NIPNama;
+        // [JsonProperty("atasnama")]
+        // public string AtasNama
+        // {
+        //     get { return _AtasNama; }
+        //     set { SetProperty(ref _AtasNama, value); }
+        // }
+        //  private string _NIPNama;
 
 
-        [JsonProperty("nipnama")]
-        public string NIPNama
-        {
-            get { return _NIPNama; }
-            set { SetProperty(ref _NIPNama, value); }
-        }
+        // [JsonProperty("nipnama")]
+        // public string NIPNama
+        // {
+        //     get { return _NIPNama; }
+        //     set { SetProperty(ref _NIPNama, value); }
+        // }
     }
+    public override bool Valid
+        {
+            get
+            {
+                return Validation();
+
+            }
+        }
+
+        private bool Validation()
+        {
+            var valid = true;
+            if (int.IsNullOrEmpty(NoSurat) || int.IsNullOrEmpty(Rt) || string.IsNullOrEmpty(KetuaRt) || int.IsNullOrEmpty(NomorSuratPengantar) || DateTime.IsNullOrEmpty(TanggalSuratPengantar) || int.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(Nama))
+            {
+                valid = false;
+                ErrorMessage = "Data Tidak Boleh Kosong";
+            }
+
+            // if (Password != ConfirmPassword)
+            // {
+            //     valid = false;
+            //     ErrorMessage = "Email dan Password Tidak Sama";
+            // }
+            // const string pattern = @"^(? !\.)(""([^""\r\\] |\\[""\r\\])*""|" + @"([-a - z0 - 9!#$%&’*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)" + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
+
+            // var regex = new Regex(pattern, RegexOptions.IgnoreCase);
+
+            // if (regex.IsMatch(Email))
+            // {
+            //     ErrorMessage = "Email Anda Tidak Valid";valid = false;
+            // }
+
+            if (valid) ErrorMessage = "";
+            return valid;
+        }
 }
