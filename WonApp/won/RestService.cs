@@ -14,7 +14,8 @@ namespace won
         {
             // this.MaxResponseContentBufferSize = 256000;
             //var a = ConfigurationManager.AppSettings["IP"];
-            string _server = "http://waena-desa.id/";
+            string _server = "http://192.168.1.3:3000/";
+          //  string _server = "http://waena-desa.id/";
             this.BaseAddress = new Uri(_server);
             this.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
             //key api = 57557c4f25f436213fe34a2090a266e2
@@ -46,8 +47,9 @@ namespace won
             }
         }
 
-        internal Task DeleteAsync(string v, StringContent stringContent)
+        internal Task DeleteAsync(string id, StringContent content)
         {
+
             throw new NotImplementedException();
         }
 

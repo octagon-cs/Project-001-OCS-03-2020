@@ -12,7 +12,17 @@ namespace won.Views.Accounts
         public LoginPage()
         {
             InitializeComponent();
-            BindingContext = new LoginViewModel();
+            var vm = new LoginViewModel();
+            vm.OnExecute += Vm_onExecute;
+            BindingContext = vm;
+        }
+
+        private void Vm_onExecute(string ev, object data)
+        {
+            if (ev == "go")
+            {
+                this.Navigation.PushAsync((Page)data);
+            }
         }
     }
 
@@ -23,22 +33,22 @@ namespace won.Views.Accounts
         public LoginViewModel()
         {
             Model = new LoginModel();
-            Model.UserName = "admin@gmail.com";
-            Model.Password = "admin";
+            Model.UserName = "aji2@gmail.com";
+            Model.Password = "Sony@77";
             Model.PropertyChanged += Model_PropertyChanged;
             LoginCommand = new Command(LoginAction, x=> Model.Valid);
-            RegisterCommand = new Command(RegisterAction);
+            RegistrasiCommand = new Command(RegisterAction);
             ForgotPasswordCommand = new Command(ForgotPasswordAction);
         }
 
         private void ForgotPasswordAction(object obj)
         {
-            Helper.ChangeMainPage(new ForgotPasswordPage());
+            Helper.NavigateTo(new ForgotPasswordPage());
         }
 
         private void RegisterAction(object obj)
         {
-            Helper.ChangeMainPage(new RegisterPage());
+            Execute("go", new RegisterPage());
         }
 
         private void Model_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -90,7 +100,7 @@ namespace won.Views.Accounts
 
 
         public Command ForgotPasswordCommand { get; set; }
-        public Command RegisterCommand { get; set; }
+        public Command RegistrasiCommand { get; set; }
 
 
     }

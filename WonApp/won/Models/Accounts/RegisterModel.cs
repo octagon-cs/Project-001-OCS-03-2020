@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -13,35 +14,41 @@ namespace won.Models.Accounts
         private string nkk;
         private string nik;
 
+        [JsonProperty("nik")]
         public string NIK
         {
             get { return nik; }
-            set { SetProperty(ref nik ,value); }
+            set     { SetProperty(ref nik ,value); }
         }
 
+        [JsonProperty("nkk")]
         public string NKK
         {
             get { return nkk; }
             set {SetProperty(ref nkk ,value); }
         }
 
+
+        [JsonProperty("email")]
         public string Email
         {
             get { return email; }
-            set { SetProperty(ref email, value); Validation(); }
+            set { SetProperty(ref email, value);  }
         }
 
+
+        [JsonProperty("password")]
         public string Password
         {
             get { return password; }
-            set { SetProperty(ref password, value); Validation(); }
+            set { SetProperty(ref password, value); }
         }
 
 
         public string ConfirmPassword
         {
             get { return confirmPassword; }
-            set { SetProperty(ref confirmPassword, value); Validation(); }
+            set { SetProperty(ref confirmPassword, value);  }
         }
 
         public override bool Valid
@@ -56,28 +63,29 @@ namespace won.Models.Accounts
         private bool Validation()
         {
             var valid = true;
+            var err = "";
             if (string.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(NKK)|| string.IsNullOrEmpty(Email) ||
                 string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(ConfirmPassword))
             {
                 valid = false;
-                ErrorMessage = "Data Tidak Boleh Kosong";
+                err = "Data Tidak Boleh Kosong";
             }
 
             if (Password != ConfirmPassword)
             {
                 valid = false;
-                ErrorMessage = "Email dan Password Tidak Sama";
+                err = "Password dan Konfirmasi Password Tidak Sama";
             }
-            const string pattern = @"^(? !\.)(""([^""\r\\] |\\[""\r\\])*""|" + @"([-a - z0 - 9!#$%&’*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)" + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
 
+            const string pattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
             var regex = new Regex(pattern, RegexOptions.IgnoreCase);
-
-            if (regex.IsMatch(Email))
+            if (!string.IsNullOrEmpty(Email) && !regex.IsMatch(Email))
             {
-                ErrorMessage = "Email Anda Tidak Valid";valid = false;
+                err = "Email Anda Tidak Valid";
+                valid = false;
             }
 
-            if (valid) ErrorMessage = "";
+            ErrorMessage = err;
             return valid;
         }
     }

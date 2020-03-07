@@ -33,11 +33,16 @@ namespace won
                 await Current.MainPage.DisplayAlert(message.Title, message.Message, message.Cancel);
 
             });
+
+
+
+
             DependencyService.Register<AccountService>();
             DependencyService.Register<JenisPermohonanService>();
+            DependencyService.Register<PermohonanService>();
 
 
-            MainPage = new LoginPage();
+            MainPage = new NavigationPage(new LoginPage());
             AppCenter.Start("android=371b628f-72e3-4305-805c-595bdaa16b97",
                  typeof(Push), typeof(Analytics), typeof(Crashes));
             if (!AppCenter.Configured)
@@ -63,12 +68,30 @@ namespace won
         }
 
 
-        public async void ChangeScreen(Page page)
+        public async void ChangeMain(Page page)
         {
             await Task.Delay(200);
             Current.MainPage = page;
             //   MessagingCenter.Send(EventArgs.Empty, "GoHome");
         }
+
+        public async void NavigateGo(Page page)
+        {
+            await Task.Delay(200);
+            Current.MainPage = new NavigationPage(page);
+            //   MessagingCenter.Send(EventArgs.Empty, "GoHome");
+        }
+
+        public async void NextPage(Page page)
+        {
+            await Current.MainPage.Navigation.PushAsync(page);
+        }
+
+        public async void BackPage()
+        {
+            await Current.MainPage.Navigation.PopAsync(true);
+        }
+
 
         protected override void OnStart()
         {

@@ -124,13 +124,14 @@ namespace won.Models.SuratPermohonan
         private bool Validation()
         {
             var valid = true;
-            if (string.IsNullOrEmpty(NIK) || Rt<=0 || string.IsNullOrEmpty(NoSuratPengantar) ||
-                string.IsNullOrEmpty(NoSurat) || TanggalSuratPengantar==new DateTime())
+            if (string.IsNullOrEmpty(NoSurat) || Rt<=0 || string.IsNullOrEmpty(NoSuratPengantar) || TanggalSuratPengantar == new DateTime()||
+                string.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(Nama))
             {
                 valid = false;
                 ErrorMessage = "Data Tidak Boleh Kosong";
             }
 
+        
 
             if (valid) ErrorMessage = "";
             return valid;

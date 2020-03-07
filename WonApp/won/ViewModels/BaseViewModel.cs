@@ -12,9 +12,20 @@ using won.Models.Accounts;
 
 namespace won.ViewModels
 {
+
+    public delegate void ExecuteEvent(string ev, object data);
     public class BaseViewModel : INotifyPropertyChanged
     {
+        public event ExecuteEvent OnExecute;
+
+
+        public void Execute(string ev, object data)
+        {
+            OnExecute?.Invoke(ev, data);
+        }
+
         public IAccountService AccountService => DependencyService.Get<IAccountService>();
+        public IPermohonanService<PermohonanModel> PermohonanService => DependencyService.Get<IPermohonanService<PermohonanModel>>();
         public IJenisPermohonanService<JenisPermohonanModel> JenisPermohonan => DependencyService.Get<IJenisPermohonanService<JenisPermohonanModel>>();
 
         bool isBusy = false;

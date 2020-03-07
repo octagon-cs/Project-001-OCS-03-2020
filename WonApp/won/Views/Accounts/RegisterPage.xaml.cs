@@ -23,17 +23,17 @@ namespace won.Views.Accounts
 
     public class RegisterViewModel:BaseViewModel
     {
-        private RegisterModel Model { get; set; }
+        public RegisterModel Model { get; set; }
         public RegisterViewModel()
         {
             Model = new RegisterModel();
             Model.PropertyChanged += Model_PropertyChanged;
-            RegisterCommand = new Command(RegisterAction, x=> Model.Valid);
+            RegisterCommand = new Command(RegisterAction, x => Model.Valid);
         }
 
         private void Model_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName != "RegisterCommand")
+            if (Model.Valid)
                 RegisterCommand = new Command(RegisterAction, x => Model.Valid);
         }
 
@@ -42,13 +42,25 @@ namespace won.Views.Accounts
             if (IsBusy)
                 return;
 
-            var result = await AccountService.Register(Model);
-            if (result)
+            try
+            {
+                var result = await AccountService.Register(Model);
+                if (result)
+                {
+                    MessagingCenter.Send(new MessagingCenterAlert
+                    {
+                        Title = "Sukses",
+                        Message = "Akun berhasil dibuat !. Anda belum dapat login, mohon periksa email anda untuk konfirmasi email",
+                        Cancel = "OK"
+                    }, "message");
+                }
+            }
+            catch (Exception ex)
             {
                 MessagingCenter.Send(new MessagingCenterAlert
                 {
-                    Title = "Sukses",
-                    Message = "Akun berhasil dibuat !. Anda belum dapat login, mohon periksa email anda untuk konfirmasi email",
+                    Title = "Error",
+                    Message = ex.Message,
                     Cancel = "OK"
                 }, "message");
             }

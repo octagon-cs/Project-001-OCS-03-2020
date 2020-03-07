@@ -14,6 +14,10 @@
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
+
+            <OnPlatform x:Key="IcoFont" x:TypeArguments="x:String">
+                <On Platform="Android" Value="icofont.ttf#IcoFont" />
+            </OnPlatform>
         </ResourceDictionary>
     </Application.Resources>
     

@@ -7,34 +7,10 @@ using won.Models;
 
 namespace won.Services
 {
-    public class PermohonanService : IPermohonan<PermohonanModel>
+    public class PermohonanService : IPermohonanService<PermohonanModel>
     {
-        private string controller = "permohonan";
-       public async Task<PermohonanModel> Create(PermohonanModel item)
-        {
-            try
-            {
-                using (var service = new RestService())
-                {
-                    var response = await service.PostAsync($"/api/{controller}",service.GenerateHttpContent(item));
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var content = await response.Content.ReadAsStringAsync();
-                        var result = JsonConvert.DeserializeObject<PermohonanModel>(content);
-                        return result;
-                    }
-                    else
-                    {
-                        throw new SystemException( await service.Error(response));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new SystemException(ex.Message);
-            }
-        }
-      public async  Task<bool> Delete(PermohonanModel item)
+        private readonly string controller = "permohonan";
+        public async Task<bool> Delete(PermohonanModel item)
         {
             try
             {
@@ -49,7 +25,7 @@ namespace won.Services
                     }
                     else
                     {
-                        throw new SystemException( await service.Error(response));
+                        throw new SystemException(await service.Error(response));
                     }
                 }
             }
@@ -83,13 +59,13 @@ namespace won.Services
             }
         }
 
-       public async Task<List<PermohonanModel>> GetPermohonans()
+        public async Task<IEnumerable<PermohonanModel>> Get()
         {
             try
             {
                 using (var service = new RestService())
                 {
-                    var response = await service.GetAsync($"/api/{controller}");
+                    var response = await service.GetAsync($"/api/{controller}/mine");
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
@@ -108,6 +84,30 @@ namespace won.Services
             }
         }
 
-       
+        public async Task<PermohonanModel> Create(PermohonanModel item)
+        {
+            try
+            {
+                using (var service = new RestService())
+                {
+                    var response = await service.PostAsync($"/api/{controller}", service.GenerateHttpContent(item));
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var content = await response.Content.ReadAsStringAsync();
+                        var result = JsonConvert.DeserializeObject<PermohonanModel>(content);
+                        return result;
+                    }
+                    else
+                    {
+                        throw new SystemException(await service.Error(response));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new SystemException(ex.Message);
+            }
+        }
+
     }
 }

@@ -7,7 +7,6 @@ namespace won.Models
    public class PendudukModel
     {
 
-
         private string nama;
 
         public string Nama
@@ -25,12 +24,7 @@ namespace won.Models
             set { data = value; }
         }
 
-
-
     }
-
-
-
 
     public class PendudukDataModel
     {

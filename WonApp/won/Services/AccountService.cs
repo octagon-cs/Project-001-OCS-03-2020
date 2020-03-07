@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using won.Models;
 using won.Models.Accounts;
 
 namespace won.Services
@@ -26,7 +27,7 @@ namespace won.Services
                     }
                     else
                     {
-                        throw new SystemException("User atau  Password anda Salah");
+                        throw new SystemException(await service.Error(response));
                     }
                 }
             }
@@ -43,17 +44,16 @@ namespace won.Services
             {
                 using (var service = new RestService())
                 {
-                    var response = await service.PostAsync("/api/users/register",service.GenerateHttpContent(model));
+                    var response = await service.PostAsync("/api/auth/registrasi", service.GenerateHttpContent(model));
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
-                        Helper.Account = JsonConvert.DeserializeObject<UserAccount>(content);
-                        Helper.Account.Role = Helper.Account.Roles[0];
+                        var penduduk = JsonConvert.DeserializeObject<PendudukModel>(content);
                         return true;
                     }
                     else
                     {
-                        throw new SystemException("User atau  Password anda Salah");
+                        throw new SystemException(await service.Error(response));
                     }
                 }
             }

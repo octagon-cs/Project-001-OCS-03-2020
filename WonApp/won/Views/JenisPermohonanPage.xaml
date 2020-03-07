@@ -6,26 +6,41 @@
              mc:Ignorable="d"
              x:Class="won.Views.JenisPermohonanPage">
     <ContentPage.Content>
-        <ListView Margin="20,0" x:Name="ItemsListView" BackgroundColor="Transparent" 
+        <ListView Margin="0" x:Name="ItemsListView" BackgroundColor="Transparent" 
                             ItemsSource="{Binding Items}" 
                               HasUnevenRows="True" 
                             RefreshCommand="{Binding LoadItemsCommand}"
                             IsPullToRefreshEnabled="true"
                             IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+            <d:ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Item 1</x:String>
+                    <x:String>Item 2</x:String>
+                </x:Array>
+            </d:ListView.ItemsSource>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell >
-                        <Grid>
+                        <Grid Margin="2,0,0,2" Padding="15,10" BackgroundColor="WhiteSmoke" RowSpacing="10">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <StackLayout>
-                                <Label FontSize="Caption" Text="{Binding Nama}"/>
+                            <StackLayout >
+                                <Label  Text="{Binding Nama}" FontSize="Default"/>
                             </StackLayout>
-                            <StackLayout Grid.Row="1" Orientation="Horizontal">
-                                <Button Text="Detail"  Command="{Binding DetailCommand}" CommandParameter="{Binding .}"></Button>
-                                <Button Text="Buat Permohonan" Command="{Binding BuatPermohonanCommand}" CommandParameter="{Binding .}"></Button>
+                            <StackLayout Grid.Row="1" HorizontalOptions="End" Orientation="Horizontal">
+                                <Label Text="&#xed13;" FontSize="Title" TextColor="#17a2b8" FontFamily="{StaticResource IcoFont}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding DetailCommand}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <Label Text="&#xefc0;" FontSize="Title" TextColor="#28a745" FontFamily="{StaticResource IcoFont}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BuatPermohonanCommand}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
                             </StackLayout>
                         </Grid>
                     </ViewCell>
