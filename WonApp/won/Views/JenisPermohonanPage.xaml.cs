@@ -36,16 +36,36 @@ namespace won.Views
 
         private async void LoadAction(object obj)
         {
-            if (IsBusy)
-                return;
-
-            Items.Clear();
-            var datas = await JenisPermohonan.Get();
-
-            foreach (var item in datas)
+            try
             {
-                Items.Add(item);
+                if (IsBusy)
+                    return;
+
+                IsBusy = true;
+                Items.Clear();
+                var datas = await JenisPermohonan.Get();
+
+                foreach (var item in datas)
+                {
+                    Items.Add(item);
+                }
+                IsBusy = false;
             }
+            catch (Exception ex)
+            {
+
+                MessagingCenter.Send(new MessagingCenterAlert
+                {
+                    Title = "Error",
+                    Message = ex.Message,
+                    Cancel = "OK"
+                }, "message");
+                IsBusy = false;
+            }
+
+
+
+          
 
         }
     }

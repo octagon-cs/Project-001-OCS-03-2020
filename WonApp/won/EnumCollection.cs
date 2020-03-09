@@ -8,18 +8,29 @@ namespace won
 
     public enum PermohonanType
     {
-        Cerai, Pindah, Nikah, TidakMampu, Meninggal, SKCK
+         Pengantar_KTP , Pengantar_KK , Tidak_Mampu , Keterangan_Domisili , Keterangan_SKCK , Keterangan_Usaha ,
+		 Penguasaan_Tanah , Keterangan_Desa , Keterangan_Cerai , Keterangan_eKTP , Keterangan_Nikah , Kelahiran , Sudah_Menikah ,
+		 Belum_Menikah , Kematian , Keterangan_Lainnya , Pindah
     }
 
     [JsonConverter(typeof(StringEnumConverter))]
     public enum StatusPersetujuan{
        Diterima, Disetujui,Dikembalikan, Selesai, Ditolak,
-        Baru
+        Baru,
+        None
     }
 
 
     public enum ProgressRole{
-        Pemohon,Admin,SekertarisLurah, Lurah
+        Pemohon, Admin, Seklur, Lurah
     }
-    
+
+
+
+    public enum PositionNode
+    {
+       Middle, Start,  End, 
+    }
+
+
 }

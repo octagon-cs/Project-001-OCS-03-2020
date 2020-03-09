@@ -33,7 +33,7 @@ namespace won.Views.Accounts
         public LoginViewModel()
         {
             Model = new LoginModel();
-            Model.UserName = "aji2@gmail.com";
+            Model.UserName = "aji3@gmail.com";
             Model.Password = "Sony@77";
             Model.PropertyChanged += Model_PropertyChanged;
             LoginCommand = new Command(LoginAction, x=> Model.Valid);

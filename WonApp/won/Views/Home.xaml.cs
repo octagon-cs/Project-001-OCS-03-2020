@@ -14,10 +14,39 @@ namespace won.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Home : ContentPage
     {
+
+        private HomeViewModel vm;
+        private double width;
+        private double height;
+
         public Home()
         {
             InitializeComponent();
-            BindingContext = new HomeViewModel();
+
+            BindingContext = vm= new HomeViewModel();
+            vm.OnExecute += Vm_OnExecute;
+            
+        }
+
+        private async void Vm_OnExecute(string ev, object data)
+        {
+            await Navigation.PushAsync((Page)data);
+        }
+
+        protected override void OnDisappearing()
+        {
+            MessagingCenter.Unsubscribe<Page>(this, "homeview");
+        }
+
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+            if (this.width != width || this.height != height)
+            {
+                this.width = width;
+                this.height = height;
+                //reconfigure layout
+            }
         }
     }
 
@@ -38,10 +67,11 @@ namespace won.Views
         {
             try
             {
+                await Task.Delay(200);
                 if (IsBusy)
                     return;
 
-
+                IsBusy = true;
                 Items.Clear();
                 var items = await PermohonanService.Get();
                 foreach (var item in items)
@@ -59,6 +89,8 @@ namespace won.Views
                     }, "message");
                 }
 
+                IsBusy = false;
+
             }
             catch (Exception ex)
             {
@@ -68,8 +100,23 @@ namespace won.Views
                     Message = ex.Message,
                     Cancel = "OK"
                 }, "message");
-
+                IsBusy = false;
             }
         }
+
+
+
+        private PermohonanModel selectedItem;
+
+        public PermohonanModel SelectedItem
+        {
+            get { return selectedItem; }
+            set { SetProperty(ref selectedItem ,value);
+                if(value!=null && value.Persetujuan!=null)
+                  this.Execute("",new PermohonanProgressView(value));
+            
+            }
+        }
+
     }
 }

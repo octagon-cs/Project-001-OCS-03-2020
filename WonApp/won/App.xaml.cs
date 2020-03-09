@@ -1,8 +1,5 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 using won.Services;
-using won.Views;
 using won.Views.Accounts;
 using System.Threading.Tasks;
 using System.Globalization;
@@ -33,9 +30,6 @@ namespace won
                 await Current.MainPage.DisplayAlert(message.Title, message.Message, message.Cancel);
 
             });
-
-
-
 
             DependencyService.Register<AccountService>();
             DependencyService.Register<JenisPermohonanService>();

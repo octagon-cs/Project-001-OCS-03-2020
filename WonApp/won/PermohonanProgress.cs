@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System;
-using System.Drawing;
+using Xamarin.Forms;
 
 namespace won.Models
 {
@@ -60,32 +60,63 @@ namespace won.Models
     }
 
 
-    public class ProgressNode
+    public class ProgressNode: Persetujuan
     {
+        private Color _ColorStatus;
 
-        public string Caption { get; set; }
-        public Color ColorStatus { get; set; }
+        public Color ColorStatus
+        {
+            get { return _ColorStatus; }
+            set { SetProperty(ref _ColorStatus, value); }
+        }
+
+
+        private bool isVisible=true;
+
+        public bool IsVisible
+        {
+            get { return isVisible; }
+            set { SetProperty(ref isVisible, value); }
+        }
+
+        private PositionNode _Position;
+
+        public PositionNode Position
+        {
+            get { return _Position; }
+            set { SetProperty(ref _Position, value); }
+        }
+
         public ProgressNode(Persetujuan item)
         {
-            Caption = item.Status.ToString();
+
+            this.Message = item.Message;
+            this.Created = item.Created;
+            this.Role = item.Role;
+            this.Status = item.Status;
+
             switch (item.Status)
             {
                 case StatusPersetujuan.Dikembalikan:
-                    ColorStatus=Color.Yellow;
+                    ColorStatus=Color.FromHex("#F67B1C");
                     break;
                 case StatusPersetujuan.Disetujui:
-                    ColorStatus=Color.Gray;
+                    ColorStatus=Color.FromHex("#857A7A");
                     break;
                 case StatusPersetujuan.Ditolak:
-                ColorStatus=Color.Red;
+                ColorStatus=Color.FromHex("#D23106");
                     break;
                 case StatusPersetujuan.Selesai:
-                    ColorStatus=Color.Green;
+                    ColorStatus=Color.FromHex("#0B9567");
                     break;
                 default:
-                     ColorStatus=Color.DarkGray;
+                     ColorStatus=Color.White;
                     break;
             }
         }
     }
+
+
+
+    
 }

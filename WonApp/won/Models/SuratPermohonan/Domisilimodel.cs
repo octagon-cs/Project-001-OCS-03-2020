@@ -93,7 +93,7 @@ namespace won.Models.SuratPermohonan
         private bool Validation()
         {
             var valid = true;
-            if (int.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(Nama) || int.IsNullOrEmpty(NoSurat))
+            if (NIK<=0 || string.IsNullOrEmpty(Nama) || string.IsNullOrEmpty(NoSurat))
             {
                 valid = false;
                 ErrorMessage = "Data Tidak Boleh Kosong";

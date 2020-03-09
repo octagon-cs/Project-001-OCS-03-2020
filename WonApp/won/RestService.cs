@@ -14,11 +14,15 @@ namespace won
         {
             // this.MaxResponseContentBufferSize = 256000;
             //var a = ConfigurationManager.AppSettings["IP"];
-            string _server = "http://192.168.1.3:3000/";
-          //  string _server = "http://waena-desa.id/";
+            //string _server = "http://192.168.1.5:3000/";
+            string _server = "http://waena-desa.id/";
             this.BaseAddress = new Uri(_server);
             this.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
             //key api = 57557c4f25f436213fe34a2090a266e2
+            if (Helper.Account != null)
+            {
+                SetToken(Helper.Account.Token);
+            }
         }
 
         public RestService(string apiUrl)
@@ -43,7 +47,7 @@ namespace won
             {
                 this.DefaultRequestHeaders.TryAddWithoutValidation("Authorization",
                     token);
-                //this.DefaultRequestHeaders.Authorization =new AuthenticationHeaderValue("Basic", token);
+                this.DefaultRequestHeaders.Authorization =new AuthenticationHeaderValue("Basic", token);
             }
         }
 

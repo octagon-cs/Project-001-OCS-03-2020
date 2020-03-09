@@ -9,13 +9,13 @@
         <ScrollView>
             <StackLayout Margin="20">
                 <Label Text="NIK Suami"    Margin="0,20,0,0"/>
-                <Entry Placeholder="NIK Suami" Text="{Binding Model.NIKSuami}"></Entry>
+                <Entry Placeholder="NIK Suami" Text="{Binding Model.NIKSuami}"/>
                 <Label Text="Nama Suami"   Margin="0,20,0,0" />
-                <Entry Placeholder="Nama Suami" Text="{Binding Model.NamaSuami}"></Entry>
+                <Entry Placeholder="Nama Suami" Text="{Binding Model.NamaSuami}"/>
                 <Label Text="NIK Istri"   Margin="0,20,0,0"/>
-                <Entry Placeholder="NIK Istri" Text="{Binding Model.NIKIstri}"></Entry>
+                <Entry Placeholder="NIK Istri" Text="{Binding Model.NIKIstri}"/>
                 <Label Text="Nama Istri"   Margin="0,20,0,0"/>
-                <Entry Placeholder="Nama Istri" Text="{Binding Model.NamaIstri}"></Entry>
+                <Entry Placeholder="Nama Istri" Text="{Binding Model.NamaIstri}"/>
                 <Label Text="No. Surat"  Margin="0,20,0,0" />
                 <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
             </StackLayout>

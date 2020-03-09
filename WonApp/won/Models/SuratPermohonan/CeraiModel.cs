@@ -65,51 +65,9 @@ namespace won.Models.SuratPermohonan
             set { SetProperty(ref _KetCerai, value); }
         }
 
-        // private string _FootCetak;
 
 
-        // [JsonProperty("footcetak")]
-        // public string _FootCetak
-        // {
-        //     get { return _FootCetak; }
-        //     set { SetProperty(ref _FootCetak, value); }
-        // }
-        // private string _JudulNama;
-
-
-        // [JsonProperty("judulnama")]
-        // public string JudulNama
-        // {
-        //     get { return _JudulNama; }
-        //     set { SetProperty(ref _JudulNama, value); }
-        // }
-        // private string _JabatanNama;
-
-
-        // [JsonProperty("jabatanama")]
-        // public string JabatanNama
-        // {
-        //     get { return _JabatanNama; }
-        //     set { SetProperty(ref _JabatanNama, value); }
-        // }
-        // private string _AtasNama;
-
-
-        // [JsonProperty("atasnama")]
-        // public string AtasNama
-        // {
-        //     get { return _AtasNama; }
-        //     set { SetProperty(ref _AtasNama, value); }
-        // }
-        // private string _NIPNama;
-
-
-        // [JsonProperty("nipnama")]
-        // public string NIKNama
-        // {
-        //     get { return _NIPNama; }
-        //     set { SetProperty(ref _NIPNama, value); }
-        // }
+        
         public override bool Valid
         {
             get
@@ -122,7 +80,8 @@ namespace won.Models.SuratPermohonan
         private bool Validation()
         {
             var valid = true;
-            if (int.IsNullOrEmpty(NIKSuami) || string.IsNullOrEmpty(NamaSuami) || int.IsNullOrEmpty(NIKIstri) || string.IsNullOrEmpty(NamaIstri) || int.IsNullOrEmpty(NoSurat) || string.IsNullOrEmpty(KetCerai))
+            if (NIKSuami<=0 || string.IsNullOrEmpty(NamaSuami) || NIKIstri<=0 || string.IsNullOrEmpty(NamaIstri) ||
+                NoSurat<=0 || string.IsNullOrEmpty(KetCerai))
             {
                 valid = false;
                 ErrorMessage = "Data Tidak Boleh Kosong";

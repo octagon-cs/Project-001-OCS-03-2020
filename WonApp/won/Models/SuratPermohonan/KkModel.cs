@@ -36,53 +36,8 @@ namespace won.Models.SuratPermohonan
             get { return _NoSurat; }
             set { SetProperty(ref _NoSurat, value); }
         }
-        // private string _TanggalCetak;
 
-
-        // [JsonProperty("tanggalcetak")]
-        // public string TanggalCetak
-        // {
-        //     get { return _TanggalCetak; }
-        //     set { SetProperty(ref _TanggalCetak, value); }
-        // }
-        // private string _JudulNama;
-
-
-        // [JsonProperty("judulnama")]
-        // public string JudulNama
-        // {
-        //     get { return _JudulNama; }
-        //     set { SetProperty(ref _JudulNama, value); }
-        // }
-        // private string _JabatanNama;
-
-
-        // [JsonProperty("jabatanNama")]
-        // public string JabatanNama
-        // {
-        //     get { return _JabatanNama; }
-        //     set { SetProperty(ref _JabatanNama, value); }
-        // }
-        // private string _AtasNama;
-
-
-        // [JsonProperty("atasnama")]
-        // public string AtasNama
-        // {
-        //     get { return _AtasNama; }
-        //     set { SetProperty(ref _AtasNama, value); }
-        // }
-        // private string _NIPNama;
-
-
-        // [JsonProperty("nipnama")]
-        // public string NIPNama
-        // {
-        //     get { return _NIPNama; }
-        //     set { SetProperty(ref _NIPNama, value); }
-        // }
-    }
-    public override bool Valid
+        public override bool Valid
         {
             get
             {
@@ -94,13 +49,13 @@ namespace won.Models.SuratPermohonan
         private bool Validation()
         {
             var valid = true;
-            if (int.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(Nama) || int.IsNullOrEmpty(NoSurat))
+            if (NIK<=0 || string.IsNullOrEmpty(Nama) || NoSurat<=0)
             {
                 valid = false;
                 ErrorMessage = "Data Tidak Boleh Kosong";
             }
 
-            // if (Password != ConfirmPassword)
+             
             // {
             //     valid = false;
             //     ErrorMessage = "Email dan Password Tidak Sama";
@@ -117,4 +72,6 @@ namespace won.Models.SuratPermohonan
             if (valid) ErrorMessage = "";
             return valid;
         }
+    }
+    
 }

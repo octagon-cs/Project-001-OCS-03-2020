@@ -127,44 +127,7 @@ namespace won.Models.SuratPermohonan
             get { return _DiusahakanSebagai; }
             set { SetProperty(ref _DiusahakanSebagai, value); }
         }
-        // private string _JudulNama;
-
-
-        // [JsonProperty("judulnama")]
-        // public string JudulNama
-        // {
-        //     get { return _JudulNama; }
-        //     set { SetProperty(ref _JudulNama, value); }
-        // }
-        // private string _JabatanNama;
-
-
-        // [JsonProperty("jabatanNama")]
-        // public string JabatanNama
-        // {
-        //     get { return _JabatanNama; }
-        //     set { SetProperty(ref _JabatanNama, value); }
-        // }
-        // private string _AtasNama;
-
-
-        // [JsonProperty("atasnama")]
-        // public string AtasNama
-        // {
-        //     get { return _AtasNama; }
-        //     set { SetProperty(ref _AtasNama, value); }
-        // }
-        // private string _NIPNama;
-
-
-        // [JsonProperty("nipnama")]
-        // public string NIPNama
-        // {
-        //     get { return _NIPNama; }
-        //     set { SetProperty(ref _NIPNama, value); }
-        // }
-    }
-    public override bool Valid
+        public override bool Valid
         {
             get
             {
@@ -176,7 +139,7 @@ namespace won.Models.SuratPermohonan
         private bool Validation()
         {
             var valid = true;
-            if (int.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(Nama) || int.IsNullOrEmpty(NoSurat) || string.IsNullOrEmpty(SebidangTanah) || string.IsNullOrEmpty(Luas) || string.IsNullOrEmpty(DigunakanUntuk) || string.IsNullOrEmpty(SebelahUtara) || string.IsNullOrEmpty(SebelahSelatan) || string.IsNullOrEmpty(SebelahTimur) || string.IsNullOrEmpty(SebelahBarat) || string.IsNullOrEmpty(TerjadiPadaTahun) || string.IsNullOrEmpty(DiusahakanSebagai))
+            if (NIK<=0 || string.IsNullOrEmpty(Nama) || NoSurat<=0 || string.IsNullOrEmpty(SebidangTanah) || string.IsNullOrEmpty(Luas) || string.IsNullOrEmpty(DigunakanUntuk) || string.IsNullOrEmpty(SebelahUtara) || string.IsNullOrEmpty(SebelahSelatan) || string.IsNullOrEmpty(SebelahTimur) || string.IsNullOrEmpty(SebelahBarat) || string.IsNullOrEmpty(TerjadiPadaTahun) || string.IsNullOrEmpty(DiusahakanSebagai))
             {
                 valid = false;
                 ErrorMessage = "Data Tidak Boleh Kosong";
@@ -199,4 +162,6 @@ namespace won.Models.SuratPermohonan
             if (valid) ErrorMessage = "";
             return valid;
         }
+    }
+    
 }

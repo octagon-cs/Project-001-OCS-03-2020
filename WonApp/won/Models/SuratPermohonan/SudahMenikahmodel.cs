@@ -72,53 +72,7 @@ namespace won.Models.SuratPermohonan
             get { return _Nama; }
             set { SetProperty(ref _Nama, value); }
         }
-        // private string _TanggalCetakSurat;
-
-
-        // [JsonProperty("tanggalsuratcetak")]
-        // public string TanggalSuratCetak
-        // {
-        //     get { return _TanggalCetakSurat; }
-        //     set { SetProperty(ref _TanggalCetakSurat, value); }
-        // }
-        //  private string _JudulNama;
-
-
-        // [JsonProperty("judulnama")]
-        // public string JudulNama
-        // {
-        //     get { return _JudulNama; }
-        //     set { SetProperty(ref _JudulNama, value); }
-        // }
-        //  private string _JabatanNama;
-
-
-        // [JsonProperty("jabatannama")]
-        // public string JabatanNama
-        // {
-        //     get { return _JabatanNama; }
-        //     set { SetProperty(ref _JabatanNama, value); }
-        // }
-        //  private string _AtasNama;
-
-
-        // [JsonProperty("atasnama")]
-        // public string AtasNama
-        // {
-        //     get { return _AtasNama; }
-        //     set { SetProperty(ref _AtasNama, value); }
-        // }
-        //  private string _NIPNama;
-
-
-        // [JsonProperty("nipnama")]
-        // public string NIPNama
-        // {
-        //     get { return _NIPNama; }
-        //     set { SetProperty(ref _NIPNama, value); }
-        // }
-    }
-    public override bool Valid
+        public override bool Valid
         {
             get
             {
@@ -130,7 +84,8 @@ namespace won.Models.SuratPermohonan
         private bool Validation()
         {
             var valid = true;
-            if (int.IsNullOrEmpty(NoSurat) || int.IsNullOrEmpty(Rt) || string.IsNullOrEmpty(KetuaRt) || int.IsNullOrEmpty(NomorSuratPengantar) || DateTime.IsNullOrEmpty(TanggalSuratPengantar) || int.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(Nama))
+            if (NoSurat<=0 || Rt<=0 || string.IsNullOrEmpty(KetuaRt) || NomorSuratPengantar<=0 || 
+                TanggalSuratPengantar== new DateTime() || NIK<=0 || string.IsNullOrEmpty(Nama))
             {
                 valid = false;
                 ErrorMessage = "Data Tidak Boleh Kosong";
@@ -153,4 +108,6 @@ namespace won.Models.SuratPermohonan
             if (valid) ErrorMessage = "";
             return valid;
         }
+    }
+    
 }

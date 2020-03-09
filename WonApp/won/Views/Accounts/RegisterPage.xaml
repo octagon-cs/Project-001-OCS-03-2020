@@ -11,6 +11,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
+            <Image Grid.Row="0" Source="bg.jpg" Aspect="AspectFill" Grid.RowSpan="2" />
             <ScrollView Margin="20,20" Grid.Row="0">
                 <StackLayout>
                     <Label Margin="5,40,0,0" Text="NIK"/>

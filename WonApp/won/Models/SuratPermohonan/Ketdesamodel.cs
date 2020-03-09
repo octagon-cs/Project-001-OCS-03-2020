@@ -36,85 +36,26 @@ namespace won.Models.SuratPermohonan
             get { return _NoSurat; }
             set { SetProperty(ref _NoSurat, value); }
         }
-        // private string _FootCetak;
 
 
-        // [JsonProperty("footcetak")]
-        // public string FootCetak
-        // {
-        //     get { return _FootCetak; }
-        //     set { SetProperty(ref _FootCetak, value); }
-        // }
-        // private string _JudulNama;
-
-
-        // [JsonProperty("judulnama")]
-        // public string JudulNama
-        // {
-        //     get { return _JudulNama; }
-        //     set { SetProperty(ref _JudulNama, value); }
-        // }
-        // private string _JabatanNama;
-
-
-        // [JsonProperty("jabatanNama")]
-        // public string JabatanNama
-        // {
-        //     get { return _JabatanNama; }
-        //     set { SetProperty(ref _JabatanNama, value); }
-        // }
-        // private string _AtasNama;
-
-
-        // [JsonProperty("atasnama")]
-        // public string AtasNama
-        // {
-        //     get { return _AtasNama; }
-        //     set { SetProperty(ref _AtasNama, value); }
-        // }
-        // private string _NIPNama;
-
-
-        // [JsonProperty("nipnama")]
-        // public string NIPNama
-        // {
-        //     get { return _NIPNama; }
-        //     set { SetProperty(ref _NIPNama, value); }
-        // }
-    }
-    public override bool Valid
+        public override bool Valid
         {
             get
             {
                 return Validation();
-
             }
         }
 
         private bool Validation()
         {
             var valid = true;
-            if (int.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(Nama) || int.IsNullOrEmpty(NoSurat))
+            if (NIK <= 0 || NIK <= 0 || string.IsNullOrEmpty(Nama))
             {
                 valid = false;
                 ErrorMessage = "Data Tidak Boleh Kosong";
             }
 
-            // if (Password != ConfirmPassword)
-            // {
-            //     valid = false;
-            //     ErrorMessage = "Email dan Password Tidak Sama";
-            // }
-            // const string pattern = @"^(? !\.)(""([^""\r\\] |\\[""\r\\])*""|" + @"([-a - z0 - 9!#$%&’*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)" + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
-
-            // var regex = new Regex(pattern, RegexOptions.IgnoreCase);
-
-            // if (regex.IsMatch(Email))
-            // {
-            //     ErrorMessage = "Email Anda Tidak Valid";valid = false;
-            // }
-
-            // if (valid) ErrorMessage = "";
-            // return valid;
+            return valid;
         }
+    }
 }

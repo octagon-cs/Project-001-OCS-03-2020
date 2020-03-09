@@ -38,6 +38,7 @@ namespace won.Models
         public List<Persetujuan> Persetujuan { get; set; } = new List<Persetujuan>();
 
 
+
         [JsonProperty("status")]
         private StatusPersetujuan status;
 
@@ -51,5 +52,47 @@ namespace won.Models
 
         [JsonProperty("data")]
         public dynamic Data { get; set; }
+
+
+
+        private string namaPermohonan;
+        private string jenis;
+        private PermohonanType jenisPermohonan;
+
+        [JsonProperty("namapermohonan")]
+        public string NamaPermohonan
+        {
+            get { return namaPermohonan; }
+            set { SetProperty(ref namaPermohonan ,value); }
+        }
+
+
+        [JsonProperty("jenis")]
+        public string Jenis
+        {
+            get { return jenis; }
+            set {
+                SetProperty(ref jenis, value);
+            }
+        }
+
+
+        public PermohonanType JenisPermohonan
+        {
+            get {
+                if (!string.IsNullOrEmpty(Jenis))
+                {
+                    var text = Jenis.Replace(" ", "_");
+                    return (PermohonanType)Enum.Parse(typeof(PermohonanType), text, true);
+                }
+                return jenisPermohonan; 
+            }
+            set
+            {
+                var text = value.ToString().Replace("-", " ");
+                Jenis = text;
+            }
+        }
+
     }
 }

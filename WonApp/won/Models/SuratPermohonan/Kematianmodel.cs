@@ -8,14 +8,14 @@ namespace won.Models.SuratPermohonan
     public class KematianModel : BaseNotify
     {
 
-        private int _NIK;
+        private int nik;
 
 
         [JsonProperty("nik")]
         public int NIK
         {
-            get { return _NIK; }
-            set { SetProperty(ref _NIK, value); }
+            get { return nik; }
+            set { SetProperty(ref nik, value); }
         }
 
         private string _Nama;
@@ -70,7 +70,7 @@ namespace won.Models.SuratPermohonan
         public string DisebabkanKarena
         {
             get { return _DisebabkanKarena; }
-            set { SetProperty(ref +_DisebabkanKarena, value); }
+            set { SetProperty(ref _DisebabkanKarena, value); }
         }
         private string _DikebumikanDi;
 
@@ -81,7 +81,7 @@ namespace won.Models.SuratPermohonan
             get { return _DikebumikanDi; }
             set { SetProperty(ref _DikebumikanDi, value); }
         }
-         private DateTime _HariTanggalDikebumikan;
+        private DateTime _HariTanggalDikebumikan;
 
 
         [JsonProperty("haritanggaldikebumikan")]
@@ -90,8 +90,8 @@ namespace won.Models.SuratPermohonan
             get { return _HariTanggalDikebumikan; }
             set { SetProperty(ref _HariTanggalDikebumikan, value); }
         }
-    }
-     public override bool Valid
+
+        public override bool Valid
         {
             get
             {
@@ -103,27 +103,16 @@ namespace won.Models.SuratPermohonan
         private bool Validation()
         {
             var valid = true;
-            if (int.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(Nama) || string.IsNullOrEmpty(TempatLahir) || DateTime.IsNullOrEmpty(Tanggallahir) || DateTime.IsNullOrEmpty(TanggalMeninggal) || string.IsNullOrEmpty(TempatMeninggal) || string.IsNullOrEmpty(DisebabkanKarena) || string.IsNullOrEmpty(DikebumikanDi) || string.IsNullOrEmpty(HariTanggalDikebumikan))
+            if (NIK<=0 || string.IsNullOrEmpty(Nama) || string.IsNullOrEmpty(TempatLahir) || Tanggallahir == new DateTime() 
+                || TanggalMeninggal ==new DateTime() || string.IsNullOrEmpty(TempatMeninggal) || string.IsNullOrEmpty(DisebabkanKarena) ||
+                string.IsNullOrEmpty(DikebumikanDi) || HariTanggalDikebumikan==new DateTime())
             {
                 valid = false;
                 ErrorMessage = "Data Tidak Boleh Kosong";
             }
 
-            // if (Password != ConfirmPassword)
-            // {
-            //     valid = false;
-            //     ErrorMessage = "Email dan Password Tidak Sama";
-            // }
-            // const string pattern = @"^(? !\.)(""([^""\r\\] |\\[""\r\\])*""|" + @"([-a - z0 - 9!#$%&’*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)" + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
-
-            // var regex = new Regex(pattern, RegexOptions.IgnoreCase);
-
-            // if (regex.IsMatch(Email))
-            // {
-            //     ErrorMessage = "Email Anda Tidak Valid";valid = false;
-            // }
-
             if (valid) ErrorMessage = "";
             return valid;
         }
+    }
 }

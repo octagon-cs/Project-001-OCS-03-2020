@@ -30,7 +30,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <Grid Padding="10">
-                            <Label TextColor="White" Text="{Binding Title}" d:Text="{Binding .}" FontSize="20"/>
+                            <Label TextColor="White" Text="{Binding Title}" d:Text="{Binding .}" FontSize="15"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

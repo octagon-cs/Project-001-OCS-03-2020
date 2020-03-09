@@ -3,50 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+             mc:Ignorable="d" Title="Home" 
              x:Class="won.Views.Home">
     <ContentPage.Content>
-        <StackLayout>
-            <Label FontSize="Header" Text="Test"/>
-            <ListView Margin="0" x:Name="ItemsListView" BackgroundColor="Transparent" 
+        <Grid>
+            <Image Source="bg.jpg" Aspect="AspectFill"/>
+            <StackLayout>
+                <ListView Margin="0" x:Name="ItemsListView" BackgroundColor="Transparent" 
                             ItemsSource="{Binding Items}" 
-                              HasUnevenRows="True" 
+                              HasUnevenRows="True" SelectedItem="{Binding SelectedItem}"
                             RefreshCommand="{Binding LoadItemsCommand}"
                             IsPullToRefreshEnabled="true"
                             IsRefreshing="{Binding IsBusy, Mode=OneWay}">
-                <d:ListView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Item 1</x:String>
-                        <x:String>Item 2</x:String>
-                    </x:Array>
-                </d:ListView.ItemsSource>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell >
-                            <Grid Margin="2,0,0,2" Padding="15,10" BackgroundColor="WhiteSmoke" RowSpacing="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <StackLayout >
-                                    <Label  Text="{Binding TanggalPengajuan}" FontSize="Small"/>
-                                    <Label  Text="{Binding JenisPermohonan}" FontSize="Small"/>
-                                </StackLayout>
-                                <StackLayout Grid.Row="1"  Orientation="Horizontal">
-                                    <Label HorizontalOptions="Start" Text="Status :"/>
-                                    <Label HorizontalOptions="Start" Text="{Binding Status}"/>
-                                    <Label HorizontalOptions="EndAndExpand" Text="&#xed13;" FontSize="Title" TextColor="#17a2b8" FontFamily="{StaticResource IcoFont}">
-                                        <Label.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding DetailCommand}"/>
-                                        </Label.GestureRecognizers>
-                                    </Label>
-                                </StackLayout>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-        </StackLayout>
+                    <d:ListView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Item 1</x:String>
+                            <x:String>Item 2</x:String>
+                        </x:Array>
+                    </d:ListView.ItemsSource>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell  >
+                                <Grid BackgroundColor="Transparent"  Margin="2,0,0,2" Padding="15,10" RowSpacing="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout >
+                                        <Label  Text="{Binding TanggalPengajuan}" FontSize="Small"/>
+                                        <Label  Text="{Binding NamaPermohonan}" FontSize="Small"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="1"  Orientation="Horizontal">
+                                        <Label HorizontalOptions="Start" Text="Status :"/>
+                                        <Label HorizontalOptions="Start" Text="{Binding Status}"/>
+                                        <Label HorizontalOptions="EndAndExpand" Text="&#xed13;" FontSize="Title" TextColor="#17a2b8" FontFamily="{StaticResource IcoFont}">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding DetailCommand}"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
+    
     </ContentPage.Content>
 </ContentPage>

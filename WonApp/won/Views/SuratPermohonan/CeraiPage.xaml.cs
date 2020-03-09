@@ -22,10 +22,11 @@ namespace won.Views.SuratPermohonan
     }
     public class CeraiViewModel : BaseViewModel
     {
-        public Models.SuratPermohonan.CeraiModel Model {get;set;}
+        public Models.SuratPermohonan.CeraiModel Model { get; set; } = new CeraiModel();
 
         public CeraiViewModel()
         {
+            
             Model.PropertyChanged += Model_PropertyChanged;
             SaveCommand = new Command(SaveAction);
         }
@@ -44,6 +45,7 @@ namespace won.Views.SuratPermohonan
                 if (IsBusy)
                     return;
 
+                IsBusy = true;
                 var permohonan = new PermohonanModel() { TanggalPengajuan = DateTime.Now, Data = Model, Status = StatusPersetujuan.Baru };
                 var result = await PermohonanService.Create(permohonan);
                 if (result != null)
@@ -51,6 +53,7 @@ namespace won.Views.SuratPermohonan
                     Helper.Permohonan.Add(result);
                     MessagingCenter.Send(new MessagingCenterAlert { Cancel = "OK", Message = "Permohonan Anda Berhasil dibuat !", Title = "Info" }, "message");
                 }
+                IsBusy = false;
             }
             catch (Exception ex)
             {
@@ -60,7 +63,7 @@ namespace won.Views.SuratPermohonan
                     Message = ex.Message,
                     Cancel = "OK"
                 }, "message");
-
+                IsBusy = false;
             }
         }
 

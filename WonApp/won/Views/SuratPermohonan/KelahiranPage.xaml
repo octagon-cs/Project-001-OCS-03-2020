@@ -24,16 +24,6 @@
                 <Entry Placeholder="Nama Bapak" Text="{Binding Model.NamaBapak}"></Entry>
                 <Label Text="Nama Ibu"  Margin="0,20,0,0" />
                 <Entry Placeholder="Nama Ibu" Text="{Binding Model.NamaIbu}"></Entry>
-                <!-- <Label Text="Footer Cetak Data"  Margin="0,20,0,0" />
-                <Entry Placeholder="Footer Cetak Data" Text="{Binding Model.FootCetak}"></Entry>
-                <Label Text="Judul Atas Nama"   Margin="0,20,0,0"/>
-                <Entry Placeholder="Judul Atas Nama" Text="{Binding Model.JudulNama}"></Entry>
-                <Label Text="Jabatan Atas Nama"  Margin="0,20,0,0" />
-                <Entry Placeholder="Jabatan Atas Nama" Text="{Binding Model.JabatanNama}"></Entry>
-                <Label Text="Nama Atas Nama"   Margin="0,20,0,0"/>
-                <Entry Placeholder="Nama Atas Nama" Text="{Binding Model.AtasNama}"></Entry>
-                <Label Text="NIP/NIAP Atas Nama" Margin="0,20,0,0"  />
-                <Entry Placeholder="NIP/NIAP Atas Nama" Text="{Binding Model.NIPNama}"></Entry> -->
                 <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
 
             </StackLayout>

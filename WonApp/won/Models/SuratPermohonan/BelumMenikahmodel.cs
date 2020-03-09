@@ -8,18 +8,17 @@ namespace won.Models.SuratPermohonan
     public class BelumMenikahmodel : BaseNotify
     {
 
-        private int _NoSurat;
+        private string _NoSurat;
 
 
         [JsonProperty("nosurat")]
-        public int NoSurat
+        public string NoSurat
         {
             get { return _NoSurat; }
             set { SetProperty(ref _NoSurat, value); }
         }
 
         private int _Rt;
-
 
         [JsonProperty("rt")]
         public int Rt
@@ -72,14 +71,7 @@ namespace won.Models.SuratPermohonan
             get { return _TanggalCetakSurat; }
             set { SetProperty(ref _TanggalCetakSurat, value); }
         }
-        private string _JudulNama;
 
-        // [JsonProperty("nipnama")]
-        // public string _NIPNama
-        // {
-        //     get { return _NIPNama; }
-        //     set { SetProperty(ref _NIPNama, value); }
-        // }
     
         public override bool Valid
         {
@@ -93,58 +85,17 @@ namespace won.Models.SuratPermohonan
         private bool Validation()
         {
             var valid = true;
-            if (int.IsNullOrEmpty(NoSurat) || int.IsNullOrEmpty(Rt) || int.IsNullOrEmpty(NomorSuratPengantar) || DateTime.IsNullOrEmpty(TanggalSuratPengantar) || int.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(Nama))
+            if (string.IsNullOrEmpty(NoSurat) || Rt<=0 || NomorSuratPengantar<=0 || TanggalSuratPengantar==new DateTime() || NIK<=0 || string.IsNullOrEmpty(Nama))
             {
                 valid = false;
                 ErrorMessage = "Data Tidak Boleh Kosong";
             }
 
-            // if (Password != ConfirmPassword)
-            // {
-            //     valid = false;
-            //     ErrorMessage = "Email dan Password Tidak Sama";
-            // }
-            // const string pattern = @"^(? !\.)(""([^""\r\\] |\\[""\r\\])*""|" + @"([-a - z0 - 9!#$%&’*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)" + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
-
-            // var regex = new Regex(pattern, RegexOptions.IgnoreCase);
-
-            // if (regex.IsMatch(Email))
-            // {
-            //     ErrorMessage = "Email Anda Tidak Valid";valid = false;
-            // }
+          
 
             if (valid) ErrorMessage = "";
             return valid;
         }
-
-        public override bool Valid
-        {
-            get
-            {
-                return Validation();
-
-            }
-        }
-
-        private bool Validation()
-        {
-            var valid = true;
-            if (string.IsNullOrEmpty(NoSurat) || Rt<=0 || string.IsNullOrEmpty(NoSuratPengantar) || TanggalSuratPengantar == new DateTime()||
-                string.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(Nama))
-            {
-                valid = false;
-                ErrorMessage = "Data Tidak Boleh Kosong";
-            }
-
-        
-
-            if (valid) ErrorMessage = "";
-            return valid;
-        }
-
-
-
-
 
     }
 }

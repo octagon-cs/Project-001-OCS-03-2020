@@ -121,7 +121,7 @@ namespace won.Models.SuratPermohonan
         private bool Validation()
         {
             var valid = true;
-            if (int.IsNullOrEmpty(NoSurat) || string.IsNullOrEmpty(Hari) || DateTime.IsNullOrEmpty(Tanggal) || string.IsNullOrEmpty(JenisKelamin) || string.IsNullOrEmpty(Bernama) || string.IsNullOrEmpty(Alamat))
+            if (NoSurat<=0 || Tanggal== new DateTime() || string.IsNullOrEmpty(JenisKelamin) || string.IsNullOrEmpty(Bernama) || string.IsNullOrEmpty(Alamat))
             {
                 valid = false;
                 ErrorMessage = "Data Tidak Boleh Kosong";
