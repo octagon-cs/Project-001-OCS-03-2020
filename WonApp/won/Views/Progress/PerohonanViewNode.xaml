@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="won.Views.Progress.PerohonanViewNode">
+  <ContentView.Content>
+      <StackLayout MinimumHeightRequest="50">
+            <Grid BackgroundColor="#FF1252" Padding="20" >
+                <Label x:Name="tanggal" TextColor="White" Text="{Binding TangalPengajuan}" HorizontalOptions="End"/>
+                <StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Label TextColor="White" Text="Nomor Permohonan" />
+                        <Label x:Name="nomorPengajuan" FontSize="18" TextColor="White"  Text="00001/KJK/2020" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="0,20">
+                        <Label TextColor="White" Text="Jenis Permohonan" />
+                        <Label x:Name="jenis" FontSize="18" TextColor="White"  Text="Surat Keterangan Belum Menikah" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="0,20" >
+                        <Label TextColor="White" Text="Progress" />
+                        <Grid HorizontalOptions="Start">
+                            <BoxView BackgroundColor="White"  HeightRequest="2" WidthRequest="50" VerticalOptions="Center"/>
+                            <StackLayout x:Name="progress" Orientation="Horizontal" VerticalOptions="Center" WidthRequest="300">
+                                
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>

@@ -69,7 +69,13 @@ namespace won.Services
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
-                        var result = JsonConvert.DeserializeObject<List<PermohonanModel>>(content);
+                        var settings = new JsonSerializerSettings()
+                        {
+                            DateParseHandling = DateParseHandling.DateTimeOffset,
+                            DateFormatHandling = DateFormatHandling.IsoDateFormat,
+                            DateTimeZoneHandling = DateTimeZoneHandling.Utc
+                        };
+                        var result = JsonConvert.DeserializeObject<List<PermohonanModel>>(content, settings);
                         return result;
                     }
                     else

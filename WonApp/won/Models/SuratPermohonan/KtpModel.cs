@@ -8,11 +8,11 @@ namespace won.Models.SuratPermohonan
     public class ktpModel : BaseNotify
     {
 
-        private string _NIK;
+        private int _NIK;
 
 
         [JsonProperty("nik")]
-        public string NIK
+        public int NIK
         {
             get { return _NIK; }
             set { SetProperty(ref _NIK, value); }
@@ -27,59 +27,39 @@ namespace won.Models.SuratPermohonan
             get { return _Nama; }
             set { SetProperty(ref _Nama, value); }
         }
-        private string _NoSurat;
+        private int _NoSurat;
 
 
         [JsonProperty("nosurat")]
-        public string NoSurat
+        public int NoSurat
         {
             get { return _NoSurat; }
             set { SetProperty(ref _NoSurat, value); }
         }
-        private string _FootCetak;
-
-
-        [JsonProperty("footcetak")]
-        public string FootCetak
+        public override bool Valid
         {
-            get { return _FootCetak; }
-            set { SetProperty(ref _FootCetak, value); }
+            get
+            {
+                return Validation();
+
+            }
         }
-        private string _JudulNama;
 
-
-        [JsonProperty("judulnama")]
-        public string JudulNama
+        private bool Validation()
         {
-            get { return _JudulNama; }
-            set { SetProperty(ref _JudulNama, value); }
+            var valid = true;
+            if (NIK<=0 || string.IsNullOrEmpty(Nama) || NoSurat<=0)
+            {
+                valid = false;
+                ErrorMessage = "Data Tidak Boleh Kosong";
+            }
+
+           
+
+            if (valid) ErrorMessage = "";
+            return valid;
         }
-        private string _JabatanNama;
 
-
-        [JsonProperty("jabatanNama")]
-        public string JabatanNama
-        {
-            get { return _JabatanNama; }
-            set { SetProperty(ref _JabatanNama, value); }
-        }
-        private string _AtasNama;
-
-
-        [JsonProperty("atasnama")]
-        public string AtasNama
-        {
-            get { return _AtasNama; }
-            set { SetProperty(ref _AtasNama, value); }
-        }
-        private string _NIPNama;
-
-
-        [JsonProperty("nipnama")]
-        public string NIPNama
-        {
-            get { return _NIPNama; }
-            set { SetProperty(ref _NIPNama, value); }
-        }
     }
+   
 }

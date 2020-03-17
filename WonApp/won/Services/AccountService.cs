@@ -23,6 +23,14 @@ namespace won.Services
                         var content = await response.Content.ReadAsStringAsync();
                         Helper.Account = JsonConvert.DeserializeObject<UserAccount>(content);
                         Helper.Account.Role = Helper.Account.Roles[0];
+
+                        if (!string.IsNullOrEmpty(RestService.DeviceToken))
+                        {
+                            service.SetToken(Helper.Account.Token);
+                               var token = new { token = RestService.DeviceToken };
+                             await service.PostAsync("/api/auth/devicetoken", service.GenerateHttpContent(token));
+                        }
+
                         return true;
                     }
                     else

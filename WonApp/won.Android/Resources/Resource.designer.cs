@@ -26,169 +26,6 @@ namespace won.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.alpha = global::won.Droid.Resource.Attribute.alpha;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.font = global::won.Droid.Resource.Attribute.font;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontProviderAuthority = global::won.Droid.Resource.Attribute.fontProviderAuthority;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontProviderCerts = global::won.Droid.Resource.Attribute.fontProviderCerts;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontProviderFetchStrategy = global::won.Droid.Resource.Attribute.fontProviderFetchStrategy;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontProviderFetchTimeout = global::won.Droid.Resource.Attribute.fontProviderFetchTimeout;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontProviderPackage = global::won.Droid.Resource.Attribute.fontProviderPackage;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontProviderQuery = global::won.Droid.Resource.Attribute.fontProviderQuery;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontStyle = global::won.Droid.Resource.Attribute.fontStyle;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontVariationSettings = global::won.Droid.Resource.Attribute.fontVariationSettings;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontWeight = global::won.Droid.Resource.Attribute.fontWeight;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.ttcIndex = global::won.Droid.Resource.Attribute.ttcIndex;
-			global::Microsoft.AppCenter.Push.Android.Resource.Color.notification_action_color_filter = global::won.Droid.Resource.Color.notification_action_color_filter;
-			global::Microsoft.AppCenter.Push.Android.Resource.Color.notification_icon_bg_color = global::won.Droid.Resource.Color.notification_icon_bg_color;
-			global::Microsoft.AppCenter.Push.Android.Resource.Color.notification_material_background_media_default_color = global::won.Droid.Resource.Color.notification_material_background_media_default_color;
-			global::Microsoft.AppCenter.Push.Android.Resource.Color.primary_text_default_material_dark = global::won.Droid.Resource.Color.primary_text_default_material_dark;
-			global::Microsoft.AppCenter.Push.Android.Resource.Color.ripple_material_light = global::won.Droid.Resource.Color.ripple_material_light;
-			global::Microsoft.AppCenter.Push.Android.Resource.Color.secondary_text_default_material_dark = global::won.Droid.Resource.Color.secondary_text_default_material_dark;
-			global::Microsoft.AppCenter.Push.Android.Resource.Color.secondary_text_default_material_light = global::won.Droid.Resource.Color.secondary_text_default_material_light;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.compat_button_inset_horizontal_material = global::won.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.compat_button_inset_vertical_material = global::won.Droid.Resource.Dimension.compat_button_inset_vertical_material;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.compat_button_padding_horizontal_material = global::won.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.compat_button_padding_vertical_material = global::won.Droid.Resource.Dimension.compat_button_padding_vertical_material;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.compat_control_corner_material = global::won.Droid.Resource.Dimension.compat_control_corner_material;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.compat_notification_large_icon_max_height = global::won.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.compat_notification_large_icon_max_width = global::won.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_action_icon_size = global::won.Droid.Resource.Dimension.notification_action_icon_size;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_action_text_size = global::won.Droid.Resource.Dimension.notification_action_text_size;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_big_circle_margin = global::won.Droid.Resource.Dimension.notification_big_circle_margin;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_content_margin_start = global::won.Droid.Resource.Dimension.notification_content_margin_start;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_large_icon_height = global::won.Droid.Resource.Dimension.notification_large_icon_height;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_large_icon_width = global::won.Droid.Resource.Dimension.notification_large_icon_width;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_main_column_padding_top = global::won.Droid.Resource.Dimension.notification_main_column_padding_top;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_media_narrow_margin = global::won.Droid.Resource.Dimension.notification_media_narrow_margin;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_right_icon_size = global::won.Droid.Resource.Dimension.notification_right_icon_size;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_right_side_padding_top = global::won.Droid.Resource.Dimension.notification_right_side_padding_top;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_small_icon_background_padding = global::won.Droid.Resource.Dimension.notification_small_icon_background_padding;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_small_icon_size_as_large = global::won.Droid.Resource.Dimension.notification_small_icon_size_as_large;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_subtext_size = global::won.Droid.Resource.Dimension.notification_subtext_size;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_top_pad = global::won.Droid.Resource.Dimension.notification_top_pad;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_top_pad_large_text = global::won.Droid.Resource.Dimension.notification_top_pad_large_text;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.subtitle_corner_radius = global::won.Droid.Resource.Dimension.subtitle_corner_radius;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.subtitle_outline_width = global::won.Droid.Resource.Dimension.subtitle_outline_width;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.subtitle_shadow_offset = global::won.Droid.Resource.Dimension.subtitle_shadow_offset;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.subtitle_shadow_radius = global::won.Droid.Resource.Dimension.subtitle_shadow_radius;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.ic_stat_notify_dot = global::won.Droid.Resource.Drawable.ic_stat_notify_dot;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_action_background = global::won.Droid.Resource.Drawable.notification_action_background;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_bg = global::won.Droid.Resource.Drawable.notification_bg;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_bg_low = global::won.Droid.Resource.Drawable.notification_bg_low;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_bg_low_normal = global::won.Droid.Resource.Drawable.notification_bg_low_normal;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_bg_low_pressed = global::won.Droid.Resource.Drawable.notification_bg_low_pressed;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_bg_normal = global::won.Droid.Resource.Drawable.notification_bg_normal;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_bg_normal_pressed = global::won.Droid.Resource.Drawable.notification_bg_normal_pressed;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_icon_background = global::won.Droid.Resource.Drawable.notification_icon_background;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_template_icon_bg = global::won.Droid.Resource.Drawable.notification_template_icon_bg;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_template_icon_low_bg = global::won.Droid.Resource.Drawable.notification_template_icon_low_bg;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_tile_bg = global::won.Droid.Resource.Drawable.notification_tile_bg;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notify_panel_notification_icon_bg = global::won.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.action0 = global::won.Droid.Resource.Id.action0;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.action_container = global::won.Droid.Resource.Id.action_container;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.action_divider = global::won.Droid.Resource.Id.action_divider;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.action_image = global::won.Droid.Resource.Id.action_image;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.action_text = global::won.Droid.Resource.Id.action_text;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.actions = global::won.Droid.Resource.Id.actions;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.async = global::won.Droid.Resource.Id.async;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.blocking = global::won.Droid.Resource.Id.blocking;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.cancel_action = global::won.Droid.Resource.Id.cancel_action;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.chronometer = global::won.Droid.Resource.Id.chronometer;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.end_padder = global::won.Droid.Resource.Id.end_padder;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.forever = global::won.Droid.Resource.Id.forever;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.icon = global::won.Droid.Resource.Id.icon;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.icon_group = global::won.Droid.Resource.Id.icon_group;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.info = global::won.Droid.Resource.Id.info;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.italic = global::won.Droid.Resource.Id.italic;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.line1 = global::won.Droid.Resource.Id.line1;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.line3 = global::won.Droid.Resource.Id.line3;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.media_actions = global::won.Droid.Resource.Id.media_actions;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.normal = global::won.Droid.Resource.Id.normal;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.notification_background = global::won.Droid.Resource.Id.notification_background;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.notification_main_column = global::won.Droid.Resource.Id.notification_main_column;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.notification_main_column_container = global::won.Droid.Resource.Id.notification_main_column_container;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.right_icon = global::won.Droid.Resource.Id.right_icon;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.right_side = global::won.Droid.Resource.Id.right_side;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.status_bar_latest_event_content = global::won.Droid.Resource.Id.status_bar_latest_event_content;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.tag_transition_group = global::won.Droid.Resource.Id.tag_transition_group;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.tag_unhandled_key_event_manager = global::won.Droid.Resource.Id.tag_unhandled_key_event_manager;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.tag_unhandled_key_listeners = global::won.Droid.Resource.Id.tag_unhandled_key_listeners;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.text = global::won.Droid.Resource.Id.text;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.text2 = global::won.Droid.Resource.Id.text2;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.time = global::won.Droid.Resource.Id.time;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.title = global::won.Droid.Resource.Id.title;
-			global::Microsoft.AppCenter.Push.Android.Resource.Integer.cancel_button_image_alpha = global::won.Droid.Resource.Integer.cancel_button_image_alpha;
-			global::Microsoft.AppCenter.Push.Android.Resource.Integer.google_play_services_version = global::won.Droid.Resource.Integer.google_play_services_version;
-			global::Microsoft.AppCenter.Push.Android.Resource.Integer.status_bar_notification_info_maxnum = global::won.Droid.Resource.Integer.status_bar_notification_info_maxnum;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_action = global::won.Droid.Resource.Layout.notification_action;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_action_tombstone = global::won.Droid.Resource.Layout.notification_action_tombstone;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_media_action = global::won.Droid.Resource.Layout.notification_media_action;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_media_cancel_action = global::won.Droid.Resource.Layout.notification_media_cancel_action;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_big_media = global::won.Droid.Resource.Layout.notification_template_big_media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_big_media_custom = global::won.Droid.Resource.Layout.notification_template_big_media_custom;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_big_media_narrow = global::won.Droid.Resource.Layout.notification_template_big_media_narrow;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_big_media_narrow_custom = global::won.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_custom_big = global::won.Droid.Resource.Layout.notification_template_custom_big;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_icon_group = global::won.Droid.Resource.Layout.notification_template_icon_group;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_lines_media = global::won.Droid.Resource.Layout.notification_template_lines_media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_media = global::won.Droid.Resource.Layout.notification_template_media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_media_custom = global::won.Droid.Resource.Layout.notification_template_media_custom;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_part_chronometer = global::won.Droid.Resource.Layout.notification_template_part_chronometer;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_part_time = global::won.Droid.Resource.Layout.notification_template_part_time;
-			global::Microsoft.AppCenter.Push.Android.Resource.String.common_google_play_services_unknown_issue = global::won.Droid.Resource.String.common_google_play_services_unknown_issue;
-			global::Microsoft.AppCenter.Push.Android.Resource.String.fcm_fallback_notification_channel_label = global::won.Droid.Resource.String.fcm_fallback_notification_channel_label;
-			global::Microsoft.AppCenter.Push.Android.Resource.String.library_name = global::won.Droid.Resource.String.library_name;
-			global::Microsoft.AppCenter.Push.Android.Resource.String.status_bar_notification_info_overflow = global::won.Droid.Resource.String.status_bar_notification_info_overflow;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification = global::won.Droid.Resource.Style.TextAppearance_Compat_Notification;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Info = global::won.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::won.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::won.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::won.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Media = global::won.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Time = global::won.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::won.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Title = global::won.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::won.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.Widget_Compat_NotificationActionContainer = global::won.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.Widget_Compat_NotificationActionText = global::won.Droid.Resource.Style.Widget_Compat_NotificationActionText;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.ColorStateListItem = global::won.Droid.Resource.Styleable.ColorStateListItem;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.ColorStateListItem_alpha = global::won.Droid.Resource.Styleable.ColorStateListItem_alpha;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.ColorStateListItem_android_alpha = global::won.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.ColorStateListItem_android_color = global::won.Droid.Resource.Styleable.ColorStateListItem_android_color;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamily = global::won.Droid.Resource.Styleable.FontFamily;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamily_fontProviderAuthority = global::won.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamily_fontProviderCerts = global::won.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::won.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::won.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamily_fontProviderPackage = global::won.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamily_fontProviderQuery = global::won.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont = global::won.Droid.Resource.Styleable.FontFamilyFont;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont_android_font = global::won.Droid.Resource.Styleable.FontFamilyFont_android_font;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont_android_fontStyle = global::won.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::won.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont_android_fontWeight = global::won.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::won.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont_font = global::won.Droid.Resource.Styleable.FontFamilyFont_font;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont_fontStyle = global::won.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::won.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont_fontWeight = global::won.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont_ttcIndex = global::won.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColor = global::won.Droid.Resource.Styleable.GradientColor;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColor_android_centerColor = global::won.Droid.Resource.Styleable.GradientColor_android_centerColor;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColor_android_centerX = global::won.Droid.Resource.Styleable.GradientColor_android_centerX;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColor_android_centerY = global::won.Droid.Resource.Styleable.GradientColor_android_centerY;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColor_android_endColor = global::won.Droid.Resource.Styleable.GradientColor_android_endColor;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColor_android_endX = global::won.Droid.Resource.Styleable.GradientColor_android_endX;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColor_android_endY = global::won.Droid.Resource.Styleable.GradientColor_android_endY;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColor_android_gradientRadius = global::won.Droid.Resource.Styleable.GradientColor_android_gradientRadius;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColor_android_startColor = global::won.Droid.Resource.Styleable.GradientColor_android_startColor;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColor_android_startX = global::won.Droid.Resource.Styleable.GradientColor_android_startX;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColor_android_startY = global::won.Droid.Resource.Styleable.GradientColor_android_startY;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColor_android_tileMode = global::won.Droid.Resource.Styleable.GradientColor_android_tileMode;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColor_android_type = global::won.Droid.Resource.Styleable.GradientColor_android_type;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColorItem = global::won.Droid.Resource.Styleable.GradientColorItem;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColorItem_android_color = global::won.Droid.Resource.Styleable.GradientColorItem_android_color;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.GradientColorItem_android_offset = global::won.Droid.Resource.Styleable.GradientColorItem_android_offset;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::won.Droid.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::won.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::won.Droid.Resource.Attribute.font;
@@ -9634,34 +9471,34 @@ namespace won.Droid
 			public const int ic_mtrl_chip_close_circle = 2131165488;
 			
 			// aapt resource value: 0x7F070131
-			public const int ic_stat_notify_dot = 2131165489;
+			public const int ic_unchecked_checkbox = 2131165489;
 			
 			// aapt resource value: 0x7F070132
-			public const int ic_unchecked_checkbox = 2131165490;
+			public const int ic_vol_mute = 2131165490;
 			
 			// aapt resource value: 0x7F070133
-			public const int ic_vol_mute = 2131165491;
+			public const int ic_vol_type_speaker_dark = 2131165491;
 			
 			// aapt resource value: 0x7F070134
-			public const int ic_vol_type_speaker_dark = 2131165492;
+			public const int ic_vol_type_speaker_group_dark = 2131165492;
 			
 			// aapt resource value: 0x7F070135
-			public const int ic_vol_type_speaker_group_dark = 2131165493;
+			public const int ic_vol_type_speaker_group_light = 2131165493;
 			
 			// aapt resource value: 0x7F070136
-			public const int ic_vol_type_speaker_group_light = 2131165494;
+			public const int ic_vol_type_speaker_light = 2131165494;
 			
 			// aapt resource value: 0x7F070137
-			public const int ic_vol_type_speaker_light = 2131165495;
+			public const int ic_vol_type_tv_dark = 2131165495;
 			
 			// aapt resource value: 0x7F070138
-			public const int ic_vol_type_tv_dark = 2131165496;
+			public const int ic_vol_type_tv_light = 2131165496;
 			
 			// aapt resource value: 0x7F070139
-			public const int ic_vol_type_tv_light = 2131165497;
+			public const int ic_vol_unmute = 2131165497;
 			
 			// aapt resource value: 0x7F07013A
-			public const int ic_vol_unmute = 2131165498;
+			public const int logowon = 2131165498;
 			
 			// aapt resource value: 0x7F07013B
 			public const int mr_button_connected_dark = 2131165499;
@@ -11275,100 +11112,100 @@ namespace won.Droid
 			public const int bottom_sheet_behavior = 2131558428;
 			
 			// aapt resource value: 0x7F0D001D
-			public const int character_counter_content_description = 2131558429;
+			public const int channel_id = 2131558429;
 			
 			// aapt resource value: 0x7F0D001E
-			public const int character_counter_pattern = 2131558430;
+			public const int character_counter_content_description = 2131558430;
 			
 			// aapt resource value: 0x7F0D001F
-			public const int common_google_play_services_enable_button = 2131558431;
+			public const int character_counter_pattern = 2131558431;
 			
 			// aapt resource value: 0x7F0D0020
-			public const int common_google_play_services_enable_text = 2131558432;
+			public const int common_google_play_services_enable_button = 2131558432;
 			
 			// aapt resource value: 0x7F0D0021
-			public const int common_google_play_services_enable_title = 2131558433;
+			public const int common_google_play_services_enable_text = 2131558433;
 			
 			// aapt resource value: 0x7F0D0022
-			public const int common_google_play_services_install_button = 2131558434;
+			public const int common_google_play_services_enable_title = 2131558434;
 			
 			// aapt resource value: 0x7F0D0023
-			public const int common_google_play_services_install_text = 2131558435;
+			public const int common_google_play_services_install_button = 2131558435;
 			
 			// aapt resource value: 0x7F0D0024
-			public const int common_google_play_services_install_title = 2131558436;
+			public const int common_google_play_services_install_text = 2131558436;
 			
 			// aapt resource value: 0x7F0D0025
-			public const int common_google_play_services_notification_channel_name = 2131558437;
+			public const int common_google_play_services_install_title = 2131558437;
 			
 			// aapt resource value: 0x7F0D0026
-			public const int common_google_play_services_notification_ticker = 2131558438;
+			public const int common_google_play_services_notification_channel_name = 2131558438;
 			
 			// aapt resource value: 0x7F0D0027
-			public const int common_google_play_services_unknown_issue = 2131558439;
+			public const int common_google_play_services_notification_ticker = 2131558439;
 			
 			// aapt resource value: 0x7F0D0028
-			public const int common_google_play_services_unsupported_text = 2131558440;
+			public const int common_google_play_services_unknown_issue = 2131558440;
 			
 			// aapt resource value: 0x7F0D0029
-			public const int common_google_play_services_update_button = 2131558441;
+			public const int common_google_play_services_unsupported_text = 2131558441;
 			
 			// aapt resource value: 0x7F0D002A
-			public const int common_google_play_services_update_text = 2131558442;
+			public const int common_google_play_services_update_button = 2131558442;
 			
 			// aapt resource value: 0x7F0D002B
-			public const int common_google_play_services_update_title = 2131558443;
+			public const int common_google_play_services_update_text = 2131558443;
 			
 			// aapt resource value: 0x7F0D002C
-			public const int common_google_play_services_updating_text = 2131558444;
+			public const int common_google_play_services_update_title = 2131558444;
 			
 			// aapt resource value: 0x7F0D002D
-			public const int common_google_play_services_wear_update_text = 2131558445;
+			public const int common_google_play_services_updating_text = 2131558445;
 			
 			// aapt resource value: 0x7F0D002E
-			public const int common_open_on_phone = 2131558446;
+			public const int common_google_play_services_wear_update_text = 2131558446;
 			
 			// aapt resource value: 0x7F0D002F
-			public const int common_signin_button_text = 2131558447;
+			public const int common_open_on_phone = 2131558447;
 			
 			// aapt resource value: 0x7F0D0030
-			public const int common_signin_button_text_long = 2131558448;
+			public const int common_signin_button_text = 2131558448;
 			
 			// aapt resource value: 0x7F0D0031
-			public const int default_web_client_id = 2131558449;
+			public const int common_signin_button_text_long = 2131558449;
 			
 			// aapt resource value: 0x7F0D0032
-			public const int fab_transformation_scrim_behavior = 2131558450;
+			public const int default_web_client_id = 2131558450;
 			
 			// aapt resource value: 0x7F0D0033
-			public const int fab_transformation_sheet_behavior = 2131558451;
+			public const int fab_transformation_scrim_behavior = 2131558451;
 			
 			// aapt resource value: 0x7F0D0034
-			public const int fcm_fallback_notification_channel_label = 2131558452;
+			public const int fab_transformation_sheet_behavior = 2131558452;
 			
 			// aapt resource value: 0x7F0D0035
-			public const int firebase_database_url = 2131558453;
+			public const int fcm_fallback_notification_channel_label = 2131558453;
 			
 			// aapt resource value: 0x7F0D0036
-			public const int gcm_defaultSenderId = 2131558454;
+			public const int firebase_database_url = 2131558454;
 			
 			// aapt resource value: 0x7F0D0037
-			public const int google_api_key = 2131558455;
+			public const int gcm_defaultSenderId = 2131558455;
 			
 			// aapt resource value: 0x7F0D0038
-			public const int google_app_id = 2131558456;
+			public const int google_api_key = 2131558456;
 			
 			// aapt resource value: 0x7F0D0039
-			public const int google_crash_reporting_api_key = 2131558457;
+			public const int google_app_id = 2131558457;
 			
 			// aapt resource value: 0x7F0D003A
-			public const int google_storage_bucket = 2131558458;
+			public const int google_crash_reporting_api_key = 2131558458;
 			
 			// aapt resource value: 0x7F0D003B
-			public const int hide_bottom_view_on_scroll_behavior = 2131558459;
+			public const int google_storage_bucket = 2131558459;
 			
 			// aapt resource value: 0x7F0D003C
-			public const int library_name = 2131558460;
+			public const int hide_bottom_view_on_scroll_behavior = 2131558460;
 			
 			// aapt resource value: 0x7F0D003D
 			public const int mr_button_content_description = 2131558461;

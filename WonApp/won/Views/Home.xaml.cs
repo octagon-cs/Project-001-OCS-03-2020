@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using won.Models;
 using won.ViewModels;
+using won.Views.Progress;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -25,11 +26,21 @@ namespace won.Views
 
             BindingContext = vm= new HomeViewModel();
             vm.OnExecute += Vm_OnExecute;
+            Load();
             
+        }
+
+        private void Load()
+        {
+            foreach (var item in ItemsListView.ItemsSource)
+            {
+
+            }
         }
 
         private async void Vm_OnExecute(string ev, object data)
         {
+
             await Navigation.PushAsync((Page)data);
         }
 
@@ -67,14 +78,14 @@ namespace won.Views
         {
             try
             {
-                await Task.Delay(200);
+               
                 if (IsBusy)
                     return;
 
                 IsBusy = true;
                 Items.Clear();
                 var items = await PermohonanService.Get();
-                foreach (var item in items)
+                foreach (var item in items.OrderByDescending(x=>x.TanggalPengajuan))
                 {
                     Items.Add(item);
                 }
@@ -88,7 +99,7 @@ namespace won.Views
                         Cancel = "OK"
                     }, "message");
                 }
-
+                await Task.Delay(200);
                 IsBusy = false;
 
             }
@@ -112,7 +123,7 @@ namespace won.Views
         {
             get { return selectedItem; }
             set { SetProperty(ref selectedItem ,value);
-                if(value!=null && value.Persetujuan!=null)
+                if(value!=null && value.Persetujuan!=null && value.Persetujuan.Count>0)
                   this.Execute("",new PermohonanProgressView(value));
             
             }

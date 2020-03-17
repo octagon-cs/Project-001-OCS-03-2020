@@ -3,13 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pvn="clr-namespace:won.Views.Progress"
              mc:Ignorable="d" Title="Home" 
              x:Class="won.Views.Home">
     <ContentPage.Content>
         <Grid>
             <Image Source="bg.jpg" Aspect="AspectFill"/>
             <StackLayout>
-                <ListView Margin="0" x:Name="ItemsListView" BackgroundColor="Transparent" 
+                <ListView  Margin="0" x:Name="ItemsListView" BackgroundColor="Transparent" 
                             ItemsSource="{Binding Items}" 
                               HasUnevenRows="True" SelectedItem="{Binding SelectedItem}"
                             RefreshCommand="{Binding LoadItemsCommand}"
@@ -23,24 +24,26 @@
                     </d:ListView.ItemsSource>
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell  >
-                                <Grid BackgroundColor="Transparent"  Margin="2,0,0,2" Padding="15,10" RowSpacing="10">
+                            <ViewCell>
+                                <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition/>
-                                        <RowDefinition/>
                                     </Grid.RowDefinitions>
-                                    <StackLayout >
-                                        <Label  Text="{Binding TanggalPengajuan}" FontSize="Small"/>
-                                        <Label  Text="{Binding NamaPermohonan}" FontSize="Small"/>
-                                    </StackLayout>
-                                    <StackLayout Grid.Row="1"  Orientation="Horizontal">
-                                        <Label HorizontalOptions="Start" Text="Status :"/>
-                                        <Label HorizontalOptions="Start" Text="{Binding Status}"/>
-                                        <Label HorizontalOptions="EndAndExpand" Text="&#xed13;" FontSize="Title" TextColor="#17a2b8" FontFamily="{StaticResource IcoFont}">
-                                            <Label.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding DetailCommand}"/>
-                                            </Label.GestureRecognizers>
-                                        </Label>
+                                    <StackLayout Margin="0,2"  BackgroundColor="BlueViolet" Opacity="0.1"></StackLayout>
+                                    <Label x:Name="tanggal" Padding="25" TextColor="White" Text="{Binding TanggalPengajuan}" HorizontalOptions="End"/>
+                                    <StackLayout Padding="25">
+                                        <StackLayout Orientation="Vertical">
+                                            <Label TextColor="White" Text="Nomor Permohonan" />
+                                            <Label x:Name="nomorPengajuan" FontSize="Medium" TextColor="White"  Text="{Binding IdPermohonan, StringFormat='{0:D8}'}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Margin="0,20">
+                                            <Label TextColor="White" Text="Jenis Permohonan" />
+                                            <Label x:Name="jenis" FontSize="Medium" TextColor="White"  Text="{Binding NamaPermohonan}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Margin="0,20" >
+                                            <Label TextColor="White" Text="Progress" />
+                                            <ProgressBar IsEnabled="False"  Progress="{Binding Progress}" ProgressColor="{Binding ProgressColor}" />
+                                        </StackLayout>
                                     </StackLayout>
                                 </Grid>
                             </ViewCell>

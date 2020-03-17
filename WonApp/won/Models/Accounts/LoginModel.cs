@@ -58,5 +58,16 @@ namespace won.Models.Accounts
         }
 
 
+
+        private string url;
+        [JsonIgnore]
+        public string URL
+        {
+            get { return Helper.Url; }
+            set { SetProperty(ref url ,value); Helper.Url = value; }
+        }
+
+
+
     }
 }

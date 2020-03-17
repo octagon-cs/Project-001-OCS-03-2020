@@ -102,7 +102,7 @@ namespace won.Models
                     break;
                 case StatusPersetujuan.Disetujui:
                     ColorStatus=Color.FromHex("#857A7A");
-                    break;
+                    break; 
                 case StatusPersetujuan.Ditolak:
                 ColorStatus=Color.FromHex("#D23106");
                     break;

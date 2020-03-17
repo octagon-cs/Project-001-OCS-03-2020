@@ -70,7 +70,9 @@ namespace won.Views.Accounts
 
                 var isLogin = await AccountService.Login(Model);
                 if (isLogin)
+                {
                     Helper.ChangeMainPage(new MainPage() as Page);
+                }
                 else
                 {
                     throw new SystemException("Anda Tidak Memiliki Akses");

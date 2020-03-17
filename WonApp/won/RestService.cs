@@ -4,18 +4,20 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading.Tasks;   
 
 namespace won
 {
     public class RestService : HttpClient
     {
+        public static string DeviceToken { get; set; }
+
         public RestService()
         {
             // this.MaxResponseContentBufferSize = 256000;
             //var a = ConfigurationManager.AppSettings["IP"];
-            //string _server = "http://192.168.1.5:3000/";
-            string _server = "http://waena-desa.id/";
+            string _server = Helper.Url;
+            //string _server = "http://waena-desa.id/";
             this.BaseAddress = new Uri(_server);
             this.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
             //key api = 57557c4f25f436213fe34a2090a266e2
@@ -67,9 +69,16 @@ namespace won
 
         public async Task<string> Error(HttpResponseMessage response)
         {
-            var content = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<ErrorMessage>(content);
-            return result.Message;
+            try
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<ErrorMessage>(content);
+                return result.Message;
+            }
+            catch (Exception)
+            {
+                return "Maaf Terjadi Kesalahan, Silahkan Ulangi Lagi Nanti";
+            }
         }
     }
 

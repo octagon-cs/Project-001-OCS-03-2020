@@ -28,31 +28,47 @@ namespace won.Views
                 {
                     lastPersetujuan = node;
                 }
-                Main.Children.Add(new NodeView(node));
+
+                if (lastPersetujuan == null)
+                {
+                    Main.Children.Add(new NodeView(node));
+                }
+             
                 index++;
             }
 
-
-            var lasindex = (int)lastPersetujuan.Role;
-            var totalIndex = typeof(ProgressRole).GetEnumValues();
-            if (lasindex < totalIndex.Length - 1)
+            if(lastPersetujuan!=null)
             {
-                var node = new ProgressNode(new Persetujuan());
-                for (int i = lasindex+1; i < totalIndex.Length; i++)
+                var lasindex = (int)lastPersetujuan.Role;
+                var totalIndex = typeof(ProgressRole).GetEnumValues();
+
+
+                if (lastPersetujuan.Status == StatusPersetujuan.Dikembalikan)
+                    lasindex = lasindex - 1;
+
+
+                if (lasindex < totalIndex.Length - 1)
                 {
-                    node.Role = (ProgressRole)i;
-                    if(i == totalIndex.Length - 1)
+                  
+                    for (int i = lasindex; i < totalIndex.Length; i++)
                     {
+                        var node = new ProgressNode(new Persetujuan());
+                        node.Role = (ProgressRole)i;
                         node.Status = StatusPersetujuan.None;
-                        node.Position = PositionNode.End; }
+                        if (i == totalIndex.Length - 1)
+                        {
+                            node.Position = PositionNode.End;
+                        }
 
-                    Main.Children.Add(new NodeView(node));
-                    
+                        Main.Children.Add(new NodeView(node));
+
+                    }
                 }
-            }
-            else
-            {
-                lastPersetujuan.Position = PositionNode.End;
+                else
+                {
+                    lastPersetujuan.Position = PositionNode.End;
+                    Main.Children.Add(new NodeView(lastPersetujuan));
+                }
             }
           
         }

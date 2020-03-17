@@ -1,6 +1,8 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using Xamarin.Forms;
+using System.Linq;
 
 namespace won.Models
 {
@@ -26,7 +28,7 @@ namespace won.Models
             set { idPenduduk = value; }
         }
 
-        [JsonProperty("tanggalpersetujuan")]
+        [JsonProperty("tanggalpengajuan")]
         public DateTime TanggalPengajuan
         {
             get { return tanggalPengajuan; }
@@ -35,7 +37,7 @@ namespace won.Models
 
 
         [JsonProperty("persetujuan")]
-        public List<Persetujuan> Persetujuan { get; set; } = new List<Persetujuan>();
+        public List<Persetujuan> Persetujuan { get; set; }
 
 
 
@@ -93,6 +95,59 @@ namespace won.Models
                 Jenis = text;
             }
         }
+
+        private double progress;
+        [JsonIgnore]
+        public double Progress
+        {
+            get
+            {
+                var datas = Persetujuan.OrderBy(x => x.Created).ToList();
+                var lastPersetujuan = datas[datas.Count - 1];
+
+
+                if (lastPersetujuan!=null)
+                {
+                    var lastIndex = (int)lastPersetujuan.Role;
+                    if(lastPersetujuan.Status == StatusPersetujuan.Selesai)
+                    {
+                        ProgressColor = Color.FromHex("#0B9567");
+                        return 1;
+                    }else if(lastPersetujuan.Status == StatusPersetujuan.Ditolak)
+                    {
+                        ProgressColor = Color.FromHex("#D23106");
+                        return 1;
+                    }else 
+                    {
+                        var lastValue = (Convert.ToDouble(lastIndex) + 1) / Convert.ToDouble(4);
+                        if(lastPersetujuan.Status == StatusPersetujuan.Dikembalikan)
+                            lastValue = (Convert.ToDouble(lastIndex)) / Convert.ToDouble(4);
+                        if (lastValue <= 0.25)
+                            ProgressColor= Color.White;
+                        else if (lastValue <= 0.75)
+                            ProgressColor = Color.FromHex("#F67B1C");
+                        else if (lastValue <= 1)
+                            ProgressColor = Color.FromHex("#0B9567");
+                        return lastValue;
+                    }
+                }
+                return 0;
+            }
+            set
+            {
+                SetProperty(ref progress, value);
+            }
+        }
+
+
+        private Color progressColor;
+        [JsonIgnore]
+        public Color ProgressColor
+        {
+            get { return progressColor; }
+            set { SetProperty(ref progressColor ,value); }
+        }
+
 
     }
 }
