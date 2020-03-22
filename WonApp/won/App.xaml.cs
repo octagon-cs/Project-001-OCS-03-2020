@@ -40,28 +40,25 @@ namespace won
         }
 
 
-        public async void ChangeMain(Page page)
+        public void ChangeMain(Page page)
         {
-            await Task.Delay(200);
             Current.MainPage = page;
-            //   MessagingCenter.Send(EventArgs.Empty, "GoHome");
         }
 
         public async void NavigateGo(Page page)
         {
             await Task.Delay(200);
             Current.MainPage = new NavigationPage(page);
-            //   MessagingCenter.Send(EventArgs.Empty, "GoHome");
         }
 
         public async void NextPage(Page page)
         {
-            await Current.MainPage.Navigation.PushAsync(page);
+            await MainPage.Navigation.PushAsync(page);
         }
 
         public async void BackPage()
         {
-            await Current.MainPage.Navigation.PopAsync(true);
+            await MainPage.Navigation.PopAsync(true);
         }
 
 

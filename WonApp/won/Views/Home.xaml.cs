@@ -26,17 +26,9 @@ namespace won.Views
 
             BindingContext = vm= new HomeViewModel();
             vm.OnExecute += Vm_OnExecute;
-            Load();
             
         }
 
-        private void Load()
-        {
-            foreach (var item in ItemsListView.ItemsSource)
-            {
-
-            }
-        }
 
         private async void Vm_OnExecute(string ev, object data)
         {
@@ -44,10 +36,7 @@ namespace won.Views
             await Navigation.PushAsync((Page)data);
         }
 
-        protected override void OnDisappearing()
-        {
-            MessagingCenter.Unsubscribe<Page>(this, "homeview");
-        }
+       
 
         protected override void OnSizeAllocated(double width, double height)
         {
@@ -59,6 +48,14 @@ namespace won.Views
                 //reconfigure layout
             }
         }
+
+        private async void ProgressBar_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            var progress = (ProgressBar)sender;
+         
+        }
+
+      
     }
 
 
@@ -99,7 +96,7 @@ namespace won.Views
                         Cancel = "OK"
                     }, "message");
                 }
-                await Task.Delay(200);
+                await Task.Delay(500);
                 IsBusy = false;
 
             }
@@ -111,6 +108,7 @@ namespace won.Views
                     Message = ex.Message,
                     Cancel = "OK"
                 }, "message");
+                await Task.Delay(500);
                 IsBusy = false;
             }
         }

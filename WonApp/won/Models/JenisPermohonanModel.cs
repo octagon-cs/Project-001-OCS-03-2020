@@ -136,7 +136,7 @@ namespace won.Models
                     Cancel = "OK"
                 }, "message");
             }else
-                Helper.NavigateTo(page);
+                Helper.GoPage(page);
         }
     }
 

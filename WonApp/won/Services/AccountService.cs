@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -45,6 +46,31 @@ namespace won.Services
             }
         }
 
+        public async Task<object> Profile()
+        {
+            try
+            {
+                using (var service = new RestService())
+                {
+                    var response = await service.GetAsync("/api/auth/profile");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var content = await response.Content.ReadAsStringAsync();
+                        JObject rss = JObject.Parse(content);
+                        Helper.Profile = rss;
+                        return true;
+                    }
+                    else
+                    {
+                        throw new SystemException(await service.Error(response));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new SystemException(ex.Message);
+            }
+        }
 
         public async Task<bool> Register(RegisterModel model)
         {

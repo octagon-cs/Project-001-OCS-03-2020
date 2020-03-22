@@ -42,7 +42,7 @@
                                         </StackLayout>
                                         <StackLayout Orientation="Vertical" Margin="0,20" >
                                             <Label TextColor="White" Text="Progress" />
-                                            <ProgressBar IsEnabled="False"  Progress="{Binding Progress}" ProgressColor="{Binding ProgressColor}" />
+                                            <ProgressBar PropertyChanged="ProgressBar_PropertyChanged" IsEnabled="False"  Progress="{Binding Progress}" ProgressColor="{Binding ProgressColor}" />
                                         </StackLayout>
                                     </StackLayout>
                                 </Grid>

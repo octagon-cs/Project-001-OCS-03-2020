@@ -8,14 +8,16 @@ namespace won.Models.SuratPermohonan
     public class PindahModel : BaseNotify
     {
 
-        private int nik;
-
+        private string nik;
 
         [JsonProperty("nik")]
-        public int NIK
+        public string NIK
         {
             get { return nik; }
-            set => SetProperty(ref nik, value);
+            set
+            {
+               SetProperty(ref nik, value);
+            }
         }
 
         private string _Nama;
@@ -86,7 +88,7 @@ namespace won.Models.SuratPermohonan
         private bool Validation()
         {
             var valid = true;
-            if (NIK <= 0 || string.IsNullOrEmpty(Nama) || string.IsNullOrEmpty(TempatLahir) || TanggalLahir == new DateTime() ||
+            if (string.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(Nama) || string.IsNullOrEmpty(TempatLahir) || TanggalLahir == new DateTime() ||
                 TanggalPindah == new DateTime() || string.IsNullOrEmpty(KeteranganPindah) || string.IsNullOrEmpty(PindahKe))
             {
                 valid = false;

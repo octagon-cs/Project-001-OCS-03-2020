@@ -33,4 +33,15 @@ namespace won
     }
 
 
+
+
+    public static class MyExtention
+    {
+        static public object GetValOfObject(this object obj, string propertyName)
+        {
+            return obj.GetType().GetProperty(propertyName).GetValue(obj, null);
+        }
+    }
+
+
 }

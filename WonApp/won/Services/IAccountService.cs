@@ -10,5 +10,6 @@ namespace won.Services
     {
         Task<bool> Login(LoginModel item);
         Task<bool> Register(RegisterModel item);
+        Task<object> Profile();
     }
 }

@@ -43,7 +43,7 @@ namespace won.Views.SuratPermohonan
                     return;
 
                 IsBusy = true;
-                var permohonan = new PermohonanModel() { TanggalPengajuan = DateTime.Now, Data = Model, Status = StatusPersetujuan.Baru };
+                var permohonan = new PermohonanModel() { JenisPermohonan= PermohonanType.Tidak_Mampu, TanggalPengajuan = DateTime.Now, Data = Model, Status = StatusPersetujuan.Baru };
                 var result = await PermohonanService.Create(permohonan);
                 if (result != null)
                 {

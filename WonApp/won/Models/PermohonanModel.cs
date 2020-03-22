@@ -102,33 +102,36 @@ namespace won.Models
         {
             get
             {
-                var datas = Persetujuan.OrderBy(x => x.Created).ToList();
-                var lastPersetujuan = datas[datas.Count - 1];
-
-
-                if (lastPersetujuan!=null)
+                if (Persetujuan != null)
                 {
-                    var lastIndex = (int)lastPersetujuan.Role;
-                    if(lastPersetujuan.Status == StatusPersetujuan.Selesai)
+                    var datas = Persetujuan.OrderBy(x => x.Created).ToList();
+                    var lastPersetujuan = datas[datas.Count - 1];
+                    if (lastPersetujuan != null)
                     {
-                        ProgressColor = Color.FromHex("#0B9567");
-                        return 1;
-                    }else if(lastPersetujuan.Status == StatusPersetujuan.Ditolak)
-                    {
-                        ProgressColor = Color.FromHex("#D23106");
-                        return 1;
-                    }else 
-                    {
-                        var lastValue = (Convert.ToDouble(lastIndex) + 1) / Convert.ToDouble(4);
-                        if(lastPersetujuan.Status == StatusPersetujuan.Dikembalikan)
-                            lastValue = (Convert.ToDouble(lastIndex)) / Convert.ToDouble(4);
-                        if (lastValue <= 0.25)
-                            ProgressColor= Color.White;
-                        else if (lastValue <= 0.75)
-                            ProgressColor = Color.FromHex("#F67B1C");
-                        else if (lastValue <= 1)
+                        var lastIndex = (int)lastPersetujuan.Role;
+                        if (lastPersetujuan.Status == StatusPersetujuan.Selesai)
+                        {
                             ProgressColor = Color.FromHex("#0B9567");
-                        return lastValue;
+                            return 1;
+                        }
+                        else if (lastPersetujuan.Status == StatusPersetujuan.Ditolak)
+                        {
+                            ProgressColor = Color.FromHex("#D23106");
+                            return 1;
+                        }
+                        else
+                        {
+                            var lastValue = (Convert.ToDouble(lastIndex) + 1) / Convert.ToDouble(4);
+                            if (lastPersetujuan.Status == StatusPersetujuan.Dikembalikan)
+                                lastValue = (Convert.ToDouble(lastIndex)) / Convert.ToDouble(4);
+                            if (lastValue <= 0.25)
+                                ProgressColor = Color.White;
+                            else if (lastValue <= 0.75)
+                                ProgressColor = Color.FromHex("#F67B1C");
+                            else if (lastValue <= 1)
+                                ProgressColor = Color.FromHex("#0B9567");
+                            return lastValue;
+                        }
                     }
                 }
                 return 0;

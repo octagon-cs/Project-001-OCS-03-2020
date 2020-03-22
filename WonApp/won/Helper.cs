@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using won.Models;
 using won.Models.Accounts;
+using won.Views;
 using Xamarin.Forms;
 
 namespace won
@@ -14,6 +16,7 @@ namespace won
         public static UserAccount Account { get;  set; }
         public static ObservableCollection<PermohonanModel> Permohonan { get; set; } = new ObservableCollection<PermohonanModel>();
         public static string Url { get; set; } = "http://192.168.1.6:3000/";
+        public static JObject Profile { get;  set; }
 
         public async static void ChangeMainPage(Page page)
         {
@@ -28,7 +31,8 @@ namespace won
         {
             if (await Task.FromResult(Application.Current) is App app)
             {
-                app.NextPage(page);
+                var mainPage = app.MainPage as MainPage;
+                await   mainPage.Detail.Navigation.PushAsync(page);
             }
         }
 
@@ -36,15 +40,8 @@ namespace won
         {
             if (await Task.FromResult(Application.Current) is App app)
             {
-                app.BackPage();
-            }
-        }
-
-        public async static void NavigateTo(Page page)
-        {
-            if (await Task.FromResult(Application.Current) is App app)
-            {
-                app.NavigateGo(page);
+                var mainPage = app.MainPage as MainPage;
+                await mainPage.Detail.Navigation.PopAsync();
             }
         }
 

@@ -1,30 +1,31 @@
-﻿using System;
-
+﻿
 using Android.App;
-using Android.Content.PM;
 using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Gms.Common;
 using Android.Support.V4.App;
 using Android.Content;
+using Xamarin.Forms.Platform.Android;
+using Android.Views;
 
 namespace won.Droid
 {
-    [Activity(Label = "won", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    [Activity(Label = "Won")]
+    public class MainActivity : FormsAppCompatActivity
     {
         static readonly string TAG = "MainActivity";
         internal static MainActivity Instance { get; private set; }
-        public static bool IsBacground { get; private set; }
+        public static bool IsBackground { get; private set; }
         public static readonly string CHANNEL_ID = "ChannelId1";
         public static readonly int NOTIFICATION_ID = 100;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-
+            base.Window.RequestFeature(WindowFeatures.ActionBar);
+         
+            base.SetTheme(Resource.Style.MainTheme);
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
@@ -40,15 +41,17 @@ namespace won.Droid
         protected override void OnResume()
         {
             base.OnResume();
-            IsBacground = false;
+            IsBackground = false;
         }
 
 
         protected override void OnPause()
         {
             base.OnPause();
-            IsBacground = true;
+            IsBackground = true;
+         
         }
+
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

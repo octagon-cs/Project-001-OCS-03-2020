@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using won.Models;
+using won.Models.SuratPermohonan;
 using won.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -21,9 +18,10 @@ namespace won.Views.SuratPermohonan
     }
     public class PindahViewModel : BaseViewModel
     {
-        public Models.SuratPermohonan.PindahModel Model { get; set; } = new Models.SuratPermohonan.PindahModel ();
+        public PindahModel Model { get; set; } = new Models.SuratPermohonan.PindahModel ();
         public PindahViewModel()
         {
+            Model.NIK = (string)Helper.Profile["nik"];
             Model.PropertyChanged += Model_PropertyChanged;
             SaveCommand = new Command(SaveAction);
         }

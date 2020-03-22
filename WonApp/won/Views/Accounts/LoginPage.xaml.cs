@@ -33,7 +33,7 @@ namespace won.Views.Accounts
         public LoginViewModel()
         {
             Model = new LoginModel();
-            Model.UserName = "aji3@gmail.com";
+            Model.UserName = "ajiaja@gmail.com";
             Model.Password = "Sony@77";
             Model.PropertyChanged += Model_PropertyChanged;
             LoginCommand = new Command(LoginAction, x=> Model.Valid);
@@ -43,7 +43,7 @@ namespace won.Views.Accounts
 
         private void ForgotPasswordAction(object obj)
         {
-            Helper.NavigateTo(new ForgotPasswordPage());
+            Helper.ChangeMainPage(new ForgotPasswordPage());
         }
 
         private void RegisterAction(object obj)
@@ -71,6 +71,7 @@ namespace won.Views.Accounts
                 var isLogin = await AccountService.Login(Model);
                 if (isLogin)
                 {
+                   await AccountService.Profile();
                     Helper.ChangeMainPage(new MainPage() as Page);
                 }
                 else
