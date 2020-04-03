@@ -33,12 +33,13 @@ namespace won.Views.Accounts
         public LoginViewModel()
         {
             Model = new LoginModel();
-            Model.UserName = "ajiaja@gmail.com";
-            Model.Password = "Sony@77";
+            Model.UserName = "kristt26@gmail.com";
+            Model.Password = "12345";
             Model.PropertyChanged += Model_PropertyChanged;
             LoginCommand = new Command(LoginAction, x=> Model.Valid);
             RegistrasiCommand = new Command(RegisterAction);
             ForgotPasswordCommand = new Command(ForgotPasswordAction);
+            this.URL = "http://192.168.1.4:3000/";
         }
 
         private void ForgotPasswordAction(object obj)
@@ -104,6 +105,17 @@ namespace won.Views.Accounts
 
         public Command ForgotPasswordCommand { get; set; }
         public Command RegistrasiCommand { get; set; }
+
+
+
+        private string url;
+        public string URL
+        {
+            get { return url; }
+            set { SetProperty(ref url, value); 
+                Helper.Url = value; }
+        }
+
 
 
     }

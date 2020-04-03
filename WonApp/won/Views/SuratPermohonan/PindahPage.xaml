@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converter="clr-namespace:won"
              mc:Ignorable="d" Title="Surat Pindah"
              x:Class="won.Views.SuratPermohonan.PindahPage">
     <ContentPage.Content>
@@ -11,12 +12,33 @@
                 <Label Text="NIK"  Margin="0,20,0,0" />
                 <Entry Placeholder="NIK" Text="{Binding Model.NIK}"></Entry>
                 <Label Text="Tanggal Pindah"   Margin="0,20,0,0" />
-                <DatePicker Date="{Binding TanggalPindah}" />
+                <DatePicker Date="{Binding Model.TanggalPindah}" />
                 <Label Text="Keterangan Pindah"  Margin="0,20,0,0" />
                 <Editor MinimumHeightRequest="75"  Placeholder="Keterangan Pindah" Text="{Binding Model.KeteranganPindah}"></Editor>
                 <Label Text="Pindah Ke"  Margin="0,20,0,0" />
                 <Entry Placeholder="Pindah Ke" Text="{Binding Model.PindahKe}"></Entry>
-                <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
+                <Label Text="Persyaratan" FontSize="Large"  Margin="0,20,0,0" />
+                <ListView ItemsSource="{Binding Persyaratan}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding nama}" VerticalOptions="Center"/>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                        <CheckBox IsVisible="{Binding HasFile}" IsChecked="{Binding HasFile}" IsEnabled="False" />
+                                        <Button  IsVisible="{Binding HasFile, Converter={converter:InverseBoolConverter}}" Text="Upload">
+                                            <Button.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="uploadAction" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                            </Button.GestureRecognizers>
+                                        </Button>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+                <Button Text="Simpan" Command="{Binding SaveCommand}" Style="{StaticResource okButton}"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

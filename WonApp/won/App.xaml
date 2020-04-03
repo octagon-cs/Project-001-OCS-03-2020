@@ -15,6 +15,26 @@
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
 
+            <Style x:Key="dataTitle" TargetType="Label">
+                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="TextColor" Value="LightGray"/>
+            </Style>
+            <Style x:Key="dataValue" TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="13"/>
+            </Style>
+
+            <Style x:Key="entryStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+
+            <Style x:Key="okButton" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="Orange"/>
+                <Setter Property="HeightRequest" Value="45"/>
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+
             <OnPlatform x:Key="IcoFont" x:TypeArguments="x:String">
                 <On Platform="Android" Value="icofont.ttf#IcoFont" />
             </OnPlatform>

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using System.Linq;
+using Newtonsoft.Json.Linq;
 
 namespace won.Models
 {
@@ -11,6 +12,7 @@ namespace won.Models
 
         private int idPermohonan;
         private int idPenduduk;
+        private int idJenisPermohonan;
         private DateTime tanggalPengajuan;
 
         [JsonProperty("idpermohonan")]
@@ -19,6 +21,17 @@ namespace won.Models
             get { return idPermohonan; }
             set { SetProperty(ref idPermohonan, value); }
         }
+
+        [JsonProperty("idjenispermohonan")]
+        public int IdJenisPermohonan
+        {
+            get { return idJenisPermohonan; }
+            set { idJenisPermohonan = value; }
+        }
+
+
+        [JsonProperty("idpejabat")]
+        public int IdPejabat { get;  set; }
 
 
         [JsonProperty("idpenduduk")]
@@ -53,7 +66,7 @@ namespace won.Models
 
 
         [JsonProperty("data")]
-        public dynamic Data { get; set; }
+        public JObject Data { get; set; }
 
 
 
@@ -150,7 +163,6 @@ namespace won.Models
             get { return progressColor; }
             set { SetProperty(ref progressColor ,value); }
         }
-
 
     }
 }

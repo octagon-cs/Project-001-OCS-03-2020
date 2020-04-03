@@ -15,8 +15,8 @@ namespace won
     {
         public static UserAccount Account { get;  set; }
         public static ObservableCollection<PermohonanModel> Permohonan { get; set; } = new ObservableCollection<PermohonanModel>();
-        public static string Url { get; set; } = "http://192.168.1.6:3000/";
-        public static JObject Profile { get;  set; }
+        public static string Url { get; set; } = "http://192.168.1.5:3000/";
+        public static Penduduk Profile { get;  set; }
 
         public async static void ChangeMainPage(Page page)
         {
@@ -42,6 +42,16 @@ namespace won
             {
                 var mainPage = app.MainPage as MainPage;
                 await mainPage.Detail.Navigation.PopAsync();
+            }
+        }
+
+
+        public async static void ShowModal(Page page)
+        {
+            if (await Task.FromResult(Application.Current) is App app)
+            {
+                var mainPage = app.MainPage as MainPage;
+                await mainPage.Detail.Navigation.PushModalAsync(page);
             }
         }
 

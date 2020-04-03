@@ -29,7 +29,7 @@
                     <Label Margin="5,20,0,0" Text="Confirm Password"/>
                     <Entry Placeholder="" Text="{Binding Model.ConfirmPassword}"/>
 
-                    <Button Margin="5,20,0,0" Text="Register" HeightRequest="60" Command="{Binding RegisterCommand}"/>
+                    <Button  Text="Register" Style="{StaticResource okButton}" Command="{Binding RegisterCommand}"/>
                 </StackLayout>
             </ScrollView>
             <StackLayout Grid.Row="1" VerticalOptions="EndAndExpand">

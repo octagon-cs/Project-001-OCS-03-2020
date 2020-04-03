@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,7 +44,7 @@ namespace won.Views.SuratPermohonan
                     return;
 
                 IsBusy = true;
-                var permohonan = new PermohonanModel() { TanggalPengajuan = DateTime.Now, Data = Model, Status = StatusPersetujuan.Baru };
+                var permohonan = new PermohonanModel() { TanggalPengajuan = DateTime.Now, Data = JObject.FromObject(Model), Status = StatusPersetujuan.Baru };
                 var result = await PermohonanService.Create(permohonan);
                 if (result != null)
                 {

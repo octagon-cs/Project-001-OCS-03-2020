@@ -22,6 +22,8 @@ namespace won.Views
             {
                 new HomeMenuItem {Id = MenuItemType.Home, Title="Home" },
                 new HomeMenuItem {Id = MenuItemType.JenisPermohonan, Title="Jenis Permohonan" } ,
+                new HomeMenuItem {Id = MenuItemType.Profile, Title="Profile" },
+                new HomeMenuItem {Id = MenuItemType.Document, Title="Dokumen" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" }
             };
 

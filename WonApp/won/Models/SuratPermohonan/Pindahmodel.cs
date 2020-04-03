@@ -7,7 +7,6 @@ namespace won.Models.SuratPermohonan
 {
     public class PindahModel : BaseNotify
     {
-
         private string nik;
 
         [JsonProperty("nik")]
@@ -22,31 +21,14 @@ namespace won.Models.SuratPermohonan
 
         private string _Nama;
 
-
         [JsonProperty("nama")]
         public string Nama
         {
             get { return _Nama; }
             set { SetProperty(ref _Nama, value); }
         }
-        private string _TempatLahir;
 
-
-        [JsonProperty("tempatlahir")]
-        public string TempatLahir
-        {
-            get { return _TempatLahir; }
-            set { SetProperty(ref _TempatLahir, value); }
-        }
-        private DateTime _TanggalLahir;
-
-
-        [JsonProperty("tanggallahir")]
-        public DateTime TanggalLahir
-        {
-            get { return _TanggalLahir; }
-            set { SetProperty(ref _TanggalLahir, value); }
-        }
+     
         private DateTime _TanggalPindah;
 
 
@@ -88,7 +70,7 @@ namespace won.Models.SuratPermohonan
         private bool Validation()
         {
             var valid = true;
-            if (string.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(Nama) || string.IsNullOrEmpty(TempatLahir) || TanggalLahir == new DateTime() ||
+            if (string.IsNullOrEmpty(NIK) || string.IsNullOrEmpty(Nama) ||
                 TanggalPindah == new DateTime() || string.IsNullOrEmpty(KeteranganPindah) || string.IsNullOrEmpty(PindahKe))
             {
                 valid = false;

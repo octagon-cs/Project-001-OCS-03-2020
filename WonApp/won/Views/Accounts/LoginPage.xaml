@@ -17,12 +17,12 @@
                 <Image Source="logowon.png" HorizontalOptions="Center" VerticalOptions="EndAndExpand" WidthRequest="100" HeightRequest="100"/>
             </StackLayout>
             <StackLayout  Margin="60,40" Grid.Row="1">
-                <Label Margin="5,40,0,0" Text="User Name"/>
-                <Entry Placeholder="User Name" Text="{Binding Model.UserName}"  />
-                <Label Margin="5,20,0,0" Text="Password" />
-                <Entry Placeholder="Password" Text="{Binding Model.Password}"/>
+                <Label Margin="5,40,0,0" Text="User Name" Style="{StaticResource dataTitle}"/>
+                <Entry Placeholder="User Name" Text="{Binding Model.UserName}"  Style="{StaticResource entryStyle}" />
+                <Label Margin="5,20,0,0" Text="Password"  Style="{StaticResource dataTitle}"/>
+                <Entry Placeholder="Password" Text="{Binding Model.Password}" Style="{StaticResource entryStyle}" IsPassword="True"/>
                 <Label FontSize="Small" TextColor="OrangeRed" Text="{Binding Model.ErrorMessage}"/>
-                <Button Margin="5,5" Text="Login" HeightRequest="60" Command="{Binding LoginCommand}"/>
+                <Button Style="{StaticResource okButton}" Text="Login"  Command="{Binding LoginCommand}" />
                 <Label FontSize="Small" TextColor="LightBlue" Text="Lupa Password">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}"/>
@@ -34,11 +34,11 @@
                         <TapGestureRecognizer Command="{Binding RegistrasiCommand}"/>
                     </Label.GestureRecognizers>
                 </Label>
-                <Entry VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center" Text="{Binding Model.URL}"/>
+                <Entry Style="{StaticResource entryStyle}" VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center" Text="{Binding URL}"/>
 
             </StackLayout>
             <StackLayout Grid.Row="2">
-                <Label FontSize="Micro" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Text="Power By Octagon Cendrawasih Solution"/>
+                <Label Style="{StaticResource dataTitle}" FontSize="Micro" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Text="Power By Octagon Cendrawasih Solution"/>
             </StackLayout>
         </Grid>
 

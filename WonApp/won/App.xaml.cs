@@ -33,6 +33,8 @@ namespace won
             DependencyService.Register<AccountService>();
             DependencyService.Register<JenisPermohonanService>();
             DependencyService.Register<PermohonanService>();
+            DependencyService.Register<PejabatService>();
+            DependencyService.Register<DocumentPendudukService>();
 
 
             MainPage = new NavigationPage(new LoginPage());

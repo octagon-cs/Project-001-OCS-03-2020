@@ -8,7 +8,9 @@ namespace won.Models
     {
         Home,
         About,
-        JenisPermohonan
+        JenisPermohonan,
+        Profile,
+        Document
     }
     public class HomeMenuItem
     {

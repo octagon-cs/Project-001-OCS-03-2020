@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="won.Views.ProfileView">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+          
+            <Image Source="bg.jpg" Grid.RowSpan="2" Aspect="AspectFill"/>
+            <Image Source="logowon.png" x:Name="photo" HeightRequest="75" Margin="20"  
+                   WidthRequest="75" HorizontalOptions="Center" Grid.Row="0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <ScrollView  Grid.Row="1" Padding="10">
+                <StackLayout >
+                    <Label Text="Biodata" TextColor="White" FontSize="Large"/>
+                    <BoxView BackgroundColor="White" HeightRequest="1"></BoxView>
+                    <StackLayout Margin="10" Orientation="Horizontal">
+                        <StackLayout>
+                            <Label  Style="{StaticResource dataTitle}" Text="Nama"/>
+                            <Label Text="{Binding nama}"  Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1"  HorizontalOptions="EndAndExpand">
+                            <Label HorizontalOptions="End" Text="Jenis Kelamin" Style="{StaticResource dataTitle}"/>
+                            <Label HorizontalOptions="End" Text="{Binding jeniskelamin}" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+
+                    </StackLayout> 
+                    <StackLayout Margin="10" Orientation="Horizontal">
+                        <StackLayout>
+                            <Label Text="NIK" Style="{StaticResource dataTitle}"/>
+                            <Label Text="{Binding nik}" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" HorizontalOptions="EndAndExpand">
+                            <Label HorizontalOptions="End" Text="NKK" Style="{StaticResource dataTitle}"/>
+                            <Label HorizontalOptions="End" Text="{Binding nkk}" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Margin="10" Orientation="Horizontal">
+                        <StackLayout>
+                            <Label Text="Status Dalam Keluarga" Style="{StaticResource dataTitle}"/>
+                            <Label Text="{Binding statusdalamkeluarga}" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" HorizontalOptions="EndAndExpand">
+                            <Label HorizontalOptions="End" Text="Agama" Style="{StaticResource dataTitle}"/>
+                            <Label HorizontalOptions="End" Text="{Binding agama}" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                    </StackLayout>
+                   
+                    <StackLayout Margin="10" Orientation="Horizontal">
+                        <StackLayout>
+                            <Label  Text="Status Perkawinan" Style="{StaticResource dataTitle}"/>
+                            <Label Text="{Binding statusperkawinan }" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" HorizontalOptions="EndAndExpand">
+                            <Label HorizontalOptions="End" Text="Golongan Darah" Style="{StaticResource dataTitle}"/>
+                            <Label HorizontalOptions="End" Text="{Binding golongandarah }" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Margin="10" Orientation="Horizontal">
+                        <StackLayout>
+                            <Label Text="Pekerjaan" Style="{StaticResource dataTitle}"/>
+                            <Label Text="{Binding pekerjaan}" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" HorizontalOptions="EndAndExpand">
+                            <Label HorizontalOptions="End" Text="Pendidikan" Style="{StaticResource dataTitle}"/>
+                            <Label HorizontalOptions="End" Text="{Binding pendidikanterakhir  }" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                    </StackLayout>
+
+
+                    <Label Text="Data Alamat" TextColor="White" FontSize="Large"/>
+                    <BoxView BackgroundColor="White" HeightRequest="1"></BoxView>
+                    <StackLayout Margin="10" >
+                        <Label Text="Alamat Rumah" Style="{StaticResource dataTitle}"/>
+                        <Label Text="{Binding alamatlangkap }" Style="{StaticResource dataValue}"/>
+                    </StackLayout>
+                    <StackLayout Margin="10" Orientation="Horizontal">
+                        <StackLayout>
+                            <Label Text="Email" Style="{StaticResource dataTitle}"/>
+                            <Label Text="{Binding email}" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" HorizontalOptions="EndAndExpand">
+                            <Label Text="Kode Pos" Style="{StaticResource dataTitle}"/>
+                            <Label Text="{Binding kodepos}" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Margin="10" Orientation="Horizontal">
+                        <StackLayout>
+                            <Label Text="Telp/Hp" Style="{StaticResource dataTitle}"/>
+                            <Label Text="{Binding kontakhp }" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" HorizontalOptions="EndAndExpand">
+                            <Label Text="Kewarganegaraan" Style="{StaticResource dataTitle}"/>
+                            <Label Text="{Binding kewarganegawaan }" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Margin="10" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                 <ColumnDefinition />
+                                 <ColumnDefinition />
+                                 <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout>
+                                <Label Text="Dusun" Style="{StaticResource dataTitle}"/>
+                                <Label Text="{Binding dusun}" Style="{StaticResource dataValue}"/>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand">
+                                <Label Text="RT" Style="{StaticResource dataTitle}"/>
+                                <Label Text="{Binding rt}" Style="{StaticResource dataValue}"/>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" HorizontalOptions="EndAndExpand">
+                                <Label Text="RW" Style="{StaticResource dataTitle}"/>
+                                <Label Text="{Binding rw}" Style="{StaticResource dataValue}"/>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <Label Text="Lain-Lain" Margin="0,20,0,0" TextColor="White" FontSize="Large"/>
+                    <BoxView BackgroundColor="White" HeightRequest="1"></BoxView>
+                    <StackLayout Margin="10" Orientation="Horizontal">
+                        <StackLayout>
+                            <Label Text="Nama Ayah" Style="{StaticResource dataTitle}"/>
+                            <Label Text="{Binding namaayah}" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" HorizontalOptions="EndAndExpand">
+                            <Label Text="Nama Ibu" Style="{StaticResource dataTitle}"/>
+                            <Label Text="{Binding namaibu}" Style="{StaticResource dataValue}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

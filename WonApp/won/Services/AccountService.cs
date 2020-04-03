@@ -56,7 +56,7 @@ namespace won.Services
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
-                        JObject rss = JObject.Parse(content);
+                        Penduduk rss = JsonConvert.DeserializeObject<Penduduk>(content);
                         Helper.Profile = rss;
                         return true;
                     }

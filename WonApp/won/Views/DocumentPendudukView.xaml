@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" Title="Jenis Permohonan"
-             x:Class="won.Views.JenisPermohonanPage">
+             xmlns:converter="clr-namespace:won"
+             mc:Ignorable="d"
+             x:Class="won.Views.DocumentPendudukView">
     <ContentPage.Content>
-
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -34,17 +34,17 @@
                                 </Grid.ColumnDefinitions>
                                 <StackLayout Grid.ColumnSpan="2" Margin="0,2" ></StackLayout>
                                 <StackLayout Padding="10,20" >
-                                    <Label  Text="{Binding Nama}" TextColor="White" FontSize="Default"/>
+                                    <Label  Text="{Binding nama}" TextColor="White" FontSize="Default"/>
                                 </StackLayout>
                                 <StackLayout Padding="10,20" Grid.Column="1" HorizontalOptions="End" Orientation="Horizontal">
-                                    <Label Text="&#xed13;" FontSize="Title" TextColor="Orange" FontFamily="{StaticResource IcoFont}">
+                                    <Label IsVisible="{Binding HasFile}" Text="&#xed13;" FontSize="Title" TextColor="Lime" FontFamily="{StaticResource IcoFont}">
                                         <Label.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding DetailCommand}"/>
+                                            <TapGestureRecognizer Tapped="detailAction" CommandParameter="{Binding .}"/>
                                         </Label.GestureRecognizers>
                                     </Label>
-                                    <Label Text="&#xefc0;" FontSize="Title" TextColor="Lime" FontFamily="{StaticResource IcoFont}">
+                                    <Label IsVisible="{Binding HasFile, Converter={converter:InverseBoolConverter}}" Text="&#xeee7;" FontSize="Title" TextColor="Orange" FontFamily="{StaticResource IcoFont}">
                                         <Label.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding BuatPermohonanCommand}"/>
+                                            <TapGestureRecognizer Tapped="uploadAction" CommandParameter="{Binding .}"/>
                                         </Label.GestureRecognizers>
                                     </Label>
                                 </StackLayout>
@@ -54,6 +54,5 @@
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
-      
     </ContentPage.Content>
 </ContentPage>

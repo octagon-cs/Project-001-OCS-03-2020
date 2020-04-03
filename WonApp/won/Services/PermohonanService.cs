@@ -115,5 +115,79 @@ namespace won.Services
             }
         }
 
+        public async Task<PermohonanModel> Put(PermohonanModel item)
+        {
+            try
+            {
+                using (var service = new RestService())
+                {
+                    var response = await service.PutAsync($"/api/{controller}", service.GenerateHttpContent(item));
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var content = await response.Content.ReadAsStringAsync();
+                        var result = JsonConvert.DeserializeObject<PermohonanModel>(content);
+                        return result;
+                    }
+                    else
+                    {
+                        throw new SystemException(await service.Error(response));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new SystemException(ex.Message);
+            }
+        }
+
+        public async Task<PermohonanModel> PostPersyaratan(int id, Persyaratan item)
+        {
+            try
+            {
+                using (var service = new RestService())
+                {
+                    var response = await service.PostAsync($"/api/{controller}/persyaratan", service.GenerateHttpContent(item));
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var content = await response.Content.ReadAsStringAsync();
+                        var result = JsonConvert.DeserializeObject<PermohonanModel>(content);
+                        return result;
+                    }
+                    else
+                    {
+                        throw new SystemException(await service.Error(response));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new SystemException(ex.Message);
+            }
+        }
+
+        public async Task<bool> DeletePersyaratan(int id)
+        {
+            try
+            {
+                using (var service = new RestService())
+                {
+                    var response = await service.DeleteAsync($"/api/{controller}/persyaratan/{id}");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var content = await response.Content.ReadAsStringAsync();
+                        var result = JsonConvert.DeserializeObject<bool>(content);
+                        return result;
+                    }
+                    else
+                    {
+                        throw new SystemException(await service.Error(response));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new SystemException(ex.Message);
+            }
+        }
     }
 }

@@ -8,6 +8,8 @@ using Android.Support.V4.App;
 using Android.Content;
 using Xamarin.Forms.Platform.Android;
 using Android.Views;
+using Plugin.CurrentActivity;
+using Plugin.FilePicker;
 
 namespace won.Droid
 {
@@ -30,6 +32,8 @@ namespace won.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
+          
             Instance = this;
 
             Firebase.Messaging.FirebaseMessaging.Instance.SubscribeToTopic("all");

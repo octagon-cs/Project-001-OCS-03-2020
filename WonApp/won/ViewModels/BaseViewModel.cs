@@ -27,6 +27,8 @@ namespace won.ViewModels
         public IAccountService AccountService => DependencyService.Get<IAccountService>();
         public IPermohonanService<PermohonanModel> PermohonanService => DependencyService.Get<IPermohonanService<PermohonanModel>>();
         public IJenisPermohonanService<JenisPermohonanModel> JenisPermohonan => DependencyService.Get<IJenisPermohonanService<JenisPermohonanModel>>();
+        public IPejabatService<PejabatModel> Pejabat => DependencyService.Get<IPejabatService<PejabatModel>>();
+        public IDocumentService DocumentPenduduk => DependencyService.Get<IDocumentService>();
 
         bool isBusy = false;
         public bool IsBusy

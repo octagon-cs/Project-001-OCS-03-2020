@@ -36,8 +36,14 @@ namespace won.Views
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
+                    case (int)MenuItemType.Profile:
+                        MenuPages.Add(id, new NavigationPage(new ProfileView()));
+                        break;
                     case (int)MenuItemType.JenisPermohonan:
                         MenuPages.Add(id, new NavigationPage(new JenisPermohonanPage()));
+                        break; 
+                    case (int)MenuItemType.Document:
+                        MenuPages.Add(id, new NavigationPage(new DocumentPendudukView()));
                         break;
                 }
             }

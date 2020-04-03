@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using won.Views;
 using Xamarin.Forms;
 
 namespace won.Models
@@ -45,7 +46,7 @@ namespace won.Models
 
         public string Deskripsi { get; set; }
 
-        public List<string> Persyaratan { get; set; }
+        public List<Persyaratan> Persyaratan { get; set; }
 
 
         [JsonIgnore]
@@ -61,12 +62,17 @@ namespace won.Models
 
         private void DetailAction(object obj)
         {
+            var vm = new InfopersyaratanViewModel(Deskripsi, Persyaratan);
+            var page = new Infopersyaratan();
+            page.BindingContext =vm;
+            Helper.ShowModal(page);
+/*
             MessagingCenter.Send(new MessagingCenterAlert
             {
                 Title = "Deskripsi",
                 Message = Deskripsi,
                 Cancel = "OK"
-            }, "message");
+            }, "message");*/
         }
 
         private void CreateAction(object obj)
