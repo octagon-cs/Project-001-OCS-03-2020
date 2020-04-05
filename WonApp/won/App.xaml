@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:rendered="clr-namespace:won.Rendered;assembly=won"
              mc:Ignorable="d"
              x:Class="won.App">
 
@@ -15,29 +16,77 @@
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
 
+            <OnPlatform x:Key="IcoFont" x:TypeArguments="x:String">
+                <On Platform="Android" Value="icofont.ttf#IcoFont" />
+            </OnPlatform>
+
+            <Style TargetType="rendered:EntryCustom">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="PlaceholderColor" Value="LightGray"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="25"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="BorderColor" Value="#3498db"/>
+                <Setter Property="Padding" Value="20,15"/>
+            </Style>
+            <Style TargetType="rendered:EditorCustom">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="HeightRequest" Value="75"/>
+                <Setter Property="PlaceholderColor" Value="LightGray"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="25"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="BorderColor" Value="#3498db"/>
+                <Setter Property="Padding" Value="20,15"/>
+            </Style>
+            <Style TargetType="rendered:PickerCustom">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="25"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="BorderColor" Value="#3498db"/>
+                <Setter Property="Padding" Value="20,15"/>
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="PlaceholderColor" Value="LightGray"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+
+            <Style TargetType="Editor">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="PlaceholderColor" Value="LightGray"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+
+            <Style TargetType="DatePicker">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+
+
             <Style x:Key="dataTitle" TargetType="Label">
                 <Setter Property="FontSize" Value="Micro"/>
                 <Setter Property="TextColor" Value="LightGray"/>
             </Style>
             <Style x:Key="dataValue" TargetType="Label">
                 <Setter Property="TextColor" Value="White"/>
-                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="FontSize" Value="14"/>
             </Style>
 
-            <Style x:Key="entryStyle" TargetType="Entry">
-                <Setter Property="TextColor" Value="White"/>
-            </Style>
+           
 
             <Style x:Key="okButton" TargetType="Button">
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="BackgroundColor" Value="Orange"/>
                 <Setter Property="HeightRequest" Value="45"/>
                 <Setter Property="Margin" Value="10"/>
+                <Setter Property="CornerRadius" Value="25"/>
             </Style>
 
-            <OnPlatform x:Key="IcoFont" x:TypeArguments="x:String">
-                <On Platform="Android" Value="icofont.ttf#IcoFont" />
-            </OnPlatform>
+          
         </ResourceDictionary>
     </Application.Resources>
     

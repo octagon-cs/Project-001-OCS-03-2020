@@ -75,9 +75,10 @@ namespace won.Models
             }, "message");*/
         }
 
+
         private void CreateAction(object obj)
         {
-            Page page=null;
+            OcphPage page = null;
             switch (JenisPermohonan)
             {
                 case PermohonanType.Pengantar_KTP:
@@ -110,7 +111,7 @@ namespace won.Models
                     page = new Views.SuratPermohonan.KtpPage();
                     break;
                 case PermohonanType.Keterangan_Nikah:
-                    page = new Views.SuratPermohonan.SudahmenikahPage();
+                    page = new Views.SuratPermohonan.KetnikahPage();
                     break;
                 case PermohonanType.Kelahiran:
                     page = new Views.SuratPermohonan.KelahiranPage();
@@ -142,7 +143,10 @@ namespace won.Models
                     Cancel = "OK"
                 }, "message");
             }else
+            {
+                page.Create(); 
                 Helper.GoPage(page);
+            }
         }
     }
 

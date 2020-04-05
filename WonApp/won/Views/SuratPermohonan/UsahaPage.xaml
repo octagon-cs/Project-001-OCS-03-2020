@@ -1,44 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<local:OcphPage  xmlns:local="clr-namespace:won" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" Title="Keterangan Usaha"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:rendered="clr-namespace:won.Rendered"
+                 mc:Ignorable="d" Title="Keterangan Usaha"
              x:Class="won.Views.SuratPermohonan.UsahaPage">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Margin="20">
-                <Label Text="NIK"    Margin="0,20,0,0"/>
-                <Entry Placeholder="NIK" Text="{Binding Model.NIK}"></Entry>
-                <Label Text="Nama"   Margin="0,20,0,0" />
-                <Entry Placeholder="Nama" Text="{Binding Model.Nama}"></Entry>
-                <Label Text="No. Surat"  Margin="0,20,0,0" />
-                <Entry Placeholder="No. Surat" Text="{Binding Model.NoSurat}"></Entry>
-                <!-- <Label Text="Footer Cetak Data"  Margin="0,20,0,0" />
-                <Entry Placeholder="Footer Cetak Data" Text="{Binding Model.FootCetak}"></Entry> -->
-                <Label Text="Nama Usaha"  Margin="0,20,0,0" />
-                <Entry Placeholder="Nama Usaha" Text="{Binding Model.NamaUsaha}"></Entry>
-                <Label Text="Jenis Usaha"  Margin="0,20,0,0" />
-                <Entry Placeholder="Jenis Usaha" Text="{Binding Model.JenisUsaha}"></Entry>
-                <Label Text="Lamanya Usaha"  Margin="0,20,0,0" />
-                <Entry Placeholder="Lamanya Usaha" Text="{Binding Model.LamanyaUsaha}"></Entry>
-                <Label Text="Alamat Usaha"  Margin="0,20,0,0" />
-                <Entry Placeholder="Alamat Usaha" Text="{Binding Model.AlamatUsaha}"></Entry>
-                <Label Text="Berlaku Sejak Tanggal"  Margin="0,20,0,0" />
-                <Entry Placeholder="Berlaku Sejak Tanggal" Text="{Binding Model.BerlakuSejakTanggal}"></Entry>
-                <Label Text="Sampai Dengan Tanggal"  Margin="0,20,0,0" />
-                <Entry Placeholder="Sampai Dengan Tanggal" Text="{Binding Model.SampaiDenganTanggal}"></Entry>
-                <!-- <Label Text="Judul Atas Nama"   Margin="0,20,0,0"/>
-                <Entry Placeholder="Judul Atas Nama" Text="{Binding Model.JudulNama}"></Entry>
-                <Label Text="Jabatan Atas Nama"  Margin="0,20,0,0" />
-                <Entry Placeholder="Jabatan Atas Nama" Text="{Binding Model.JabatanNama}"></Entry>
-                <Label Text="Nama Atas Nama"   Margin="0,20,0,0"/>
-                <Entry Placeholder="Nama Atas Nama" Text="{Binding Model.AtasNama}"></Entry>
-                <Label Text="NIP/NIAP Atas Nama" Margin="0,20,0,0"  />
-                <Entry Placeholder="NIP/NIAP Atas Nama" Text="{Binding Model.NIPNama}"></Entry> -->
-                <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
-
-            </StackLayout>
-        </ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Image Source="bg.jpg" Grid.RowSpan="2" Aspect="AspectFill"/>
+            <ScrollView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Margin="20">
+                        <Label Text="NIK"    Margin="0,20,0,0"/>
+                        <rendered:EntryCustom Placeholder="NIK" Text="{Binding Model.NIK}"/>
+                        <Label Text="Nama"   Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="Nama" Text="{Binding Model.Nama}"/>
+                        <Label Text="No. Surat"  Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="No. Surat" Text="{Binding Model.NoSurat}"/>
+                        <Label Text="Nama Usaha"  Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="Nama Usaha" Text="{Binding Model.NamaUsaha}"/>
+                        <Label Text="Jenis Usaha"  Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="Jenis Usaha" Text="{Binding Model.JenisUsaha}"/>
+                        <Label Text="Lamanya Usaha"  Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="Lamanya Usaha" Text="{Binding Model.LamanyaUsaha}"/>
+                        <Label Text="Alamat Usaha"  Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="Alamat Usaha" Text="{Binding Model.AlamatUsaha}"/>
+                        <Label Text="Berlaku Sejak Tanggal"  Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="Berlaku Sejak Tanggal" Text="{Binding Model.BerlakuSejakTanggal}"/>
+                        <Label Text="Sampai Dengan Tanggal"  Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="Sampai Dengan Tanggal" Text="{Binding Model.SampaiDenganTanggal}"/>
+                    </StackLayout>
+                    <StackLayout Margin="20,5,0,0" Grid.Row="1" >
+                        <Label Style="{StaticResource dataTitle}" Text="Persyaratan" FontSize="17"  Margin="0,30,0,0" />
+                        <ListView HeightRequest="200" ItemsSource="{Binding Persyaratan}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal" Padding="10">
+                                            <Label Style="{StaticResource dataValue}" Text="{Binding nama}" VerticalOptions="Center"/>
+                                            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                                <CheckBox IsVisible="{Binding HasFile}" IsChecked="{Binding HasFile}" IsEnabled="False" />
+                                                <Label IsVisible="{Binding HasFile, Converter={local:InverseBoolConverter}}" Text="&#xeee7;" FontSize="Title" TextColor="Orange" FontFamily="{StaticResource IcoFont}">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="uploadAction" CommandParameter="{Binding .}"/>
+                                                    </Label.GestureRecognizers>
+                                                </Label>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Grid>
+            </ScrollView>
+            <Button Grid.Row="1" Text="Simpan" Command="{Binding SaveCommand}" Style="{StaticResource okButton}"/>
+        </Grid>
     </ContentPage.Content>
-</ContentPage>
+</local:OcphPage>

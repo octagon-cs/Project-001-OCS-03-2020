@@ -13,7 +13,19 @@ namespace won
 
     public class BaseNotify : INotifyPropertyChanged
     {
-        
+        private string nik;
+
+        [JsonProperty("nik")]
+        public string NIK
+        {
+            get { return nik; }
+            set
+            {
+                SetProperty(ref nik, value);
+            }
+        }
+
+
         [JsonIgnore]
         public virtual bool Valid { get; }
 

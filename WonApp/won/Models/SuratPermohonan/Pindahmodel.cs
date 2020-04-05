@@ -7,18 +7,7 @@ namespace won.Models.SuratPermohonan
 {
     public class PindahModel : BaseNotify
     {
-        private string nik;
-
-        [JsonProperty("nik")]
-        public string NIK
-        {
-            get { return nik; }
-            set
-            {
-               SetProperty(ref nik, value);
-            }
-        }
-
+      
         private string _Nama;
 
         [JsonProperty("nama")]

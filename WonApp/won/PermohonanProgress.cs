@@ -98,16 +98,16 @@ namespace won.Models
             switch (item.Status)
             {
                 case StatusPersetujuan.Dikembalikan:
-                    ColorStatus=Color.FromHex("#F67B1C");
+                    ColorStatus=Color.Orange;
                     break;
                 case StatusPersetujuan.Disetujui:
-                    ColorStatus=Color.FromHex("#857A7A");
+                    ColorStatus=Color.LightGray;
                     break; 
                 case StatusPersetujuan.Ditolak:
-                ColorStatus=Color.FromHex("#D23106");
+                    ColorStatus = Color.Red;
                     break;
                 case StatusPersetujuan.Selesai:
-                    ColorStatus=Color.FromHex("#0B9567");
+                    ColorStatus = Color.Lime;
                     break;
                 default:
                      ColorStatus=Color.White;

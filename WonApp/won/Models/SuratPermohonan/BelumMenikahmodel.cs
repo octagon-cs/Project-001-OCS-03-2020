@@ -44,11 +44,11 @@ namespace won.Models.SuratPermohonan
             get { return _TanggalSuratPengantar; }
             set { SetProperty(ref _TanggalSuratPengantar, value); }
         }
-        private int _NIK;
+        private string _NIK;
 
 
         [JsonProperty("nik")]
-        public int NIK
+        public string NIK
         {
             get { return _NIK; }
             set { SetProperty(ref _NIK, value); }
@@ -85,7 +85,7 @@ namespace won.Models.SuratPermohonan
         private bool Validation()
         {
             var valid = true;
-            if (string.IsNullOrEmpty(NoSurat) || Rt<=0 || NomorSuratPengantar<=0 || TanggalSuratPengantar==new DateTime() || NIK<=0 || string.IsNullOrEmpty(Nama))
+            if (string.IsNullOrEmpty(NoSurat) || Rt<=0 || NomorSuratPengantar<=0 || TanggalSuratPengantar==new DateTime() || string.IsNullOrEmpty( NIK)|| string.IsNullOrEmpty(Nama))
             {
                 valid = false;
                 ErrorMessage = "Data Tidak Boleh Kosong";

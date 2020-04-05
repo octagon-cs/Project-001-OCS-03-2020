@@ -124,7 +124,7 @@ namespace won.Models
                         var lastIndex = (int)lastPersetujuan.Role;
                         if (lastPersetujuan.Status == StatusPersetujuan.Selesai)
                         {
-                            ProgressColor = Color.FromHex("#0B9567");
+                            ProgressColor = Color.Lime;
                             return 1;
                         }
                         else if (lastPersetujuan.Status == StatusPersetujuan.Ditolak)
@@ -140,9 +140,9 @@ namespace won.Models
                             if (lastValue <= 0.25)
                                 ProgressColor = Color.White;
                             else if (lastValue <= 0.75)
-                                ProgressColor = Color.FromHex("#F67B1C");
+                                ProgressColor = Color.LightSlateGray;
                             else if (lastValue <= 1)
-                                ProgressColor = Color.FromHex("#0B9567");
+                                ProgressColor = Color.Orange;
                             return lastValue;
                         }
                     }

@@ -6,7 +6,6 @@
              mc:Ignorable="d" HeightRequest="300"
              x:Class="won.Views.Infopersyaratan">
     <ContentPage.Content>
-
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -15,17 +14,13 @@
             </Grid.RowDefinitions>
             <Image Grid.RowSpan="3" Source="bg.jpg" Aspect="AspectFill"/>
             <StackLayout Margin="10">
-                <Label FontSize="Title" Margin="0,20" TextColor="DarkOrange" Text="Deskripsi Dan Persyaratan"></Label>
-                <Label FontSize="Large" Text="Deskripsi"></Label>
-                <Label Text="{Binding Deskripsi}"></Label>
-                <Label FontSize="Large" Text="Persyaratan" Margin="0,30,0,0"></Label>
+                <Label FontSize="Title" Margin="0,20" TextColor="Orange" Text="Deskripsi Dan Persyaratan"></Label>
+                <Label FontSize="Large" Style="{StaticResource dataTitle}" Text="Deskripsi"></Label>
+                <Label Style="{StaticResource dataValue}" Text="{Binding Deskripsi}"></Label>
+                <Label Style="{StaticResource dataTitle}" FontSize="Large" Text="Persyaratan" Margin="0,30,0,0"></Label>
             </StackLayout>
             <ListView Grid.Row="1" Margin="10,0,10,0" x:Name="ItemsListView" BackgroundColor="Transparent" 
-                            ItemsSource="{Binding Persyaratan}" 
-                              HasUnevenRows="True" SelectionMode="None"
-                            RefreshCommand="{Binding LoadItemsCommand}"
-                            IsPullToRefreshEnabled="true"
-                            IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+                            ItemsSource="{Binding Persyaratan}" >
                 <d:ListView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Ini adalah Persyaratan Nomor Satu yang salallu adalah akan di harapkan turun dan tidak</x:String>
@@ -40,10 +35,10 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
-                                <StackLayout Grid.ColumnSpan="2" Margin="0,2"  BackgroundColor="BlueViolet" Opacity="0.1"></StackLayout>
+                                <StackLayout Grid.ColumnSpan="2" Margin="10,2"  ></StackLayout>
                                 <StackLayout Padding="10,10" >
-                                    <Label  Text="{Binding Nama}" FontSize="Default"/>
-                                    <Label Margin="10" Text="{Binding Deskripsi}" FontSize="Default"/>
+                                    <Label  Text="{Binding Nama}" Style="{StaticResource dataValue}" FontSize="Default"/>
+                                    <Label Style="{StaticResource dataTitle}" Margin="10" Text="{Binding Deskripsi}" FontSize="Default"/>
                                 </StackLayout>
                             </Grid>
                         </ViewCell>
@@ -52,6 +47,5 @@
             </ListView>
             <Button Grid.Row="2" TextColor="DeepPink" BackgroundColor="Transparent" Clicked="Button_Clicked" WidthRequest="100" HorizontalOptions="End" Margin="10" Text="OK"></Button>
         </Grid>
-
     </ContentPage.Content>
 </ContentPage>

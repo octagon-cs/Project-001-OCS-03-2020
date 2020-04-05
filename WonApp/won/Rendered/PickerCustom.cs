@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace won.Rendered
 {
-   public class EntryCustom:Entry
+   public class PickerCustom:Picker
     {
         public int CornerRadius
         {

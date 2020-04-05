@@ -11,6 +11,36 @@ namespace won.Services
 {
     public class AccountService : IAccountService
     {
+        private List<Penduduk> anggotaKeluarga;
+        public async Task<List<Penduduk>> GetAnggotakeluarga()
+        {
+            try
+            {
+                if (anggotaKeluarga == null)
+                {
+                    using (var service = new RestService())
+                    {
+                        var response = await service.GetAsync("/api/penduduk/bynkk/"+Helper.Profile.nkk);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var content = await response.Content.ReadAsStringAsync();
+                            anggotaKeluarga = JsonConvert.DeserializeObject<List<Penduduk>>(content);
+                        }
+                        else
+                        {
+                            throw new SystemException(await service.Error(response));
+                        }
+                    }
+                }
+
+                return anggotaKeluarga;
+            }
+            catch (Exception ex)
+            {
+                throw new SystemException(ex.Message);
+            }
+        }
+
         public async Task<bool> Login(LoginModel model)
         {
             try

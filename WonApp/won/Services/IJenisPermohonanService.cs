@@ -18,13 +18,13 @@ namespace won.Services
     public class JenisPermohonanService : IJenisPermohonanService<JenisPermohonanModel>
     {
 
-        private List<JenisPermohonanModel> items = new List<JenisPermohonanModel>();
+        private List<JenisPermohonanModel> items;
 
         private bool instance;
 
         public async Task<List<JenisPermohonanModel>> Get()
         {
-            if (instance)
+            if (instance && items!=null )
             {
                 return items;
             }

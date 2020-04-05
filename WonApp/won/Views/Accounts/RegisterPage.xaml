@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:rendered="clr-namespace:won.Rendered"
              mc:Ignorable="d" Title="Registrasi"
              x:Class="won.Views.Accounts.RegisterPage">
     <ContentPage.Content>
@@ -15,19 +15,19 @@
             <ScrollView Margin="20,20" Grid.Row="0">
                 <StackLayout>
                     <Label Margin="5,40,0,0" Text="NIK"/>
-                    <Entry Text="{Binding Model.NIK}"  Placeholder=""/>
+                    <rendered:EntryCustom Text="{Binding Model.NIK}"  Placeholder=""/>
 
                     <Label Margin="5,20,0,0" Text="NKK"/>
-                    <Entry Text="{Binding Model.NKK}" Placeholder=""/>
+                    <rendered:EntryCustom Text="{Binding Model.NKK}" Placeholder=""/>
 
                     <Label Margin="5,20,0,0" Text="Email"/>
-                    <Entry Placeholder="" Text="{Binding Model.Email}"/>
+                    <rendered:EntryCustom Placeholder="" Text="{Binding Model.Email}"/>
 
                     <Label Margin="5,20,0,0" Text="Password"/>
-                    <Entry Placeholder="" Text="{Binding Model.Password}"/>
+                    <rendered:EntryCustom Placeholder="" Text="{Binding Model.Password}"/>
 
                     <Label Margin="5,20,0,0" Text="Confirm Password"/>
-                    <Entry Placeholder="" Text="{Binding Model.ConfirmPassword}"/>
+                    <rendered:EntryCustom Placeholder="" Text="{Binding Model.ConfirmPassword}"/>
 
                     <Button  Text="Register" Style="{StaticResource okButton}" Command="{Binding RegisterCommand}"/>
                 </StackLayout>

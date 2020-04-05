@@ -1,24 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<local:OcphPage  xmlns:local="clr-namespace:won" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" Title="Surat Cerai"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:rendered="clr-namespace:won.Rendered"
+                 mc:Ignorable="d" Title="Surat Cerai"
              x:Class="won.Views.SuratPermohonan.CeraiPage">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Margin="20">
-                <Label Text="NIK Suami"    Margin="0,20,0,0"/>
-                <Entry Placeholder="NIK Suami" Text="{Binding Model.NIKSuami}"/>
-                <Label Text="Nama Suami"   Margin="0,20,0,0" />
-                <Entry Placeholder="Nama Suami" Text="{Binding Model.NamaSuami}"/>
-                <Label Text="NIK Istri"   Margin="0,20,0,0"/>
-                <Entry Placeholder="NIK Istri" Text="{Binding Model.NIKIstri}"/>
-                <Label Text="Nama Istri"   Margin="0,20,0,0"/>
-                <Entry Placeholder="Nama Istri" Text="{Binding Model.NamaIstri}"/>
-                <Label Text="No. Surat"  Margin="0,20,0,0" />
-                <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
-            </StackLayout>
-        </ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Image Source="bg.jpg" Grid.RowSpan="2" Aspect="AspectFill"/>
+            <ScrollView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Margin="20">
+                        <Label Text="NIK Suami"    Margin="0,20,0,0"/>
+                        <rendered:EntryCustom Placeholder="NIK Suami" Text="{Binding Model.NIKSuami}"/>
+                        <Label Text="Nama Suami"   Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="Nama Suami" Text="{Binding Model.NamaSuami}"/>
+                        <Label Text="NIK Istri"   Margin="0,20,0,0"/>
+                        <rendered:EntryCustom Placeholder="NIK Istri" Text="{Binding Model.NIKIstri}"/>
+                        <Label Text="Nama Istri"   Margin="0,20,0,0"/>
+                        <rendered:EntryCustom Placeholder="Nama Istri" Text="{Binding Model.NamaIstri}"/>
+                        <Label Text="No. Surat"  Margin="0,20,0,0" />
+
+                        <Label Style="{StaticResource dataTitle}" Text="Persyaratan" FontSize="17"  Margin="0,30,0,0" />
+                    </StackLayout>
+                    <ListView Margin="20,5,0,0" Grid.Row="1" HeightRequest="200" ItemsSource="{Binding Persyaratan}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" Padding="10">
+                                        <Label Style="{StaticResource dataValue}" Text="{Binding nama}" VerticalOptions="Center"/>
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                            <CheckBox IsVisible="{Binding HasFile}" IsChecked="{Binding HasFile}" IsEnabled="False" />
+                                            <Label IsVisible="{Binding HasFile, Converter={local:InverseBoolConverter}}" Text="&#xeee7;" FontSize="Title" TextColor="Orange" FontFamily="{StaticResource IcoFont}">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="uploadAction" CommandParameter="{Binding .}"/>
+                                                </Label.GestureRecognizers>
+                                            </Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </ScrollView>
+            <Button Grid.Row="1" Text="Simpan" Command="{Binding SaveCommand}" Style="{StaticResource okButton}"/>
+        </Grid>
     </ContentPage.Content>
-</ContentPage>
+</local:OcphPage>

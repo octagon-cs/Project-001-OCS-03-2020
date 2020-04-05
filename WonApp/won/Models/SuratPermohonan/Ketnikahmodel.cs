@@ -7,44 +7,6 @@ namespace won.Models.SuratPermohonan
 {
     public class Ketnikahmodel : BaseNotify
     {
-
-        private int _NIKSuami;
-
-
-        [JsonProperty("niksuami")]
-        public int NIKSuami
-        {
-            get { return _NIKSuami; }
-            set { SetProperty(ref _NIKSuami, value); }
-        }
-
-        private string _NamaSuami;
-
-
-        [JsonProperty("namasuami")]
-        public string NamaSuami
-        {
-            get { return _NamaSuami; }
-            set { SetProperty(ref _NamaSuami, value); }
-        }
-        private int _NIKIstri;
-
-
-        [JsonProperty("nikistri")]
-        public int NIKIstri
-        {
-            get { return _NIKIstri; }
-            set { SetProperty(ref _NIKIstri, value); }
-        }
-        private string _NamaIstri;
-
-
-        [JsonProperty("namaistri")]
-        public string NamaIstri
-        {
-            get { return _NamaIstri; }
-            set { SetProperty(ref _NamaIstri, value); }
-        }
         private int _NoSurat;
 
 
@@ -54,15 +16,60 @@ namespace won.Models.SuratPermohonan
             get { return _NoSurat; }
             set { SetProperty(ref _NoSurat, value); }
         }
+
+        private int _idSuami;
+
+        [JsonProperty("idpenduduksuami")]
+        public int IdSuami
+        {
+            get { return _idSuami; }
+            set { SetProperty(ref _idSuami, value); }
+        }
+
+      
+        private int _idIstri;
+
+
+        [JsonProperty("idpendudukistri")]
+        public int IdIstri
+        {
+            get { return _idIstri; }
+            set { SetProperty(ref _idIstri, value); }
+        }
+       
+       
         private string _Ketnikah;
 
-
-        [JsonProperty("ketnikah")]
+        [JsonProperty("keterangan")]
         public string KetNikah
         {
             get { return _Ketnikah; }
             set { SetProperty(ref _Ketnikah, value); }
         }
+
+
+        private Penduduk suami;
+
+        [JsonIgnore]
+        public Penduduk Suami
+        {
+            get { return suami; }
+            set { SetProperty(ref suami, value); }
+        }
+
+
+        private Penduduk istri;
+
+        [JsonIgnore]
+        public Penduduk Istri
+        {
+            get { return istri; }
+            set
+            {
+                SetProperty(ref istri, value);
+            }
+        }
+
 
         public override bool Valid
         {
@@ -76,7 +83,7 @@ namespace won.Models.SuratPermohonan
         private bool Validation()
         {
             var valid = true;
-            if (NIKSuami<=0 || string.IsNullOrEmpty(NamaSuami) || NIKIstri<=0 || string.IsNullOrEmpty(NamaIstri) || NoSurat<=0 || string.IsNullOrEmpty(KetNikah))
+            if (IdSuami<=0 || IdIstri<=0 || NoSurat<=0 || string.IsNullOrEmpty(KetNikah))
             {
                 valid = false;
                 ErrorMessage = "Data Tidak Boleh Kosong";

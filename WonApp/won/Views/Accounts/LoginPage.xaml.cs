@@ -39,7 +39,7 @@ namespace won.Views.Accounts
             LoginCommand = new Command(LoginAction, x=> Model.Valid);
             RegistrasiCommand = new Command(RegisterAction);
             ForgotPasswordCommand = new Command(ForgotPasswordAction);
-            this.URL = "http://192.168.1.4:3000/";
+            this.URL = "http://192.168.1.9:3000/";
         }
 
         private void ForgotPasswordAction(object obj)

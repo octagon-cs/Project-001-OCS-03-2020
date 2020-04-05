@@ -42,7 +42,7 @@ namespace won.Models
         public string namaayah { get; set; }
         public string keterangan { get; set; }
         public string status { get; set; }
-        public int idusers { get; set; }
+        public int? idusers { get; set; }
         public DateTime created { get; set; }
         public DateTime updated { get; set; }
         public string rolename { get; set; }

@@ -1,34 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<local:OcphPage  xmlns:local="clr-namespace:won" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" Title="Kematian"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:rendered="clr-namespace:won.Rendered"
+                 mc:Ignorable="d" Title="Kematian"
              x:Class="won.Views.SuratPermohonan.KematianPage">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Margin="20">
-                <Label Text="NIK"  Margin="0,20,0,0" />
-                <Entry Placeholder="NIK" Text="{Binding Model.NIK}"></Entry>
-                <Label Text="Nama"  Margin="0,20,0,0" />
-                <Entry Placeholder="Nama" Text="{Binding Model.Nama}"></Entry>
-                <Label Text="Tempat Lahir"    Margin="0,20,0,0"/>
-                <Entry Placeholder="Tempat Lahir" Text="{Binding Model.TempatLahir}"></Entry>
-                <Label Text="Tanggal Lahir"    Margin="0,20,0,0"/>
-                <Entry Placeholder="Tanggal Lahir" Text="{Binding Model.TanggalLahir}"></Entry>
-                <Label Text="Hari/Tanggal Meninggal"   Margin="0,20,0,0" />
-                <Entry Placeholder="Hari/Tanggal Meninggal" Text="{Binding Model.TanggalMeninggal}"></Entry>
-                <Label Text="Tempat Meninggal"  Margin="0,20,0,0" />
-                <Entry Placeholder="Tempat Meninggal" Text="{Binding Model.TempatMeninggal}"></Entry>
-                <Label Text="Disebabkan Karena"  Margin="0,20,0,0" />
-                <Entry Placeholder="Disebabkan Karena" Text="{Binding Model.DisebabkanKarena}"></Entry>
-                <Label Text="Dikebumikan Di"  Margin="0,20,0,0" />
-                <Entry Placeholder="Dikebumikan Di" Text="{Binding Model.DikebumikanDi}"></Entry>
-                <Label Text="Hari/Tanggal Dikebumikan"  Margin="0,20,0,0" />
-                <Entry Placeholder="Hari/Tanggal Dikebumikan" Text="{Binding Model.HariTanggalDikebumikan}"></Entry>
-                <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
-
-            </StackLayout>
-        </ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Image Source="bg.jpg" Grid.RowSpan="2" Aspect="AspectFill"/>
+            <ScrollView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Margin="20">
+                        <Label Text="NIK"  Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="NIK" Text="{Binding Model.NIK}"/>
+                        <Label Text="Nama"  Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="Nama" Text="{Binding Model.Nama}"/>
+                        <Label Text="Tempat Lahir"    Margin="0,20,0,0"/>
+                        <rendered:EntryCustom Placeholder="Tempat Lahir" Text="{Binding Model.TempatLahir}"/>
+                        <Label Text="Tanggal Lahir"    Margin="0,20,0,0"/>
+                        <rendered:EntryCustom Placeholder="Tanggal Lahir" Text="{Binding Model.TanggalLahir}"/>
+                        <Label Text="Hari/Tanggal Meninggal"   Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="Hari/Tanggal Meninggal" Text="{Binding Model.TanggalMeninggal}"/>
+                        <Label Text="Tempat Meninggal"  Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="Tempat Meninggal" Text="{Binding Model.TempatMeninggal}"/>
+                        <Label Text="Disebabkan Karena"  Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="Disebabkan Karena" Text="{Binding Model.DisebabkanKarena}"/>
+                        <Label Text="Dikebumikan Di"  Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="Dikebumikan Di" Text="{Binding Model.DikebumikanDi}"/>
+                        <Label Text="Hari/Tanggal Dikebumikan"  Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="Hari/Tanggal Dikebumikan" Text="{Binding Model.HariTanggalDikebumikan}"/>
+                        <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
+                    </StackLayout>
+                    <StackLayout Margin="20,5,0,0" Grid.Row="1" >
+                        <Label Style="{StaticResource dataTitle}" Text="Persyaratan" FontSize="17"  Margin="0,30,0,0" />
+                        <ListView HeightRequest="200" ItemsSource="{Binding Persyaratan}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal" Padding="10">
+                                            <Label Style="{StaticResource dataValue}" Text="{Binding nama}" VerticalOptions="Center"/>
+                                            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                                                <CheckBox IsVisible="{Binding HasFile}" IsChecked="{Binding HasFile}" IsEnabled="False" />
+                                                <Label IsVisible="{Binding HasFile, Converter={local:InverseBoolConverter}}" Text="&#xeee7;" FontSize="Title" TextColor="Orange" FontFamily="{StaticResource IcoFont}">
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="uploadAction" CommandParameter="{Binding .}"/>
+                                                    </Label.GestureRecognizers>
+                                                </Label>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Grid>
+            </ScrollView>
+            <Button Grid.Row="1" Text="Simpan" Command="{Binding SaveCommand}" Style="{StaticResource okButton}"/>
+        </Grid>
     </ContentPage.Content>
-</ContentPage>
+</local:OcphPage>

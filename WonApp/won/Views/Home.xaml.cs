@@ -71,7 +71,7 @@ namespace won.Views
             TappedEventArgs events = (TappedEventArgs)e;
             PermohonanModel value = (PermohonanModel)events.Parameter;
 
-            Page page = null;
+            OcphPage page = null;
             switch (value.JenisPermohonan)
             {
                 case PermohonanType.Pengantar_KTP:
@@ -122,9 +122,7 @@ namespace won.Views
                     page = new Views.SuratPermohonan.LainnyaPage();
                     break;
                 case PermohonanType.Pindah:
-                    page = new PindahPage();
-                    var vm = new PindahViewModel(value);
-                    page.BindingContext = vm;
+                    page = new Views.SuratPermohonan.PindahPage();
                     break;
                 default:
                     break;
@@ -140,7 +138,10 @@ namespace won.Views
                 }, "message");
             }
             else
+            {
+                page.Edit(value);
                 Helper.GoPage(page);
+            }
 
 
 

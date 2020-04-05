@@ -10,7 +10,9 @@ namespace won.Models
         public int IdDetailPersyaratan { get; set; }
         public string Nama { get; set; }
         public string Deskripsi { get; set; }
+
         public int Status { get; set; }
+
 
         private bool _NoHaveData=false;
 
