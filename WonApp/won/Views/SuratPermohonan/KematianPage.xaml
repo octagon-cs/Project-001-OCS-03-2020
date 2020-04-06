@@ -20,6 +20,8 @@
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <StackLayout Margin="20">
+                        <Label Text="No. Surat" Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="No. Surat" Text="{Binding Model.NoSurat}" />
                         <Label Text="NIK"  Margin="0,20,0,0" />
                         <rendered:EntryCustom Placeholder="NIK" Text="{Binding Model.NIK}"/>
                         <Label Text="Nama"  Margin="0,20,0,0" />
@@ -38,7 +40,6 @@
                         <rendered:EntryCustom Placeholder="Dikebumikan Di" Text="{Binding Model.DikebumikanDi}"/>
                         <Label Text="Hari/Tanggal Dikebumikan"  Margin="0,20,0,0" />
                         <rendered:EntryCustom Placeholder="Hari/Tanggal Dikebumikan" Text="{Binding Model.HariTanggalDikebumikan}"/>
-                        <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
                     </StackLayout>
                     <StackLayout Margin="20,5,0,0" Grid.Row="1" >
                         <Label Style="{StaticResource dataTitle}" Text="Persyaratan" FontSize="17"  Margin="0,30,0,0" />

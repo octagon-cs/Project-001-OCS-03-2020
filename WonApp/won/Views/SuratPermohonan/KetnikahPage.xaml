@@ -33,7 +33,6 @@
                         <rendered:EntryCustom Placeholder="NIK Istri" Text="{Binding Model.Istri.nik}"/>
                         <Label Text="Nama Istri"   Margin="0,20,0,0"/>
                         <rendered:EntryCustom Placeholder="Nama Istri" Text="{Binding Model.Istri.nama}"/>
-                       
                         <Label Text="Keterangan Nikah"  Margin="0,20,0,0" />
                         <rendered:EditorCustom Placeholder="Keterangan Nikah" Text="{Binding Model.KetNikah}"/>
                     </StackLayout>

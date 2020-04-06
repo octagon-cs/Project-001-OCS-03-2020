@@ -20,12 +20,12 @@
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <StackLayout Margin="20">
+                        <Label Text="No. Surat"  Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="No. Surat" Text="{Binding Model.NoSurat}"/>
                         <Label Text="NIK"    Margin="0,20,0,0"/>
                         <rendered:EntryCustom Placeholder="NIK" Text="{Binding Model.NIK}"/>
                         <Label Text="Nama"   Margin="0,20,0,0" />
                         <rendered:EntryCustom Placeholder="Nama" Text="{Binding Model.Nama}"/>
-                        <Label Text="No. Surat"  Margin="0,20,0,0" />
-                        <rendered:EntryCustom Placeholder="No. Surat" Text="{Binding Model.NoSurat}"/>
                         <Label Text="Nama Usaha"  Margin="0,20,0,0" />
                         <rendered:EntryCustom Placeholder="Nama Usaha" Text="{Binding Model.NamaUsaha}"/>
                         <Label Text="Jenis Usaha"  Margin="0,20,0,0" />

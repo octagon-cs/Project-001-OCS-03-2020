@@ -20,14 +20,20 @@
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <StackLayout Margin="20">
+                        <Label Text="No. Surat" Margin="0,20,0,0"/>
+                        <rendered:EntryCustom Placeholder="No. Surat" Text="{Binding Model.NoSurat}"/>
                         <Label Text="NIK"  Margin="0,20,0,0" />
                         <rendered:EntryCustom Placeholder="NIK" Text="{Binding Model.NIK}"/>
                         <Label Text="Nomor Surat Pengantar"  Margin="0,20,0,0" />
                         <rendered:EntryCustom Placeholder="Nomor Surat Pengantar" Text="{Binding Model.NomorSuratPengantar}"/>
+                        <Label Text="RT" Margin="0,20,0,0"/>
+                        <rendered:EntryCustom Placeholder="RT" Text="{Binding Model.RT}"/>
+                        <Label Text="Ketua RT" Margin="0,20,0,0"/>
+                        <rendered:EntryCustom Placeholder="Ketua RT" Text="{Binding Model.KetuaRT}"/>
                         <Label Text="Tanggal Surat Pengantar"  Margin="0,20,0,0" />
                         <rendered:EntryCustom Placeholder="Tanggal Surat Pengantar" Text="{Binding Model.TanggalSuratPengantar}"/>
-                        <Label Style="{StaticResource dataTitle}" Text="Persyaratan" FontSize="17"  Margin="0,30,0,0" />
                     </StackLayout>
+                    <Label Style="{StaticResource dataTitle}" Text="Persyaratan" FontSize="17"  Margin="0,30,0,0" />
                     <ListView Margin="20,5,0,0" Grid.Row="1" HeightRequest="200" ItemsSource="{Binding Persyaratan}">
                         <ListView.ItemTemplate>
                             <DataTemplate>

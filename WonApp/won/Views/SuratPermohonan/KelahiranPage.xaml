@@ -36,7 +36,6 @@
                         <rendered:EntryCustom Placeholder="Nama Bapak" Text="{Binding Model.NamaBapak}"/>
                         <Label Text="Nama Ibu"  Margin="0,20,0,0" />
                         <rendered:EntryCustom Placeholder="Nama Ibu" Text="{Binding Model.NamaIbu}"/>
-                        <Button Text="Simpan" Command="{Binding SaveCommand}" BackgroundColor="#00a65a"/>
                     </StackLayout>
                     <StackLayout Margin="20,5,0,0" Grid.Row="1" >
                         <Label Style="{StaticResource dataTitle}" Text="Persyaratan" FontSize="17"  Margin="0,30,0,0" />

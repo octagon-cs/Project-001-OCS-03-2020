@@ -23,6 +23,8 @@
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <StackLayout Margin="20">
+                        <Label Text="No. Surat" Margin="0,20,0,0" />
+                        <rendered:EntryCustom Placeholder="No.Surat" Text="{Binding Model.NoSurat}" />
                         <Label Text="NIK" Style="{StaticResource dataTitle}"  Margin="0,20,0,0" />
                         <rendered:EntryCustom  Placeholder="NIK" Text="{Binding Model.NIK}"/>
                         <Label Style="{StaticResource dataTitle}"  Text="Tanggal Pindah"   Margin="0,20,0,0" />
